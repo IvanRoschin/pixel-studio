@@ -1,7 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { Social } from "@/sanity/interface";
 
-
 export default async function getSocials(){
 const query = `
 *[_type == "social"] {

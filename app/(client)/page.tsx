@@ -3,17 +3,18 @@ export const dynamic = "force-dynamic";
 // import { Header, Hero, About, Team, Stacks, Projects, Contact } from "../components";
 import Link from "next/link";
 import Image from "next/image";
-import { Header, Hero, About, Team, Stacks  }  from "@/components/index";
-import { PageInfo, Social, TeamMember, Stack, Project,  } from "@/sanity/interface";
-import { getPageInfo, getSocials, getTeam, getStacks, getProjects } from "@/actions/index";
+import { Header, Hero, About, Team, Technologies  }  from "@/components/index";
+import { PageInfo, Social, TeamMember, Stack, Project, Technology  } from "@/sanity/interface";
+import { getPageInfo, getSocials, getTeam, getStacks, getProjects, getTechnologies } from "@/actions/index";
 
 
 export default async function Home () {
   const pageInfo: PageInfo = await getPageInfo();
   const socials: Social[] = await getSocials();
   const team: TeamMember[] = await getTeam(); 
-  const stacks: Stack[] = await getStacks();
+  // const stacks: Stack[] = await getStacks();
   const projects: Project[] = await getProjects();
+  const technologies: Technology[] = await getTechnologies();
 
   return (
     <div
@@ -41,7 +42,7 @@ export default async function Home () {
         <Team team={team} />
       </section>
       <section id="stack" className="snap-start">
-        <Stacks stacks={stacks} />
+        <Technologies technologies={technologies} />
       </section>
       {/* Projects*/}
       <section id="projects" className="snap-start">

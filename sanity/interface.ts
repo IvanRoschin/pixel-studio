@@ -28,6 +28,13 @@ export interface Stack extends SanityBody {
   url: string;
 }
 
+export interface Technology extends SanityBody {
+  _type: "technology"
+  name: string;
+  progress: number;
+  image: Image;
+}
+
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
   logo: Image;

@@ -1,11 +1,8 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import pageInfo from "./schemas/pageInfo";
-import project from "./schemas/project";
-import social from "./schemas/social";
-import stack from "./schemas/stack";
-import teamMember from "./schemas/teamMember";
+
+import { pageInfo, project, social, stack, teamMember, technologies } from "./schemas";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [pageInfo, project, social, stack, teamMember],
+  types: [pageInfo, project, social, stack, teamMember, technologies],
 };

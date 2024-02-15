@@ -52,9 +52,9 @@ const Team: React.FC<TeamProps> = ({team}) => {
       md:pt-[300px]
       snap-x
       snap-mandatory
-       scrollbar-thin
-    scrollbar-track-gray-400/20
-    scrollbar-thumb-[#F7AB0A]/80"
+      scrollbar-thin
+      scrollbar-track-gray-400/20
+      scrollbar-thumb-[#F7AB0A]/80"
       >
         {team?.map((teamMember) => (        
         <TeamMemberCard key={teamMember._id} teamMember={teamMember} />

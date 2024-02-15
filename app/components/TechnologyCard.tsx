@@ -1,15 +1,16 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Stack } from "@/sanity/interface";
+import { Technology } from "@/sanity/interface";
+import { urlForImage } from "@/sanity/lib/image";
 
-interface StackCardProps {
-  stack: Stack;
+interface TechnologyCardProps {
+  technology: Technology;
   directionLeft?: boolean;
 };
 
-
-const StackCard: React.FC<StackCardProps> = ({ directionLeft, stack }) => {
+const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technology }) => {
   return (
     <motion.div
       initial={{
@@ -26,14 +27,14 @@ const StackCard: React.FC<StackCardProps> = ({ directionLeft, stack }) => {
       className="group relative flex cursor-pointer"
     >
       <Image
-        alt={stack.name}
-        src={stack.url}
-        width={24}
-        height={24}
+        alt={technology?.name}
+        src={urlForImage(technology?.image)}
+        width={54}
+        height={48}
         className="
-        rounded-full 
         border 
         border-gray-500 
+        group:bg-gray-500/2
         object-cover 
         h-24
         w-24
@@ -42,6 +43,7 @@ const StackCard: React.FC<StackCardProps> = ({ directionLeft, stack }) => {
         xl:h-32
         xl:w-32
         filter
+        rounded-full
         group-hover:grayscale 
         transition 
         duration-300 
@@ -56,21 +58,21 @@ const StackCard: React.FC<StackCardProps> = ({ directionLeft, stack }) => {
       transition
       duration-300
       ease-in-out
+      rounded-full
       h-24
       w-24
       md:h-28
       md:w-28
       xl:h-32
       xl:w-32
-      rounded-full 
       z-0"
       >
         <div className="flex items-center justify-center h-full">
-          <p className="text-3xl fond-bold text-black opacity-100">{stack.progress}</p>
+          <p className="text-3xl fond-bold text-black opacity-100">{technology.progress}</p>
         </div>
       </div>
     </motion.div>
   );
 };
 
-export default StackCard;
+export default TechnologyCard;

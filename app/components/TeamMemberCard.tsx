@@ -54,12 +54,12 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
           width={128}
           height={128}
           className="
-      w-32
-      h-32
-      rounded-full
-      xl:w-[200px]
-      xl:h-[200px]
-      object-center
+            w-32
+            h-32
+            rounded-full
+            xl:w-[200px]
+            xl:h-[200px]
+            object-center
       "
         />
         <div className="px-0 md:px-10">
@@ -80,25 +80,27 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
           </div>
         </div>
       </motion.div>
-      <div className="flex space-x-2 my-2">
+      <div className="grid grid-cols-5 gap-3 md:grid-cols-7" >
         {teamMember.technologies.map(stack => (
-          <div className="group relative flex cursor-pointer">
+          <div 
+          key={stack._id}
+          className="group relative flex cursor-pointer ">
           <Image
-            key={stack._id}
             alt={stack.name}
             src={stack.url}
               className="
-          rounded-full 
-        border 
-        border-gray-500 
-        object-cover 
-        h-10
-        w-10
-        filter
-        group-hover:grayscale 
-        transition 
-        duration-300 
-        ease-in-out"
+                rounded-full 
+                border 
+                border-gray-500 
+                object-cover 
+                h-12
+                w-12
+                filter
+                group-hover:grayscale 
+                transition 
+                duration-300 
+                ease-in-out
+              "
             width={40}
             height={40}
             />
@@ -111,13 +113,13 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
       transition
       duration-300
       ease-in-out
-      h-10
-      w-10
+      h-12
+      w-12
       rounded-full 
       z-0"
       >
         <div className="flex items-center justify-center h-full">
-          <p className="text-small fond-bold text-black opacity-100">{stack.progress}</p>
+          <p className="text-lg fond-bold text-black opacity-100">{stack.progress}</p>
         </div>
       </div>
     </div>

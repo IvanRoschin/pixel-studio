@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import StackCard from "./StackCard";
-import { Stack } from "@/sanity/interface";
+import TechnologyCard from "./TechnologyCard";
+import { Technology } from "@/sanity/interface";
 
-interface StacksProps {
-  stacks: Stack[];
+interface TechnologiesProps {
+  technologies: Technology[];
 };
 
-const Stacks: React.FC<StacksProps> = ({stacks}) => {
+const Technologies: React.FC<TechnologiesProps> = ({technologies}) => {
   return (
     <motion.div
       initial={{
@@ -51,22 +51,23 @@ const Stacks: React.FC<StacksProps> = ({stacks}) => {
       <h3
         className="
       absolute
-      top-[12rem]
+      top-[14rem]
       tracking-[3px]
       text-gray-500
       text-sm
       uppercase
-      px-10"
+      px-10
+      "
       >
         Hover over a skill for currency profieciency
       </h3>
-      <div className="grid grid-col-4 gap-5">
-        {stacks.map((stack) => (
-        <StackCard key={stack._id} stack={stack}/>
+      <div className="pt-64 grid grid-cols-4 gap-5">
+        {technologies.map((technology) => (
+        <TechnologyCard key={technology._id} technology={technology}/>
         ))}
       </div>
     </motion.div>
   );
 };
 
-export default Stacks;
+export default Technologies;
