@@ -2,11 +2,14 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Project } from "@/sanity/interface";
+import { urlForImage } from "@/sanity/lib/image";
+import ProjectCard from "./ProjectCard";
 
-type Props = {};
-
-const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5];
+interface ProjectsProps {
+  projects: Project[];
+};
+const Projects: React.FC<ProjectsProps> = ({projects}) => {
 
   return (
     <motion.div
@@ -54,58 +57,8 @@ const Projects = (props: Props) => {
     scrollbar-track-gray-400/20
     scrollbar-thumb-[#F7AB0A]/80"
       >
-        {projects.map((project, i) => (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            key={project}
-            className="
-      flex
-      flex-col
-      rounded-lg
-      items-center
-      space-y-5
-      flex-shrink-0
-      snap-center
-      cursor-pointer
-      duration-200
-      overflow-hidden
-      text-left
-      md:flex-row
-      max-w-full
-      px-10
-      justify-evenly
-      h-screen
-      w-screen
-      z-0
-    "
-          >
-            <motion.div
-              initial={{ y: -300, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                alt=""
-                src="/images/team/freelance.webp"
-                width={600}
-                height={300}
-              />
-            </motion.div>
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
-                <span className="underline decoration-[#F7AB0A]/50">
-                  Case Study {i + 1} of {projects.length}:
-                </span>
-                UPS Clone
-              </h4>
-              <p className="text-lg text-center md:text-left">
-                Project Summuary
-              </p>
-            </div>
-          </motion.div>
+        {projects.map((project, i: number) => (
+          <ProjectCard key={project._id} project={project} projects={projects} i={i} />
         ))}
       </div>
       <div

@@ -24,24 +24,32 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
       transition={{
         duration: 1,
       }}
-      className="group relative flex cursor-pointer"
-    >
-      <Image
-        alt={technology?.name}
-        src={urlForImage(technology?.image)}
-        width={54}
-        height={48}
-        className="
-        border 
-        border-gray-500 
-        group:bg-gray-500/2
-        object-cover 
+      className="
+        group
+        relative 
+        flex 
+        cursor-pointer  
         h-24
         w-24
         md:h-28
         md:w-28
         xl:h-32
         xl:w-32
+        "
+    >
+      <Image
+        alt={technology?.name}
+        src={urlForImage(technology?.image)}
+        width={24}
+        height={24}
+        className="
+        p-2
+        border 
+        border-gray-500 
+        bg-gray-200
+        object-cover 
+        h-[100%]
+        w-[100%]
         filter
         rounded-full
         group-hover:grayscale 

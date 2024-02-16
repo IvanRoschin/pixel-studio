@@ -61,11 +61,15 @@ const Technologies: React.FC<TechnologiesProps> = ({technologies}) => {
       >
         Hover over a skill for currency profieciency
       </h3>
-      <div className="pt-64 grid grid-cols-4 gap-5">
-        {technologies.map((technology) => (
+      <div className="grid grid-cols-4 gap-5 pt-64">
+        {technologies?.slice(0, technologies.length/2).map((technology) => (
         <TechnologyCard key={technology._id} technology={technology}/>
         ))}
-      </div>
+        {technologies?.slice(technologies.length/2, technologies.length).map((technology) => (
+        <TechnologyCard key={technology._id} technology={technology} directionLeft/>
+        ))}
+        </div>
+
     </motion.div>
   );
 };

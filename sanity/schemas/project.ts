@@ -28,7 +28,7 @@ export default defineType({
       name: "technologies",
       title: "Technologies",
       type: "array",
-      of: [{ type: "reference", to: { type: "stack" } }],
+      of: [{ type: "reference", to: { type: "technology" } }],
     },
     {
       name: "linkToBuild",

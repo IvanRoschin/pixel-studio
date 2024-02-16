@@ -50,13 +50,12 @@ export interface PageInfo extends SanityBody {
   phoneNumber: string;
 }
 
-
 export interface Project extends SanityBody {
   _type: "project"
   title: string;
   image: Image;
-  summary: Text;
-  technologies: Stack[];
+  summary: string;
+  technologies: Technology[];
   linkToBuild: string;
 }
 
