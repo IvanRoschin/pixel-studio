@@ -37,9 +37,10 @@ export interface Technology extends SanityBody {
 
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
+  title: string;
   headerLogo: Image;
   socials: Social[];
-  title: string;
+  heroWords: string;
   subtitle: string;
   aboutTitle: string;
   aboutImage: Image;
