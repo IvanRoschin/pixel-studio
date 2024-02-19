@@ -11,17 +11,11 @@ interface HeroProps {
 
 const Hero:React.FC<HeroProps> = ({pageInfo}) => {
 
-  const titleString = pageInfo.title
-  const regex = /<([^>]+)\/>/g;
-  const matches = [];
-  let match;
-
-while ((match = regex.exec(titleString)) !== null) {
-  matches.push(`<${match[1]}/>`);
-}
+  const titleString = pageInfo?.heroWords
+  const arrayOfWords = titleString.split(', ').map(word => `<${word}/>`);
 
   const [text, count] = useTypewriter({
-    words: matches,
+    words: arrayOfWords,
     loop: true,
     delaySpeed: 2000,
   });
@@ -69,6 +63,9 @@ while ((match = regex.exec(titleString)) !== null) {
           </Link>
           <Link href="#projects">
             <button className="heroBtn">Projects</button>
+          </Link>
+           <Link href="#price">
+            <button className="heroBtn">Price</button>
           </Link>
         </div>
       </div>

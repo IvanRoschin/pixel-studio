@@ -1,15 +1,16 @@
 export const dynamic = "force-dynamic";
 
-import { Header, Hero, About, Team, Technologies, Projects, Contact, Footer }  from "@/components/index";
-import { PageInfo, Social, TeamMember, Technology, Project } from "@/sanity/interface";
-import { getPageInfo, getSocials, getTeam, getTechnologies, getProjects } from "@/actions/index";
+import { Header, Hero, About, Team, Technologies, Projects, Contact, Prices, Footer }  from "@/components/index";
+import { PageInfo, TeamMember, Technology, Project, Price } from "@/sanity/interface";
+import { getPageInfo, getTeam, getTechnologies, getProjects, getPrices } from "@/actions/index";
 
 export default async function Home () {
   const pageInfo: PageInfo = await getPageInfo();
-  const socials: Social[] = await getSocials();
+  // const socials: Social[] = await getSocials();
   const team: TeamMember[] = await getTeam(); 
   const projects: Project[] = await getProjects();
   const technologies: Technology[] = await getTechnologies();
+  const prices: Price[] = await getPrices();
 
   return (
     <div
@@ -26,7 +27,8 @@ export default async function Home () {
         scrollbar-track-gray-400/20
         scrollbar-thumb-[#F7AB0A]/80"
     >
-      <Header pageInfo={pageInfo} socials={socials}  />
+      <Header pageInfo={pageInfo} />
+    
       <section id="hero" className="snap-start pb-8">
         <Hero pageInfo={pageInfo} />
       </section>
@@ -42,10 +44,15 @@ export default async function Home () {
       <section id="projects" className="snap-start">
         <Projects projects={projects} />
       </section>
+          <section id="price" className="snap-start">
+        <Prices price={prices} />
+      </section>
       <section id="contact" className="snap-start">
         <Contact />
       </section>
-    <Footer/>
+      <section className="snap-start">
+        <Footer pageInfo={pageInfo} />
+      </section>
     </div>
   );
 }

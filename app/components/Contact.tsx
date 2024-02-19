@@ -1,7 +1,7 @@
 "use client";
 
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Button from "./Button";
 type Inputs = {
   name: string;
   email: string;
@@ -50,20 +50,7 @@ const Contact = () => {
           We have got just what you need{" "}
           <span className="decoration-[#F7AB0A]/50 underline">Let`s talk</span>
         </h4>
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+380951983729</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">mail@pixel-studio.com.ua</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">123 Developer Lane</p>
-          </div>
-        </div>
+
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto"
@@ -99,12 +86,15 @@ const Contact = () => {
             placeholder="Message"
             className="contactInput"
           />
-          <button
+           <div className="flex items-center justify-center pt-5">
+          <Button type="submit" label="Submit" />
+        </div>
+          {/* <button
             className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg hover:scale-105 transition"
             type="submit"
           >
             Submit
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

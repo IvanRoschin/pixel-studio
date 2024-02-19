@@ -4,3 +4,4 @@ export { default as social } from './social';
 export { default as stack } from './stack';
 export { default as teamMember } from './teamMember';
 export { default as technologies } from './technology';
+export { default as price } from './price';

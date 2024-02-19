@@ -34,13 +34,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projects, i}) => {
               overflow-hidden
               text-left
               md:flex-row
-              max-w-full
-              px-10
+              md:max-w-full
+              max-w-[480px]
+              px-5
               justify-evenly
               h-screen
               w-screen
               z-0
-    "
+              "
           >
             <motion.div
               initial={{ y: -300, opacity: 0 }}
@@ -51,20 +52,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projects, i}) => {
               <Image
                 alt={project.title}
                 src={urlForImage(project.image)}
-                width={600}
-                height={300}
+                width={470}
+                height={360}
+            className="
+            w-[470px] 
+            h-[360px] 
+            md:w-[320px] 
+            md:h-[240px] 
+            xl:w-[740px] 
+            xl:h-auto
+            "
               />
             </motion.div>
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="text-2xl md:text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case Study {i + 1} of {projects.length}:
                 </span>
-                <span> </span><Link href={project.linkToBuild} className="text-[#F7AB0A]/50">{project.title}</Link>
-              </h4>
-              <p className="text-2xl text-center md:text-left">
+               <Link href={project.linkToBuild} className="text-[#F7AB0A]/50 hover:underline"><br/>Link: {project.title}</Link>
+          </h4>
+          <span className="flex items-center justify-center px-5">
+            <p className="text-lx/2 p-1 max-w-[440px] text-center md:text-left md:text-2xl">
                 {project?.summary}
-              </p>
+          </p>
+            </span>   
                   <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
                   Technologies:

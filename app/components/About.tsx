@@ -62,6 +62,7 @@ const About:React.FC<AboutProps> = ({pageInfo}) => {
           height={300}
           className="
              -mb-20
+            mt-20
             md:mb-0
             flex-shrink-0
             rounded-full

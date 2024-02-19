@@ -1,5 +1,5 @@
 import { client } from "@/sanity/lib/client";
-import { TeamMember } from "../../typings";
+import { TeamMember } from "@/sanity/interface";
 
 export default async function getTeam(){
 const query =`

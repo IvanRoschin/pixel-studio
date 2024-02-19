@@ -6,8 +6,13 @@ export default defineType({
   type: "document",
   fields: [
     {
-      name: "logo",
-      title: "Logo",
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      name: "headerLogo",
+      title: "HeaderLogo",
       type: "image",
       options: {
         hotspot: true,
@@ -20,8 +25,8 @@ export default defineType({
       of: [{ type: "reference", to: { type: "social" } }],
     },
     {
-      name: "title",
-      title: "Title",
+      name: "heroWords",
+      title: "HeroWords",
       type: "string",
     },
     {
@@ -67,5 +72,27 @@ export default defineType({
       title: "Address",
       type: "string",
     },
+    {
+      name: "footerLogo",
+      title: "FooterLogo",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+        {
+      name: "footerBtnUp",
+      title: "FooterBtnUp",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: "copyright",
+      title: "Copyright",
+      type: "string",
+    },
+
   ],
 });

@@ -31,10 +31,6 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
         cursor-pointer  
         h-24
         w-24
-        md:h-28
-        md:w-28
-        xl:h-32
-        xl:w-32
         "
     >
       <Image
@@ -69,10 +65,6 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
       rounded-full
       h-24
       w-24
-      md:h-28
-      md:w-28
-      xl:h-32
-      xl:w-32
       z-0"
       >
         <div className="flex items-center justify-center h-full">

@@ -1,18 +1,18 @@
 "use client"
 
-import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { PageInfo, Social }  from "@/sanity/interface";
+import { PageInfo }  from "@/sanity/interface";
 import { urlForImage } from "@/sanity/lib/image";
+import SocialCard from "./SocialCard";
 
 interface HomeProps {
   pageInfo: PageInfo;
-  socials: Social[];
 };
 
-const Header: React.FC<HomeProps> =  ({ pageInfo, socials}) => {
+const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
 
   return (
     <header
@@ -25,7 +25,10 @@ const Header: React.FC<HomeProps> =  ({ pageInfo, socials}) => {
     max-w-7xl
     mx-auto
     z-20
-    p-5
+    py-5
+    backdrop-filter 
+    backdrop-blur
+    dark:bg-primary dark:text-white
     "
     >
       <motion.div
@@ -46,12 +49,19 @@ const Header: React.FC<HomeProps> =  ({ pageInfo, socials}) => {
       flex
       flex-row
       items-center
-      space-x-2"
+      space-x-2
+      after:absolute 
+      after:inset-x-0 
+      after:w-full 
+      after:h-12 
+      after:shadow-hr 
+      after:z-[-1]
+      "
       >
         <Link href="/#hero">
           <Image
-            src={urlForImage(pageInfo?.logo)}
-            alt="pixel-studio"
+            src={urlForImage(pageInfo?.headerLogo)}
+            alt={pageInfo.title}
             width={200}
             height={200}
             className="cursor-pointer object-cover"
@@ -59,16 +69,9 @@ const Header: React.FC<HomeProps> =  ({ pageInfo, socials}) => {
         </Link>
 
         {/*Social Icons*/}
-        {/* {socials.map((social) => (
-          <SocialIcon
-          key={social._id}
-          url={social.url}
-          fgColor="gray"
-          bgColor="transparent"
-          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110"
-        />
-       ) )} */}
-
+        {/* {pageInfo?.socials?.map((social) => (
+          <SocialCard key={social._id} social={social}/>
+        ))} */}
       </motion.div>
       <motion.div
         initial={{

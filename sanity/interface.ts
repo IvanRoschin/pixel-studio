@@ -37,9 +37,9 @@ export interface Technology extends SanityBody {
 
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
-  logo: Image;
+  headerLogo: Image;
   socials: Social[];
-  title: string[];
+  title: string;
   subtitle: string;
   aboutTitle: string;
   aboutImage: Image;
@@ -48,6 +48,9 @@ export interface PageInfo extends SanityBody {
   address: string;
   email: string;
   phoneNumber: string;
+  footerLogo: Image;
+  footerBtnUp: Image;
+  copyright: string;
 }
 
 export interface Project extends SanityBody {
@@ -68,5 +71,12 @@ export interface TeamMember extends SanityBody {
   technologies: Stack[];
   joinedTeam: Date;
   isCurrentWorkingHere: boolean;
+  points: string[];
+}
+
+export interface Price extends SanityBody {
+  _type: "price"
+  title: string;
+  price: number;
   points: string[];
 }
