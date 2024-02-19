@@ -43,7 +43,7 @@ export interface PageInfo extends SanityBody {
   subtitle: string;
   aboutTitle: string;
   aboutImage: Image;
-  aboutText: Text;
+  aboutText: string;
   contactTitle: string;
   address: string;
   email: string;
