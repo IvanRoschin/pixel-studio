@@ -24,7 +24,9 @@
     "paths": {
       "@/components/*": ["app/components/*"],
       "@/sanity/*": ["sanity/*"],
-      "@/actions/*": ["app/actions/*"]
+      "@/actions/*": ["app/actions/*"],
+      "@/hooks/*": ["app/hooks/*"]
+
     },
     "target": "ES2017"
   },

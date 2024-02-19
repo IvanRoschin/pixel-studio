@@ -3,7 +3,10 @@ import { PageInfo } from "@/sanity/interface";
 
 export default async function getPageInfo(){
     const query =`
-*[_type == "pageInfo"][0]
+*[_type == "pageInfo"][0] {
+  ...,
+  socials[]->
+}
 `;
   try {
     const pageInfo: PageInfo = await client.fetch(query)

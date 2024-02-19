@@ -14,7 +14,7 @@ const SocialCard: React.FC<SocialCardProps> = ({social}) => {
           url={social.url}
           fgColor="gray"
           bgColor="transparent"
-          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110"
+          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110 cursor-pointer"
         />
       </div>
  

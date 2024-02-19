@@ -25,7 +25,8 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
     max-w-7xl
     mx-auto
     z-20
-    py-5
+    p-5
+    pb-0
     backdrop-filter 
     backdrop-blur
     dark:bg-primary dark:text-white
@@ -69,9 +70,16 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
         </Link>
 
         {/*Social Icons*/}
-        {/* {pageInfo?.socials?.map((social) => (
-          <SocialCard key={social._id} social={social}/>
-        ))} */}
+        {pageInfo?.socials?.map((social) =>   
+        <SocialIcon
+          key={social._key}
+          url={social.url}
+          fgColor="gray"
+          bgColor="transparent"
+          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110 cursor-pointer"
+            />
+               
+        )}
       </motion.div>
       <motion.div
         initial={{

@@ -67,15 +67,16 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
           <p className="font-bold text-2xl mt-1">{teamMember?.position}</p>
           <div className="flex space-x-2 my-2">
             <>
-          {teamMember.socials.map(social => (
-          <SocialIcon
+          {teamMember.socials.map(social => 
+              <SocialIcon
             key={social._id}
             url={social.url}
             fgColor="gray"
             bgColor="transparent"
             className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110"
             />
-          ))}
+          
+          )}
             </>
           </div>
         </div>

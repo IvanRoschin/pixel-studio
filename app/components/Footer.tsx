@@ -68,21 +68,20 @@ const Footer: React.FC<FooterProps> = ({pageInfo}) => {
               <p className="text-xl">{pageInfo?.address}</p>
           </div>
           </div>
-                  {/*Social Icons*/}
-            <p className="text-[#F7AB0A] uppercase tracking-widest text-xl pb-10">Socials</p>
-
-        {/* <div className="flex flex-row">
-            {pageInfo?.socials.map(social => (
-        <div key={social._id} >
-        <SocialIcon
+        
+        {/*Social Icons*/}
+        <div className="md:space-x-5">
+        <p className="text-[#F7AB0A] uppercase tracking-widest text-xl pb-10">Socials</p>
+        {pageInfo?.socials.map(social => (
+          <SocialIcon
+          key={social._id}
           url={social.url}
           fgColor="gray"
           bgColor="transparent"
-          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110"
-                />
-                </div>
+          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110 cursor-pointer"
+            />      
        ) )}
-        </div> */}
+            </div>
       </div>
 
       <p className="flex justify-center">{pageInfo.copyright}</p>
