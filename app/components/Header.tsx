@@ -69,7 +69,7 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
         </Link>
 
         {/*Social Icons*/}
-        {pageInfo?.socials?.map((social) =>
+        {pageInfo?.socials.map((social) =>
         <SocialIcon
           key={social._id}
           url={social.url}
