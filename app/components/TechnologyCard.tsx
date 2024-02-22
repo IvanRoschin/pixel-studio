@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { Technology } from "@/sanity/interface";
 import { urlForImage } from "@/sanity/lib/image";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface TechnologyCardProps {
   technology: Technology;
@@ -26,11 +26,11 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
       }}
       className="
         group
-        relative 
-        flex 
-        cursor-pointer  
-        h-24
-        w-24
+        relative
+        flex
+        cursor-pointer
+        h-20
+        w-20
         "
     >
       <Image
@@ -40,22 +40,22 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
         height={24}
         className="
         p-2
-        border 
-        border-gray-500 
+        border
+        border-gray-500
         bg-gray-200
-        object-cover 
+        object-cover
         h-[100%]
         w-[100%]
         filter
         rounded-full
-        group-hover:grayscale 
-        transition 
-        duration-300 
+        group-hover:grayscale
+        transition
+        duration-300
         ease-in-out"
       />
       <div
         className="
-      absolute 
+      absolute
       opacity-0
       group-hover:opacity-80
       group-hover:bg-white
@@ -63,8 +63,8 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
       duration-300
       ease-in-out
       rounded-full
-      h-24
-      w-24
+      h-20
+      w-20
       z-0"
       >
         <div className="flex items-center justify-center h-full">
