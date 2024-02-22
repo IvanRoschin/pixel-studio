@@ -1,12 +1,11 @@
 "use client"
 
-import { SocialIcon } from "react-social-icons";
+import { PageInfo } from "@/sanity/interface";
+import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { PageInfo }  from "@/sanity/interface";
-import { urlForImage } from "@/sanity/lib/image";
-import SocialCard from "./SocialCard";
+import { SocialIcon } from "react-social-icons";
 
 interface HomeProps {
   pageInfo: PageInfo;
@@ -27,7 +26,7 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
     z-20
     p-5
     pb-0
-    backdrop-filter 
+    backdrop-filter
     backdrop-blur
     dark:bg-primary dark:text-white
     "
@@ -51,11 +50,11 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
       flex-row
       items-center
       space-x-2
-      after:absolute 
-      after:inset-x-0 
-      after:w-full 
-      after:h-12 
-      after:shadow-hr 
+      after:absolute
+      after:inset-x-0
+      after:w-full
+      after:h-12
+      after:shadow-hr
       after:z-[-1]
       "
       >
@@ -70,15 +69,15 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
         </Link>
 
         {/*Social Icons*/}
-        {pageInfo?.socials?.map((social) =>   
+        {pageInfo?.socials?.map((social) =>
         <SocialIcon
-          key={social._key}
+          key={social._id}
           url={social.url}
           fgColor="gray"
           bgColor="transparent"
           className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110 cursor-pointer"
             />
-               
+
         )}
       </motion.div>
       <motion.div
