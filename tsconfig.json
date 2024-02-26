@@ -30,6 +30,6 @@
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/emails/NewOrderTemplate.tsч"],
   "exclude": ["node_modules", "sanity", ".next/"]
 }

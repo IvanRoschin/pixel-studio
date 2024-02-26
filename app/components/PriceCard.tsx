@@ -1,21 +1,27 @@
 "use client"
 
-import {motion} from "framer-motion";
+import useOrderModal from "@/hooks/useOrderModal";
 import { Price } from "@/sanity/interface";
+import { motion } from "framer-motion";
+import { useCallback, useState } from "react";
 import Button from "./Button";
-import { useRouter } from 'next/router';
+
 
 interface PriceCardProps {
     pricePlan: Price;
 };
 
 const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
-  // const router = useRouter();
-
-  const handleClick = () => { 
-    console.log("Click")
+  const orderModal = useOrderModal();
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = useCallback(() => {
+    setIsOpen((value) => !value);
+  }, []);
+  const handleClick = () => {
+    orderModal.onOpen();
+    toggleOpen();
   }
-  
+
   return (
     <article
       className="
@@ -46,7 +52,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           y: 0,
         }}
         transition={{ duration: 1.5 }}
-        className="         
+        className="
               flex
               flex-col
               rounded-lg
@@ -63,7 +69,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
               justify-evenly
               h-screen
               w-screen
-              md:flex-cols-3 
+              md:flex-cols-3
               z-0"
       >
         <div className="px-0 md:px-2">
@@ -72,14 +78,16 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
             <p className="font-bold text-3xl mt-5">$ {pricePlan?.price}</p>
           </div>
         </div>
-          <ul className="list-disc space-y-4 ml-5 text-lg px-10">
+
+        <div className="flex items-center justify-center flex-col xl:flex-row">
+             <ul className="list-disc space-y-4 ml-5 text-lg px-10 mb-10">
         {pricePlan.points.map((point, i) => (<li key={i}>{ point}</li>))}
-      </ul>
-      </motion.div>
-    
-      <div className="flex items-center justify-center">
+        </ul>
         <Button type="button" label="Order" onClick={handleClick} />
         </div>
+      </motion.div>
+
+
     </article>
   )
 }

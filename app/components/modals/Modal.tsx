@@ -94,20 +94,21 @@ const Modal: React.FC<ModalProps> = ({
       z-50
       outline-none
       focus:outline-none
-      bg-neutral-800/70"
+      bg-neutral-800/70
+      rounded-lg"
       >
         <div
           ref={ref}
           className="
-          relative 
-          w-full 
-          md:w-4/6 
-          lg:w-3/6 
-          xl:w-2/5 
-          my-6 
-          mx-auto 
-          h-full 
-          lg:h-auto 
+          relative
+          w-full
+          md:w-4/6
+          lg:w-3/6
+          xl:w-2/5
+          my-6
+          mx-auto
+          h-full
+          lg:h-auto
           md:h-auto
         "
         >
@@ -137,24 +138,25 @@ const Modal: React.FC<ModalProps> = ({
               {/* Header*/}
               <div
                 className="
-              flex 
-              items-center 
-              p-6 
-              border-nuatral:800 
+              flex
+              items-center
+              p-6
+              border-nuatral:800
               justify-center
               relative
-              border-[1px]"
+              border-[1px]
+              rounded-lg"
               >
                 <button
                   onClick={handleClose}
                   className="
-                  p-1 
-                  border-[1px] 
-                  rounded-full 
-                  border-neutral-600 
-                  hover:opacity-70 
-                  transition 
-                  absolute 
+                  p-1
+                  border-[1px]
+                  rounded-full
+                  border-neutral-600
+                  hover:opacity-70
+                  transition
+                  absolute
                   left-9"
                 >
                   <IoMdClose size={18} />
@@ -167,9 +169,10 @@ const Modal: React.FC<ModalProps> = ({
               <div className="flex flex-col gap-2 p-6">
                 <div
                   className="
-                flex 
-                flex-row 
-                items-center 
+                flex
+                flex-row
+                items-center
+                justify-center
                 gap-4
                 w-ful"
                 >

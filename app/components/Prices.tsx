@@ -1,8 +1,8 @@
 "use client";
 
+import { Price } from "@/sanity/interface";
 import { motion } from "framer-motion";
 import PriceCard from "./PriceCard";
-import { Price } from "@/sanity/interface";
 
 interface PricesProps {
   price: Price[];
@@ -15,14 +15,14 @@ const Prices: React.FC<PricesProps> = ({price}) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-    h-screen
+    h-full
     flex
     relative
     overflow-hidden
     flex-col
     text-left
     md:flex-row
-    max-w-full 
+    max-w-full
     px-10
     justify-evenly
     mx-auto
@@ -47,7 +47,7 @@ const Prices: React.FC<PricesProps> = ({price}) => {
           relative
           w-full
           flex
-          overflow-x-scroll 
+          overflow-x-scroll
           overflow-y-hidden
           snap-x
           snap-mandatory
@@ -58,7 +58,7 @@ const Prices: React.FC<PricesProps> = ({price}) => {
           scrollbar-thumb-[#F7AB0A]/80
         "
       >
-        {price?.map((pricePlan) => (        
+        {price?.map((pricePlan) => (
         <PriceCard key={pricePlan._id} pricePlan={pricePlan} />
         ))}
 
