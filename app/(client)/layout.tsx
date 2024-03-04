@@ -1,10 +1,29 @@
+
 import OrderModal from "@/components/modals/OrderModal";
+import { Providers } from "app/providers/providers";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Toaster } from 'sonner';
+import localfont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const tacticsans = localfont({
+  src: [
+    {
+      path: "../fonts/tacticsans-reg.otf",
+      weight: "400"
+    }
+  ],
+  variable: "--font-tacticsans"
+})
+
+const boldTacticsans = localfont({
+  src: [
+    {
+      path: "../fonts/tacticsans-bld.otf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-tacticsans-bold",
+});
 
 export const metadata: Metadata = {
   title: "Pixel Studio",
@@ -17,11 +36,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${tacticsans.variable} ${boldTacticsans.variable}`}>
+        <Providers>
         <OrderModal />
-        <Toaster position="top-right" richColors/>
-        {children}
+          {children}
+          </Providers>
       </body>
     </html>
   );

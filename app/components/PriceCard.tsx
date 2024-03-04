@@ -28,10 +28,10 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
       rounded-lg
       items-center
       space-y-5
-      bg-[#292929]
+      bg-secondaryBackground
       hover:opacity-100
       shadow-md
-      hover:shadow-[#F7AB0A]/50
+      hover:shadow-primaryAccentColor
       hover:shadow-lg
       opacity-40
       cursor-pointer

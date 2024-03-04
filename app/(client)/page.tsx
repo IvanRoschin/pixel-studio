@@ -1,13 +1,12 @@
 export const dynamic = "force-dynamic";
 
-import { Header, Hero, About, Team, Technologies, Projects, Contact, Prices, Footer }  from "@/components/index";
-import { PageInfo, TeamMember, Technology, Project, Price } from "@/sanity/interface";
-import { getPageInfo, getTeam, getTechnologies, getProjects, getPrices } from "@/actions/index";
+import { getPageInfo, getPrices, getProjects, getTeam, getTechnologies } from "@/actions/index";
+import { About, Contact, Footer, Header, Hero, Prices, Projects, Team, Technologies, WhatWeDo } from "@/components/index";
+import { PageInfo, Price, Project, TeamMember, Technology } from "@/sanity/interface";
 
 export default async function Home () {
   const pageInfo: PageInfo = await getPageInfo();
-  // const socials: Social[] = await getSocials();
-  const team: TeamMember[] = await getTeam(); 
+  const team: TeamMember[] = await getTeam();
   const projects: Project[] = await getProjects();
   const technologies: Technology[] = await getTechnologies();
   const prices: Price[] = await getPrices();
@@ -15,8 +14,8 @@ export default async function Home () {
   return (
     <div
       className="
-        bg-[rgb(36,36,36)]
-        text-white
+        bg-primaryBackground
+        text-textColor
         h-screen
         snap-y
         snap-mandatory
@@ -24,16 +23,19 @@ export default async function Home () {
         overflow-x-hidden
         z-0
         scrollbar
-        scrollbar-track-gray-400/20
-        scrollbar-thumb-[#F7AB0A]/80"
+        scrollbar-track-scrollbarTrack
+        scrollbar-thumb-scrollbarThumb
+        "
     >
       <Header pageInfo={pageInfo} />
-    
-      <section id="hero" className="snap-start pb-8">
+      <section id="hero" className="snap-center">
         <Hero pageInfo={pageInfo} />
       </section>
-      <section id="about" className="snap-center">
+      <section id="about" className="snap-start pb-8">
         <About pageInfo={pageInfo} />
+      </section>
+      <section id="whatwedo" className="snap-start pb-8">
+        <WhatWeDo pageInfo={pageInfo}  />
       </section>
       <section id="team" className="snap-center">
         <Team team={team} />

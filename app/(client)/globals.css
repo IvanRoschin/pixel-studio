@@ -2,25 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/*HEX => RGB*/
+/*
+#282828 => 40 40 40
+#000000 => 0 0 0
+#767676 => 118 118 118
+#D9D9D9 => 217 217 217
+#FFFC32 => 255 255 50
+#FFFD84 => 255 255 216
+*/
+
+@layer base {
+  :root {
+    --color-primaryBackground: 0 0 0;
+    --color-secondaryBackground: 40 40 40;
+
+    --color-primaryTextColor: 217 217 217;
+    --color-secondaryTextColor: 118 118 118;
+    --color-thirdTextColor: 118 118 118;
+
+    --color-primaryAccentColor: 255 255 50;
+    --color-secondaryAccentColor: 255 255 216;
+
+    --color-sectionTitleColor: 255 255 255;
+    --color-iconColor: 255 255 255;
+
+    --color-scrollbarTrack: 40 40 40;
+    --color-scrollbarThumb: 255 255 50;
+  }
+
+  @media (prefes-color-scheme: dark) {
+  :root {
+    --color-primaryBackground: 217 217 217;
+    --color-secondaryBackground: 40 40 40;
+
+    --color-primaryTextColor: 217 217 217;
+    --color-secondaryTextColor: 118 118 118;
+
+    --color-primaryAccentColor: 255 255 50;
+    --color-secondaryAccentColor: 255 255 216;
+
+    --color-sectionTitleColor: 255 255 255;
+    --color-iconColor: 255 255 255;
+
+    --color-scrollbarTrack: 40 40 40;
+    --color-scrollbarThumb: 255 255 50;
+  }
+  }
+    /* If the user switchs dark mode */
+  :root[class="dark"] {
+    --color-primaryBackground: 0 0 0;
+    --color-secondaryBackground: 40 40 40;
+
+    --color-primaryTextColor: 217 217 217;
+    --color-secondaryTextColor: 118 118 118;
+
+    --color-primaryAccentColor: 255 255 50;
+    --color-secondaryAccentColor: 255 255 216;
+
+    --color-sectionTitleColor: 255 255 255;
+    --color-iconColor: 255 255 255;
+
+    --color-scrollbarTrack: 40 40 40;
+    --color-scrollbarThumb: 255 255 50;
+  }
+
+  /* If the user switchs light mode */
+  :root[class="light"] {
+    --color-primaryBackground: 217 217 217;
+    --color-secondaryBackground: 40 40 40;
+    --color-textColor: 0 0 0;
+    --color-primaryAccentColor: 255 255 50;
+    --color-secondaryAccentColor: 255 255 216;
+    --color-iconColor: 255 255 255;
+    --color-scrollbarTrack: 255 255 216;
+    --color-scrollbarThumb: 217 217 217;
+  }
+}
+
 @layer components {
 
   .heroBtn {
-    @apply px-6 
-    py-2 
-    border 
-    border-[#242424] 
-    rounded-full 
-    uppercase 
-    text-sm 
+    @apply px-6
+    py-2
+    text-[22px]
     tracking-widest
-    text-gray-500
+    font-tacticsans
     transition-all
-    hover:border-[#F7AB0A]/70 hover:text-[#F7AB0A]/70;
+    hover:text-[#FFFC32];
   }
   .footerBtn {
     @apply
-    text-xl 
-    uppercase 
+    text-xl
+    uppercase
     tracking-widest
     text-white
     transition-all
@@ -30,11 +104,11 @@
   }
 
   .contactInput {
-    @apply outline-none 
+    @apply outline-none
     bg-slate-400/10
     rounded-sm
     border-b
-    px-6 
+    px-6
     py-4
     border-[#242424]
     text-gray-500

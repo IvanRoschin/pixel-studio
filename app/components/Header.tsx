@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 interface HomeProps {
   pageInfo: PageInfo;
 };
 
-const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
-
+const Header: React.FC<HomeProps> = ({ pageInfo }) => {
   return (
     <header
       className="
@@ -21,14 +21,14 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
     flex
     items-center
     justify-between
-    max-w-7xl
+    max-w-[1620px]
+    min-h-[150px]
     mx-auto
     z-20
     p-5
     pb-0
     backdrop-filter
     backdrop-blur
-    dark:bg-primary dark:text-white
     "
     >
       <motion.div
@@ -62,23 +62,29 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
           <Image
             src={urlForImage(pageInfo?.headerLogo)}
             alt={pageInfo.title}
-            width={200}
-            height={200}
-            className="cursor-pointer object-cover"
+            width={ 257} height={100}
+            className="cursor-pointer object-cover w-[257px]"
           />
         </Link>
-
-        {/*Social Icons*/}
-        {pageInfo?.socials.map((social) =>
-        <SocialIcon
-          key={social._id}
-          url={social.url}
-          fgColor="gray"
-          bgColor="transparent"
-          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110 cursor-pointer"
-            />
-
-        )}
+      </motion.div>
+      <motion.div
+          initial={{
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+        className="bg-transparent"
+        >
+        {pageInfo?.navbar.map(item =>
+          <Link key={item._id} href={item.link}>
+            <button className="heroBtn mr-[50px] text-primaryTextColor">{item.title}</button>
+          </Link>)}
       </motion.div>
       <motion.div
         initial={{
@@ -98,20 +104,50 @@ const Header: React.FC<HomeProps> =  ({ pageInfo }) => {
       flex
       flex-row
       items-center
-      text-gray-300
+      text-primaryTextColor
       space-x-2
       "
       >
-        <SocialIcon
+        {/*Social Icons*/}
+          <div className="relative group">
+            <div className="bg-secondaryBackground rounded-full h-[50px] w-[50px] absolute"/>
+              <SocialIcon
           href="/#contact"
           network="email"
-          fgColor="gray"
           bgColor="transparent"
-          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110"
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400 hover:border-[#F7AB0A]/50">
-          Get in Touch
-        </p>
+          fgColor="secondaryBackground"
+          className="
+          fill-iconColor
+          rounded-full
+          mr-4
+          icon-transition
+          hover:text-secondaryBackground
+          hover:bg-primaryAccentColor
+          hover:fill-secondaryBackground
+          "
+            />
+          </div>
+
+        {pageInfo?.socials.map((social) =>
+          <div className="relative group" key={social._id}>
+            <div className="bg-secondaryBackground rounded-full h-[50px] w-[50px] absolute"/>
+          <SocialIcon
+          url={social.url}
+          bgColor="transparent"
+          fgColor="secondaryBackground"
+          className="
+          fill-iconColor
+          rounded-full
+          mr-4
+          icon-transition
+          hover:text-secondaryBackground
+          hover:bg-primaryAccentColor
+          hover:fill-secondaryBackground
+          "
+            />
+          </div>
+        )}
+        <ThemeSwitcher/>
       </motion.div>
     </header>
   );

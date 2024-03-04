@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { urlForImage } from "@/sanity/lib/image";
 import { PageInfo } from "@/sanity/interface";
 
 interface AboutProps {
@@ -33,15 +31,21 @@ const About:React.FC<AboutProps> = ({pageInfo}) => {
       <h3
         className="
           absolute
-          top-24
+          top-[160px]
+          left-0
           uppercase
-          tracking-[20px]
-          text-gray-500
+          tracking-[3px]
+          text-primaryTextColor
           text-2xl
-          hover:text-[#F7AB0A]/50
+          font-tacticsans
      "
       >
-        About
+        <div className="text-sectionTitleColor">
+          {`<About`}
+          <span className="text-primaryAccentColor">{ `/`}
+        </span>
+          <span>{`>`}</span>
+        </div>
       </h3>
       <motion.div
           initial={{
@@ -55,34 +59,35 @@ const About:React.FC<AboutProps> = ({pageInfo}) => {
         }}
         viewport={{ once: true }}
       >
-        <Image
-          src={urlForImage(pageInfo.aboutImage)}
-          alt="AboutImage"
-          width={200}
-          height={300}
-          className="
-             -mb-20
-            mt-20
-            md:mb-0
-            flex-shrink-0
-            rounded-full
-            md:rounded-lg
-            md:w-56
-            md:h-76
-            xl:w-[700px]
-            xl-h-[900px]"
-        />
+        <p className="
+        text-2xl
+        text-primaryTextColor
+        left
+        uppercase
+        font-tacticsans
+        font-light
+        tracking-[3px]
+        w-[920px]
+        pb-[75px]
+
+">We are self motivated JS developers who likes working in <span className="font-tacticansBld text-white">web development</span>. We have about two year experience in creating websites. <span className="font-tacticansBld text-white">Technologies</span> we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB.</p>
+
+        <div className="grid grid-cols-3 font-tacticsans">
+          <div>
+            <span className="text-5xl text-primaryAccentColor pb-2">2+</span>
+            <p>years of expirence</p>
+          </div>
+          <div>
+            <span className="text-5xl text-primaryAccentColor pb-2">10+</span>
+            <p>applied technologies</p>
+          </div>
+          <div>
+              <span className="text-5xl text-primaryAccentColor pb-2">20+</span>
+            <p>happy clients</p>
+          </div>
+</div>
       </motion.div>
-      <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
-          Here is a
-          <span className="underline decoration-[#F7AB0A]/50"> little</span>{" "}
-          background
-        </h4>
-        <p className="text-base">
-         {pageInfo.aboutText}
-        </p>
-      </div>
+
     </motion.div>
   );
 };

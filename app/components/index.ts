@@ -7,3 +7,4 @@ export { default as Technologies } from './Technologies';
 export { default as Team } from './Team';
 export { default as Prices } from './Prices';
 export { default as Footer } from './Footer';
+export { default as WhatWeDo } from './WhatWeDo';

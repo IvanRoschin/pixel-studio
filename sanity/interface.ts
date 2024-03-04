@@ -35,8 +35,27 @@ export interface Technology extends SanityBody {
   image: Image;
 }
 
+export interface AccordionItem extends SanityBody {
+  _type: "accordion"
+  title: string;
+  text: string;
+}
+
+export interface Accordion extends SanityBody, AccordionItem {
+  _type: "accordion"
+  closeIcon: Image;
+  openIcon: Image;
+}
+
+export interface navbarItem extends SanityBody {
+  _type: "navbar"
+  title: string;
+  link: string;
+}
+
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
+  navbar: navbarItem[];
   title: string;
   headerLogo: Image;
   socials: Social[];
@@ -45,6 +64,9 @@ export interface PageInfo extends SanityBody {
   aboutTitle: string;
   aboutImage: Image;
   aboutText: string;
+  accordion: AccordionItem[];
+  openIcon: Image;
+  closeIcon: Image;
   contactTitle: string;
   address: string;
   email: string;
@@ -59,7 +81,7 @@ export interface Project extends SanityBody {
   title: string;
   image: Image;
   summary: string;
-  technologies: Technology[];
+  technologies: string;
   linkToBuild: string;
 }
 
@@ -69,7 +91,7 @@ export interface TeamMember extends SanityBody {
   position: string;
   photo: Image;
   socials: Social[];
-  technologies: Stack[];
+  technologies: string;
   joinedTeam: Date;
   isCurrentWorkingHere: boolean;
   points: string[];

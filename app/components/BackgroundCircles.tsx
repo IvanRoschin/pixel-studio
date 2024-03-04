@@ -15,15 +15,15 @@ const BackgroundCircles = (props: Props) => {
       }}
       transition={{ duration: 2.5 }}
       className="
-      relative 
-      flex 
-      justify-center 
+      relative
+      flex
+      justify-center
       items-center"
     >
-      <div className="border border-[#333333] rounded-full h-[100px] w-[100px] mt-[350px] animate-ping absolute" />
-      <div className="border border-[#333333] rounded-full h-[200px] w-[200px] mt-[350px] absolute" />
-      <div className="border border-[#333333] rounded-full h-[400px] w-[400px] mt-[350px] absolute" />
-      <div className="border border-[#F7AB0A] rounded-full h-[610px] w-[610px] opacity-20 mt-[350px] absolute animate-pulse" />
+      <div className="border border-textColor rounded-full h-[100px] w-[100px] mt-[450px] animate-ping absolute" />
+      <div className="border border-textColor rounded-full h-[200px] w-[200px] mt-[450px] absolute" />
+      <div className="border border-textColor rounded-full h-[400px] w-[400px] mt-[450px] absolute" />
+      <div className="border border-primaryAccentColor rounded-full h-[800px] w-[800px] opacity-20 mt-[450px] absolute animate-pulse" />
     </motion.div>
   );
 };

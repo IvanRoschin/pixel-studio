@@ -6,13 +6,12 @@ export default async function getProjects(){
 const query =`
 *[_type == "project"] {
 ...,
-technologies[]->
 }
 `;
 
  try {
   const projects: Project[] = await client.fetch(query)
-  return projects   
+  return projects
   } catch (error: any) {
   throw new Error(error?.message || "Error get Projects");
  }

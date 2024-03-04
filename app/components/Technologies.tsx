@@ -21,55 +21,43 @@ const Technologies: React.FC<TechnologiesProps> = ({technologies}) => {
         duration: 1.5,
       }}
       className="
-    h-screen
-    flex
-    flex-col
-    relative
-    text-center
-    md:text-left
-    xl:flex-row
-    max-w-[2000px]
-    xl:px-10
-    min-h-screen
-    justify-center
-    xl:space-y-0
-    mx-auto
-    items-center"
+        h-screen
+        flex
+        flex-col
+        relative
+        text-center
+        md:text-left
+        md:flex-row
+        max-w-7xl
+        px-10
+        justify-evenly
+        mx-auto
+        items-center"
     >
       <h3
-        className="      
-        absolute
-      top-36
-      uppercase
-      tracking-[20px]
-      text-gray-500
-      text-2xl
-      hover:text-[#F7AB0A]/50"
-      >
-        Stack techologies
-      </h3>
-      <h3
         className="
-      absolute
-      top-[14rem]
-      tracking-[3px]
-      text-gray-500
-      text-sm
-      uppercase
-      px-10
-      "
+          absolute
+          top-[160px]
+          left-0
+          uppercase
+          tracking-[3px]
+          text-primaryTextColor
+          text-2xl
+          font-tacticsans
+     "
       >
-        Hover over a skill for currency profieciency
+        <div className="text-sectionTitleColor">
+          {`<Technogies`}
+          <span className="text-primaryAccentColor">{ `/`}
+        </span>
+        <span>{`>`}</span>
+        </div>
       </h3>
-      <div className="grid grid-cols-4 gap-5 pt-64 mt-20">
-        {technologies?.slice(0, technologies.length/2).map((technology) => (
+      <div className="flex space-x-20">
+        {technologies?.map((technology) => (
         <TechnologyCard key={technology._id} technology={technology}/>
         ))}
-        {technologies?.slice(technologies.length/2, technologies.length).map((technology) => (
-        <TechnologyCard key={technology._id} technology={technology} directionLeft/>
-        ))}
         </div>
-
     </motion.div>
   );
 };
