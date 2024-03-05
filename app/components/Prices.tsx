@@ -15,47 +15,55 @@ const Prices: React.FC<PricesProps> = ({price}) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-    h-full
-    flex
-    relative
-    overflow-hidden
-    flex-col
-    text-left
-    md:flex-row
-    max-w-full
-    px-10
-    justify-evenly
-    mx-auto
-    items-center"
+        flex
+        flex-col
+        relative
+        text-center
+        max-w-7xl
+        px-10
+        justify-evenly
+        mx-auto
+        items-center
+        "
     >
       <h3
         className="
-      absolute
-      top-24
-      uppercase
-      tracking-[20px]
-      text-gray-500
-      text-2xl
-      hover:text-[#F7AB0A]/50"
+          absolute
+          top-[160px]
+          left-0
+          uppercase
+          tracking-[3px]
+          text-primaryTextColor
+          text-2xl
+          font-tacticsans
+     "
       >
-        Price plans
+        <div className="text-sectionTitleColor">
+          {`<Price`}
+          <span className="text-primaryAccentColor">{ `/`}
+        </span>
+        <span>{`>`}</span>
+        </div>
       </h3>
       <div
         className="
-          mt-40
-          md:mt-[450px]
+          flex
+          flex-row
+          space-x-5
+          mt-[240px]
           relative
           w-full
-          flex
+          h-full
           overflow-x-scroll
           overflow-y-hidden
           snap-x
           snap-mandatory
           z-10
-          space-x-5
+          scroll-smooth
           scrollbar-thin
-          scrollbar-track-gray-400/20
-          scrollbar-thumb-[#F7AB0A]/80
+          scrollbar-track-primaryScrollbarTrack
+          scrollbar-thumb-primaryScrollbarThumb
+          pb-[35px]
         "
       >
         {price?.map((pricePlan) => (

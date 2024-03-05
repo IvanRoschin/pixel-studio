@@ -9,7 +9,7 @@ const Accordion: React.FC<Accordion> = ({ title, text, closeIcon, openIcon}) => 
 
     return (
     <div className="text-2xl text-secondaryTextColor left font-tacticsans font-light tracking-[3px] border-b w-full">
-      <div  className="w-[920px] m-auto">
+      <div className="w-[920px] m-auto">
           <button onClick={() => { setAccordionOpen(!accordionOpen) }} className="flex items-center justify-between w-full py-[35px]">
             <span className="uppercase">{title}</span>
             { accordionOpen ?

@@ -58,13 +58,13 @@ const Header: React.FC<HomeProps> = ({ pageInfo }) => {
       after:z-[-1]
       "
       >
-        <Link href="/#hero">
-          <Image
-            src={urlForImage(pageInfo?.headerLogo)}
-            alt={pageInfo.title}
-            width={ 257} height={100}
-            className="cursor-pointer object-cover w-[257px]"
-          />
+        {/*Header Logo*/}
+        <Link href="#hero">
+        <p className="text-[30px] text-secondaryTextColor uppercase tracking-[3px]">
+        <span className="text-primaryAccentColor">{`| `}</span>
+        {pageInfo.title}
+        <span className="text-primaryAccentColor">{` |`}</span>
+        </p>
         </Link>
       </motion.div>
       <motion.div

@@ -27,8 +27,8 @@
     --color-sectionTitleColor: 255 255 255;
     --color-iconColor: 255 255 255;
 
-    --color-scrollbarTrack: 40 40 40;
-    --color-scrollbarThumb: 255 255 50;
+    --color-primaryScrollbarTrack: 40 40 40;
+    --color-primaryScrollbarThumb: 255 255 50;
   }
 
   @media (prefes-color-scheme: dark) {
@@ -99,22 +99,8 @@
     text-white
     transition-all
     hover:border-b
-  hover:border-[#F7AB0A]/70
-  hover:text-[#F7AB0A]/70
+    hover:border-[#F7AB0A]/70
+    hover:text-[#F7AB0A]/70
   }
 
-  .contactInput {
-    @apply outline-none
-    bg-slate-400/10
-    rounded-sm
-    border-b
-    px-6
-    py-4
-    border-[#242424]
-    text-gray-500
-    placeholder:text-gray-500 transition-all
-    focus:border-[#F7AB0A]/40
-    focus:text-[#F7AB0A]/40
-    hover:border-[#F7AB0A]/40;
-  }
 }

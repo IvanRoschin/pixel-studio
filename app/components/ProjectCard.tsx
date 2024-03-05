@@ -4,7 +4,6 @@ import {motion} from "framer-motion";
 import Image from "next/image";
 import { Project } from "@/sanity/interface";
 import { urlForImage } from "@/sanity/lib/image";
-import TechnologyCard from "./TechnologyCard";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -33,7 +32,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i}) => {
         flex
         flex-row
         py-2
-        h-screen
         items-center
         justify-between
         rounded-[50px]

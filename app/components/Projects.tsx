@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Project } from "@/sanity/interface";
-import { urlForImage } from "@/sanity/lib/image";
 import ProjectCard from "./ProjectCard";
 
 interface ProjectsProps {
@@ -62,13 +60,13 @@ const Projects: React.FC<ProjectsProps> = ({projects}) => {
           snap-mandatory
           z-10
           scrollbar-thin
-          scrollbar-track-scrollbarTrack
-          scrollbar-thumb-scrollbarThumb
+          scrollbar-track-primaryScrollbarTrack
+          scrollbar-thumb-primaryScrollbarThumb
           pb-[35px]
       "
       >
         {projects.map((project, i: number) => (
-          <ProjectCard key={project._id} project={project} projects={projects} i={i} />
+          <ProjectCard key={project._id} project={project} i={i} />
         ))}
       </div>
     </motion.div>

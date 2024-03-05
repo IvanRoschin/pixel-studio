@@ -10,81 +10,86 @@ interface FooterProps  {
 }
 
 const Footer: React.FC<FooterProps> = ({pageInfo}) => {
+
   return (
-    <>
-       <div className="flex items-center justify-center">
-      <div className="border-t border-[#F7AB0A]/70 w-[60%] pb-10"/>
-      </div>
-      <footer className="p-10 pt-0">
+      <footer className="
+        p-10
+        bg-secondaryBackground
+        font-tacticsans
+      ">
         <div className="
-              grid
-              grid-cols-1
-              place-items-center
-              gap-3
-              pb-10
-              md:grid-cols-2
-              md:place-items-start
-              xl:grid-cols-4
-              xl:gap-8
-              ">
+        flex
+        flex-col-4
+        justify-between
+        mx-auto
+        max-w-[1620px]
+        min-h-[150px]
+        z-20
+        p-5
+        pb-0
+        ">
+
+        {/*Footer Logo*/}
         <Link href="#hero">
-            <Image
-              src={urlForImage(pageInfo.footerLogo)}
-              alt="pixel-studio"
-              width={250}
-              height={50}
-              className="w-60 h-15 pb-10"
-              />
+        <p className="text-[30px] text-secondaryTextColor uppercase tracking-[3px]">
+        <span className="text-primaryAccentColor">{`| `}</span>
+        {pageInfo.title}
+        <span className="text-primaryAccentColor">{` |`}</span>
+        </p>
+        </Link>
+
+        {/*Navbar Items*/}
+        <div className="shrink">
+          {pageInfo?.navbar.map(item =>
+          <div key={item._id} className="grid grid-cols-2 gap-5 xl:grid-cols-1">
+          <Link  href={item.link}>
+            <button className="heroBtn mr-[50px] text-primaryTextColor">{item.title}</button>
           </Link>
-          <div className="flex flex-col space-y-4 pb-10">
-            <p className="text-[#F7AB0A] uppercase tracking-widest text-xl">menu</p>
-            <div className="grid grid-cols-2 gap-5 xl:grid-cols-1">
-           <Link href="#about">
-            <button className="footerBtn">About</button>
-          </Link>
-          <Link href="#team">
-            <button className="footerBtn">Our Team</button>
-          </Link>
-          <Link href="#stack">
-            <button className="footerBtn">Stack</button>
-          </Link>
-          <Link href="#projects">
-            <button className="footerBtn">Projects</button>
-          </Link>
-       </div>
-      </div>
-        <div className="space-y-4 pb-10">
-          <p className="text-textColor uppercase tracking-widest text-xl">Conatct information</p>
+          </div>)}
+        </div>
+
+        {/*Contact Information*/}
+        <div className="space-y-4 pb-10 text-primaryTextColor">
           <div className="flex items-center space-x-5 justify-left">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <PhoneIcon className="text-primaryAccentColor h-7 w-7 animate-pulse" />
             <p className="text-xl">{pageInfo?.phoneNumber}</p>
           </div>
           <div className="flex items-center space-x-5 justify-left">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <EnvelopeIcon className="text-primaryAccentColor h-7 w-7 animate-pulse" />
             <p className="text-xl">{pageInfo?.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-left">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <MapPinIcon className="text-primaryAccentColor h-7 w-7 animate-pulse" />
               <p className="text-xl">{pageInfo?.address}</p>
           </div>
-          </div>
+        </div>
 
         {/*Social Icons*/}
         <div className="md:space-x-5">
-        <p className="text-[#F7AB0A] uppercase tracking-widest text-xl pb-10">Socials</p>
         {pageInfo?.socials.map(social => (
           <SocialIcon
           key={social._id}
           url={social.url}
-          fgColor="gray"
           bgColor="transparent"
-          className="border border-gray-500 hover:border-[#F7AB0A]/50 rounded-full hover:scale-110 cursor-pointer"
+          fgColor="secondaryBackground"
+          className="
+          border
+          b-primaryBackground
+          fill-iconColor
+          rounded-full
+          mr-4
+          icon-transition
+          hover:text-secondaryBackground
+          hover:bg-primaryAccentColor
+          hover:fill-secondaryBackground
+          "
             />
-       ) )}
-            </div>
+       ))}
+      </div>
       </div>
 
-      <p className="flex justify-center">{pageInfo.copyright}</p>
+      {/*Copyright*/}
+      <p className="flex justify-center text-secondaryTextColor">{pageInfo.copyright}</p>
 
           <Link href="#hero" className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
@@ -105,10 +110,9 @@ const Footer: React.FC<FooterProps> = ({pageInfo}) => {
                 p-2
                 border-[#F7AB0A]/80"
             />
-          </div>
+            </div>
       </Link>
-      </footer>
-  </>
+    </footer>
   )
 }
 

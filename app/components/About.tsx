@@ -69,8 +69,12 @@ const About:React.FC<AboutProps> = ({pageInfo}) => {
         tracking-[3px]
         w-[920px]
         pb-[75px]
-
-">We are self motivated JS developers who likes working in <span className="font-tacticansBld text-white">web development</span>. We have about two year experience in creating websites. <span className="font-tacticansBld text-white">Technologies</span> we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB.</p>
+">
+We are self motivated JS developers who likes working in
+<span className="font-tacticansBld text-white"> web development</span>.
+ We have about two year experience in creating websites.
+ <span className="font-tacticansBld text-white">Technologies</span>
+ we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB.</p>
 
         <div className="grid grid-cols-3 font-tacticsans">
           <div>

@@ -23,8 +23,8 @@ export default async function Home () {
         overflow-x-hidden
         z-0
         scrollbar
-        scrollbar-track-scrollbarTrack
-        scrollbar-thumb-scrollbarThumb
+        scrollbar-track-primaryScrollbarTrack
+        scrollbar-thumb-primaryScrollbarThumb
         "
     >
       <Header pageInfo={pageInfo} />

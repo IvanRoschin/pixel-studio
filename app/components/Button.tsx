@@ -16,21 +16,23 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled,  outlin
         onClick={onClick}
         disabled={disabled}
         className={`
-        relative 
-        disabled:opacity-70 
-        disabled:cursor-not-allowed 
-        rounded-lg 
-        hover:opacity-80
-        hover:scale-105 
+        relative
+        disabled:opacity-70
+        disabled:cursor-not-allowed
+        rounded-2xl
+        opacity-60
+        hover:opacity-100
+        hover:scale-105
         transition
-        w-28
+        w-[144px]
+        h-[56px]
         mb-10
-        ${outline ? "bg-white" : "bg-[#F7AB0A]"} 
-        ${outline ? "border-black" : "border-[#F7AB0A]"} 
-        ${outline ? "text-black" : "text-white"} 
-        ${small ? "py-1" : "py-3"} 
-        ${small ? "text-sm" : "text:md"} 
-        ${small ? "font-light" : "font-semibold"} 
+        ${outline ? "bg-transparent hover:bg-white" : "bg-primaryAccentColor"}
+        ${outline ? "border-white" : "border-primaryAccentColor"}
+        ${outline ? "text-white hover:text-black" : "text-primaryBackground"}
+        ${small ? "py-1" : "py-3"}
+        ${small ? "text-sm" : "text:md"}
+        ${small ? "font-tacticsans" : "font-tacticsans"}
         ${small ? "border-[1px]" : "border-2"}
         `}
     >

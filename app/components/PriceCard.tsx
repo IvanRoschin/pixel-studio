@@ -23,25 +23,6 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
   }
 
   return (
-    <article
-      className="
-      rounded-lg
-      items-center
-      space-y-5
-      bg-secondaryBackground
-      hover:opacity-100
-      shadow-md
-      hover:shadow-primaryAccentColor
-      hover:shadow-lg
-      opacity-40
-      cursor-pointer
-      transition-opacity
-      duration-200
-      p-5
-      pt-0
-      "
-    >
-
       <motion.div
         initial={{
           opacity: 0,
@@ -53,42 +34,43 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
         }}
         transition={{ duration: 1.5 }}
         className="
-              flex
-              flex-col
-              rounded-lg
-              items-center
-              space-y-5
-              flex-shrink-0
-              snap-center
-              cursor-pointer
-              duration-200
-              overflow-hidden
-              text-left
-              md:flex-row
-              px-5
-              justify-evenly
-              h-screen
-              w-screen
-              md:flex-cols-3
-              z-0"
+          border
+          b-white
+          bg-secondaryBackground
+          w-[580px]
+          flex-shrink-0
+          snap-center
+          cursor-pointer
+          overflow-hidden
+          font-tacticsans
+          flex
+          flex-col
+          p-10
+          pb-0
+          justify-between
+          items-start
+          rounded-xl
+          opacity-40
+          shadow-md
+          hover:opacity-100
+          hover:shadow-primaryAccentColor
+          hover:shadow-lg
+          hover:bg-transparent
+          transition-opacity
+          group
+        "
       >
-        <div className="px-0 md:px-2">
-          <h4 className="text-4xl font-bold uppercase text-[#F7AB0A]/50">{pricePlan?.title}</h4>
-          <div className="flex items-start justify-center my-2">
-            <p className="font-bold text-3xl mt-5">$ {pricePlan?.price}</p>
+        <h4 className="text-[30px]">{pricePlan?.title}</h4>
+        <div className="text-left text-secondaryTextColor group-hover:text-white">
+          <ul className="list-disc text-sm px-10 ">
+          {pricePlan.points.map((point, i) => (<li key={i}>{ point}</li>))}
+          </ul>
+          <p className="text-[22px] text-primaryAccentColor mt-5">from $ {pricePlan?.price}</p>
+          <div className="flex flex-col items-center justify-center my-2">
+          <Button type="button" label="Order" onClick={handleClick} />
           </div>
         </div>
-
-        <div className="flex items-center justify-center flex-col xl:flex-row">
-             <ul className="list-disc space-y-4 ml-5 text-lg px-10 mb-10">
-        {pricePlan.points.map((point, i) => (<li key={i}>{ point}</li>))}
-        </ul>
-        <Button type="button" label="Order" onClick={handleClick} />
-        </div>
       </motion.div>
-
-
-    </article>
   )
 }
 

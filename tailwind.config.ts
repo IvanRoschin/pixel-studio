@@ -39,8 +39,8 @@ const config: Config = {
         primaryAccentColor: 'rgb(var(--color-primaryAccentColor) / <alpha-value>)',
         secondaryAccentColor: 'rgb(var(--color-secondaryAccentColor) / <alpha-value>)',
 
-        scrollbarTrack: 'rgb(var(--color-scrollbarTrack) / <alpha-value>)',
-        scrollbarThumb: 'rgb(var(--color-scrollbarThumb) / <alpha-value>)',
+        primaryScrollbarTrack: 'rgb(var(--color-primaryScrollbarTrack) / <alpha-value>)',
+        primaryScrollbarThumb: 'rgb(var(--color-primaryScrollbarThumb) / <alpha-value>)',
       },
       animation: {
         'fade-in': 'fade-in 1s',

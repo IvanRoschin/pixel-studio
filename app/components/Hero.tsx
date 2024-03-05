@@ -48,7 +48,8 @@ const Hero:React.FC<HeroProps> = ({pageInfo}) => {
         px-12
         tracking-[5px]"
         >
-          <p>we are a development company helping business with <br/> a full cycle projects and launching startups</p>
+          <p>we are a development company helping business with
+            <br/> a full cycle projects and launching startups</p>
         </h2>
       </div>
     </div>
