@@ -58,17 +58,20 @@ const About:React.FC<AboutProps> = ({pageInfo}) => {
           opacity: 1,
         }}
         viewport={{ once: true }}
+        className="w-full text-center"
       >
         <p className="
         text-2xl
         text-primaryTextColor
-        left
+        text-center
+        2xl:left
         uppercase
         font-tacticsans
         font-light
         tracking-[3px]
-        w-[920px]
-        pb-[75px]
+        w-full
+        2xl:w-[920px]
+        2xl:pb-[75px]
 ">
 We are self motivated JS developers who likes working in
 <span className="font-tacticansBld text-white"> web development</span>.

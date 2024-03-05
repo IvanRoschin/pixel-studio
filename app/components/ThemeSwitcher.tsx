@@ -10,6 +10,7 @@ const ThemeSwitcher = () => {
 
     useEffect(() => {
         setMounted(true)
+        setTheme("dark");
     }, [])
 
     const toggleTheme = useCallback(() => {
@@ -18,12 +19,11 @@ const ThemeSwitcher = () => {
 
     if (!mounted) {
         return (
-            setTheme("dark")
-//             <pre>
-//                 theme === "dark"
-// ¯\_(ツ)_/¯
-// Your data will show up here when you've configured everything correctly
-//         </pre >
+            // setTheme("dark")
+            <pre>
+¯\_(ツ)_/¯
+Your data will show up here when you've configured everything correctly
+        </pre >
         )
     }
 

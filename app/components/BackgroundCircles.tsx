@@ -20,10 +20,10 @@ const BackgroundCircles = (props: Props) => {
       justify-center
       items-center"
     >
-      <div className="border border-textColor rounded-full h-[100px] w-[100px] mt-[450px] animate-ping absolute" />
-      <div className="border border-textColor rounded-full h-[200px] w-[200px] mt-[450px] absolute" />
-      <div className="border border-textColor rounded-full h-[400px] w-[400px] mt-[450px] absolute" />
-      <div className="border border-primaryAccentColor rounded-full h-[800px] w-[800px] opacity-20 mt-[450px] absolute animate-pulse" />
+      <div className="border border-textColor rounded-full h-[50px] w-[50px] 2xl:h-[100px] 2xl:w-[100px] mt-[250px] 2xl:mt-[450px] animate-ping absolute" />
+      <div className="border border-textColor rounded-full h-[100px] w-[100px] 2xl:h-[200px] 2xl:w-[200px] mt-[250px] 2xl:mt-[450px] absolute" />
+      <div className="border border-textColor rounded-full h-[200px] w-[200px] 2xl:h-[400px] 2xl:w-[400px] mt-[250px] 2xl:mt-[450px] absolute" />
+      <div className="border border-primaryAccentColor rounded-full h-[400px] w-[400px] 2xl:h-[800px] 2xl:w-[800px] opacity-20 mt-[250px] 2xl:mt-[450px] absolute animate-pulse" />
     </motion.div>
   );
 };

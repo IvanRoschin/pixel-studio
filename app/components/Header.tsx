@@ -1,19 +1,30 @@
 "use client"
 
 import { PageInfo } from "@/sanity/interface";
-import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import ThemeSwitcher from "./ThemeSwitcher";
-
+import { useState } from "react";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
+import  Navbar from "@/components/Navbar"
 interface HomeProps {
   pageInfo: PageInfo;
 };
 
 const Header: React.FC<HomeProps> = ({ pageInfo }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const content = pageInfo?.navbar.map(item =>
+    <Link key={item._id} href={item.link}>
+      <button className="heroBtn mr-[50px] text-primaryTextColor">{item.title}</button>
+    </Link>)
+
   return (
+
     <header
       className="
     sticky
@@ -21,8 +32,8 @@ const Header: React.FC<HomeProps> = ({ pageInfo }) => {
     flex
     items-center
     justify-between
-    max-w-[1620px]
-    min-h-[150px]
+    2xl:max-w-[1620px]
+    lg:min-h-[150px]
     mx-auto
     z-20
     p-5
@@ -59,6 +70,7 @@ const Header: React.FC<HomeProps> = ({ pageInfo }) => {
       "
       >
         {/*Header Logo*/}
+
         <Link href="#hero">
         <p className="text-[30px] text-secondaryTextColor uppercase tracking-[3px]">
         <span className="text-primaryAccentColor">{`| `}</span>
@@ -79,13 +91,50 @@ const Header: React.FC<HomeProps> = ({ pageInfo }) => {
         transition={{
           duration: 1.5,
         }}
-        className="bg-transparent"
-        >
-        {pageInfo?.navbar.map(item =>
-          <Link key={item._id} href={item.link}>
-            <button className="heroBtn mr-[50px] text-primaryTextColor">{item.title}</button>
-          </Link>)}
+        className="bg-transparent hidden lg:flex"
+      >
+        { /*Navbar Items*/}
+        {content}
       </motion.div>
+
+      { /*Mobile Menu*/}
+      <motion.div
+          initial={{
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+        className="lg:hidden bg-transparent">
+          <button onClick={toggleNavbar}>
+            {isOpen? <IoMdClose size={32} /> : <IoMdMenu size={32} />}
+          </button>
+      </motion.div>
+      { isOpen && (
+        <div className="
+        absolute
+        block
+        top-16
+        left-0
+        right-0
+        transition
+        flex
+        flex-col
+        items-center
+        backdrop-filter
+        backdrop-blur
+        bg-primaryBackground
+        pb-4
+        ">
+            {content}
+        </div>
+      )}
+
       <motion.div
         initial={{
           x: 500,
@@ -101,7 +150,8 @@ const Header: React.FC<HomeProps> = ({ pageInfo }) => {
           duration: 1.5,
         }}
         className="
-      flex
+      hidden
+      lg:flex
       flex-row
       items-center
       text-primaryTextColor

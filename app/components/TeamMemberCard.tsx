@@ -37,7 +37,6 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
         flex
         flex-col
         py-10
-        h-screen
         items-center
         justify-between
         rounded-[50px]
@@ -59,7 +58,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
         <div className="px-4 flex flex-col items-center justify-center">
           <h4 className="text-xl text-primaryAccentColor uppercase">{teamMember?.name}</h4>
           <p className="font-bold text-md mt-1 mb-[45px]">{teamMember?.position}</p>
-      <ul className="text-secondaryTextColor text-left min-h-[160px] list-disc space-y-4 ml-5 text-sm mb-[45px]">
+      <ul className="text-secondaryTextColor text-left min-h-[120px] list-disc space-y-4 ml-5 text-sm mb-[20px]">
         {teamMember.points.map((point, i) => (<li key={i}>{point}</li>))}
       </ul>
 

@@ -25,6 +25,11 @@ export default async function Home () {
         scrollbar
         scrollbar-track-primaryScrollbarTrack
         scrollbar-thumb-primaryScrollbarThumb
+        sm:max-w-[640px]
+        md:max-w-[768px]
+        lg:max-w-[1024px]
+        xl:max-w-[1366px]
+        2xl:max-w-[1920px]
         "
     >
       <Header pageInfo={pageInfo} />
@@ -34,7 +39,7 @@ export default async function Home () {
       <section id="about" className="snap-start pb-8">
         <About pageInfo={pageInfo} />
       </section>
-      <section id="whatwedo" className="snap-start pb-8">
+      <section id="services" className="snap-start pb-8">
         <WhatWeDo pageInfo={pageInfo}  />
       </section>
       <section id="team" className="snap-center">
