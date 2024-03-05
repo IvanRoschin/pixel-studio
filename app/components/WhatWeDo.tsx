@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { PageInfo } from "@/sanity/interface";
+import { PageInfo, AccordionItem } from "@/sanity/interface";
 
 import Accordion from "./Accordion";
 
@@ -65,13 +65,14 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({pageInfo}) => {
         className="w-full"
       >
         {accordion.map((item) =>
+          <div key={item?._id}>
         <Accordion
-            key={item?._id}
             title={item?.title}
             text={item?.text}
             closeIcon={pageInfo?.closeIcon}
             openIcon={pageInfo?.openIcon}
-         />
+            />
+            </div>
         )
         }
       </motion.div>

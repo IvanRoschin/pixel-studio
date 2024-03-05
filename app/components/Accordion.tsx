@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 import { useState } from "react";
-import { Accordion } from "@/sanity/interface";
 
+interface AccordionProps {
+  title: string;
+  text: string;
+  closeIcon?: any;
+  openIcon?: any;
+}
 
-const Accordion: React.FC<Accordion> = ({ title, text, closeIcon, openIcon}) => {
+const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon}) => {
   const [accordionOpen, setAccordionOpen] = useState(false)
 
     return (

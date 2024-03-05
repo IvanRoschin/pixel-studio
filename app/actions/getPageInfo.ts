@@ -5,9 +5,9 @@ export default async function getPageInfo(){
     const query =`
 *[_type == "pageInfo"][0] {
   ...,
+  accordion[]->,
   socials[]->,
-  navbar[]->,
-  accordion[]->
+  navbar[]->
 }
 `;
   try {
