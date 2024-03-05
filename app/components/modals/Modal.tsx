@@ -46,21 +46,21 @@ const Modal: React.FC<ModalProps> = ({
     }, 300);
   }, [disabled, onClose]);
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (!ref.current?.contains(event.target as Node)) {
-  //       handleClose();
-  //     }
-  //   };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!ref.current?.contains(event.target as Node)) {
+        handleClose();
+      }
+    };
 
-  //   if (showModal) {
-  //     document.addEventListener("mousedown", handleClickOutside);
-  //   }
+    if (showModal) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [showModal, handleClose]);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showModal, handleClose]);
 
   const handleSubmit = useCallback(() => {
     if (disabled) {
@@ -157,7 +157,8 @@ const Modal: React.FC<ModalProps> = ({
                   hover:opacity-70
                   transition
                   absolute
-                  left-9"
+                  left-9
+                  text-black"
                 >
                   <IoMdClose size={18} />
                 </button>

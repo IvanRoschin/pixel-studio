@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 import { sendEmail } from "@/actions/resendEmail";
 import { toast } from 'sonner';
 import { useState } from 'react';

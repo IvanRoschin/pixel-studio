@@ -41,7 +41,7 @@ const OrderModal = () => {
     toast.error("Something went wrong")
   }
   const bodyContent = (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 font-tacticsans text-primaryBackground">
       <Heading title="Send us an email" subtitle="and we`ll contact you" />
       <Input
         id="name"
