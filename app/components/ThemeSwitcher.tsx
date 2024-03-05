@@ -18,10 +18,13 @@ const ThemeSwitcher = () => {
 
     if (!mounted) {
         return (
-        <pre>
-¯\_(ツ)_/¯
-Your data will show up here when you've configured everything correctly
-        </pre>)
+            setTheme("dark")
+//             <pre>
+//                 theme === "dark"
+// ¯\_(ツ)_/¯
+// Your data will show up here when you've configured everything correctly
+//         </pre >
+        )
     }
 
     return (
