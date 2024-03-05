@@ -7,7 +7,7 @@ import { SocialIcon } from "react-social-icons";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
-import  Navbar from "@/components/Navbar"
+
 interface HomeProps {
   pageInfo: PageInfo;
 };
