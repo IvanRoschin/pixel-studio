@@ -15,6 +15,7 @@ const About: React.FC<AboutProps> = ({ pageInfo }) => {
       transition={{ duration: 1.5 }}
       className="
         h-screen
+        2xl:h-full
         flex
         flex-col
         relative
@@ -73,7 +74,6 @@ const About: React.FC<AboutProps> = ({ pageInfo }) => {
         xl:pb-[75px]
         2xl:w-[1444px]
         2xl:pb-[75px]
-        
         "
       >
         <p

@@ -23,14 +23,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
       className="
         max-w-[1920px]
         w-full
-        h-screen
         flex-shrink-0
         snap-center
         cursor-pointer
         overflow-hidden
         font-tacticsans
         flex
-        flex-row
+        flex-col
+        md:flex-row
         py-2
         items-center
         justify-between
@@ -42,22 +42,48 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
+        className="md:flex-shrink-0 p-3"
       >
         <Image
           alt={project.title}
           src={urlForImage(project.image)}
-          width={600}
-          height={628}
+          width={325}
+          height={300}
           className="
-            w-[600px]
-            h-[628px]
+          w-[325px]
+          h-[300px]
+          md:w-[350px]
+          md:h-[278px]
+          lg:w-[400px]
+          lg:h-[328px]
+          xl:w-[600px]
+          xl:h-[538px]
+          mb-2
             "
         />
       </motion.div>
-      <div className="flex text-left text-[22px] flex-col justify-center space-y-10 px-0font-tacticsans">
-        <h4 className="text-[30px] mb-[50px]">{project.title}</h4>
-        <p className="p-1 max-w-[440px]">{project?.summary}</p>
-        <div className="flex justify-between space-x-5 text-secondaryTextColor">{arrayOfWords}</div>
+      <div
+        className="
+      flex 
+      text-left 
+      px-6 
+      text-xs 
+      md:text-base 
+      lg:text-xl 
+      xl:text-2xl
+      flex-col 
+      justify-center 
+      md:space-y-2
+      lg:space-y-4 
+      xl:space-y-10 
+      font-tacticsans
+      "
+      >
+        <h4 className="text-lg md:text-3xl lg:text-4xl xl:mb-[50px] mb-2">{project.title}</h4>
+        <p className="xl:max-w-[440px] xl:mb-2 mb-2">{project?.summary}</p>
+        <div className="flex justify-between space-x-5 text-secondaryTextColor mb-2">
+          {arrayOfWords}
+        </div>
         <Link href={project.linkToBuild} className="text-primaryAccentColor hover:underline">
           Explore more
         </Link>

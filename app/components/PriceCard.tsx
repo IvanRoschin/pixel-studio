@@ -33,10 +33,16 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
       }}
       transition={{ duration: 1.5 }}
       className="
+      w-[340px]  
+      md:w-[310px]
+      lg:w-[440px]
+      xl:w-[560px]
+      mx-4
+
           border
           b-white
           bg-secondaryBackground
-          w-[580px]
+      
           flex-shrink-0
           snap-center
           cursor-pointer
@@ -59,16 +65,26 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           group
         "
     >
-      <h4 className="text-[30px]">{pricePlan?.title}</h4>
-      <div className="text-left text-secondaryTextColor group-hover:text-white">
-        <ul className="list-disc text-sm px-10 ">
+      <h4 className="text-lg md:text-3xl lg:text-4xl xl:mb-[50px] mb-4">{pricePlan?.title}</h4>
+      <div
+        className="text-left text-secondaryTextColor group-hover:text-white
+         text-xs 
+         md:text-base 
+         lg:text-xl 
+         xl:text-2xl
+         xl:px-10
+         "
+      >
+        <ul className="list-disc">
           {pricePlan.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
         </ul>
-        <p className="text-[22px] text-primaryAccentColor mt-5">from $ {pricePlan?.price}</p>
+        <p className="text-lg xl:text-4xl text-primaryAccentColor mt-5">
+          from $ {pricePlan?.price}
+        </p>
         <div className="flex flex-col items-center justify-center my-2">
-          <Button type="button" label="Order" onClick={handleClick} />
+          <Button type="button" label="Order" onClick={handleClick} small />
         </div>
       </div>
     </motion.div>

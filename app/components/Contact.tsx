@@ -37,29 +37,27 @@ const Contact = () => {
   return (
     <div
       className="
-        flex
-        flex-col
-        relative
-        text-center
-        max-w-7xl
-        px-10
-        justify-evenly
-        mx-auto
-        items-center
-        font-tacticsans
-        "
+      h-screen
+      2xl:h-full
+      relative
+      max-w-7xl
+      md:px-10
+      justify-evenly
+      mx-auto
+      font-tacticsans"
     >
       <h3
         className="
-          absolute
-          top-[160px]
-          left-0
-          uppercase
-          tracking-[3px]
-          text-primaryTextColor
-          text-2xl
-          font-tacticsans
-     "
+        absolute
+        top-[70px]
+        left-[20px]
+        md:top-[120px]
+        uppercase
+        tracking-[3px]
+        text-primaryTextColor
+        text-2xl
+        xl:text-4xl
+        "
       >
         <div className="text-sectionTitleColor">
           {`<Contact`}
@@ -67,18 +65,32 @@ const Contact = () => {
           <span>{`>`}</span>
         </div>
       </h3>
-      <div className="mt-[240px] w-[640px] flex flex-col space-y-10 pt-[120px]">
-        <h4 className="text-2xl uppercase text-center">
+      <div
+        className="
+              space-x-4
+              gap-4
+              pt-[150px]
+              md:pt-[200px]
+              place-items-center
+              place-content-center
+              w-[340px] 
+              flex 
+              flex-col 
+              space-y-10
+              mx-3
+              "
+      >
+        <h4 className="text-lg md:text-3xl lg:text-4xl uppercase text-center">
           <span className="text-primaryAccentColor">{`{   `}</span> Any questions?
         </h4>
-        <p className="text-xl">
+        <p className="text-base md:text-3xl lg:text-4xl">
           leave a request and our manager will
           <br />
           contact you within 15 minutes!
           <span className="text-2xl text-primaryAccentColor">{`   }`}</span>
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-[640px]">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-[340px]">
           <div className="relative text-left">
             <input
               {...register('email', {

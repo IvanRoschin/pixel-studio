@@ -4,6 +4,7 @@ import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { PageInfo } from '@/sanity/interface'
 import { SocialIcon } from 'react-social-icons'
 import { urlForImage } from '@/sanity/lib/image'
+import Logo from './Logo'
 
 interface FooterProps {
   pageInfo: PageInfo
@@ -21,7 +22,8 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
       <div
         className="
         flex
-        flex-col-4
+        flex-row
+        xl:flex-col-4
         justify-between
         mx-auto
         max-w-[1620px]
@@ -32,16 +34,10 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
         "
       >
         {/*Footer Logo*/}
-        <Link href="#hero">
-          <p className="text-[30px] text-secondaryTextColor uppercase tracking-[3px]">
-            <span className="text-primaryAccentColor">{`| `}</span>
-            {pageInfo.title}
-            <span className="text-primaryAccentColor">{` |`}</span>
-          </p>
-        </Link>
+        <Logo title="Pixel studio" />
 
         {/*Navbar Items*/}
-        <div className="shrink">
+        <div className="hidden shrink">
           {pageInfo?.navbar.map(item => (
             <div key={item._id} className="grid grid-cols-2 gap-5 xl:grid-cols-1">
               <Link href={item.link}>

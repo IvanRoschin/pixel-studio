@@ -22,6 +22,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
       }}
       className="      
       h-screen
+      2xl:h-full
       relative
       max-w-7xl
       md:px-10

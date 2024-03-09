@@ -19,6 +19,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
       transition={{ duration: 1.5 }}
       className="
       h-screen
+      2xl:h-full
       flex
       flex-col
       relative

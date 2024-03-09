@@ -21,7 +21,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon 
           }}
           className="flex items-center justify-between w-full px-4"
         >
-          <span className="uppercase text-lg xl:text-2xl">{title}</span>
+          <span className="uppercase text-lg lg:text-xl xl:text-2xl">{title}</span>
           {accordionOpen ? (
             <Image
               alt={title}
@@ -44,7 +44,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon 
           className={`
           grid
           overflow-hidden
-          transitiona-all
+          transition-all
           duration-300
           ease-in-out
           text-sm
