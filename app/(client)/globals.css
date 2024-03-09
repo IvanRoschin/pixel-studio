@@ -81,16 +81,15 @@
 }
 
 @layer components {
-
-  .heroBtn {
-    @apply px-6
-    py-2
-    text-[22px]
-    tracking-widest
-    font-tacticsans
-    transition-all
-    hover:text-[#FFFC32];
+  .section {
+    @apply
+   pb-12
   }
+
+}
+
+@layer components {
+  
   .footerBtn {
     @apply
     text-xl

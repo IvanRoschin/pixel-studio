@@ -1,14 +1,13 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { Project } from "@/sanity/interface";
-import ProjectCard from "./ProjectCard";
+import { motion } from 'framer-motion'
+import { Project } from '@/sanity/interface'
+import ProjectCard from './ProjectCard'
 
 interface ProjectsProps {
-  projects: Project[];
-};
-const Projects: React.FC<ProjectsProps> = ({projects}) => {
-
+  projects: Project[]
+}
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -40,9 +39,8 @@ const Projects: React.FC<ProjectsProps> = ({projects}) => {
       >
         <div className="text-sectionTitleColor">
           {`<Case stadies`}
-          <span className="text-primaryAccentColor">{ `/`}
-        </span>
-        <span>{`>`}</span>
+          <span className="text-primaryAccentColor">{`/`}</span>
+          <span>{`>`}</span>
         </div>
       </h3>
       <div
@@ -70,7 +68,7 @@ const Projects: React.FC<ProjectsProps> = ({projects}) => {
         ))}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

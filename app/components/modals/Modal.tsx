@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { IoMdClose } from "react-icons/io";
-import Button from "../Button";
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { IoMdClose } from 'react-icons/io'
+import Button from '../Button'
 
 interface ModalProps {
-  isOpen?: boolean;
-  onClose: () => void;
-  onSubmit: () => void;
-  title?: string;
-  body?: React.ReactElement;
-  footer?: React.ReactElement;
-  actionLabel: string;
-  disabled?: boolean;
-  secondaryAction?: () => void;
-  secondaryActionLabel?: string;
+  isOpen?: boolean
+  onClose: () => void
+  onSubmit: () => void
+  title?: string
+  body?: React.ReactElement
+  footer?: React.ReactElement
+  actionLabel: string
+  disabled?: boolean
+  secondaryAction?: () => void
+  secondaryActionLabel?: string
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -29,55 +29,55 @@ const Modal: React.FC<ModalProps> = ({
   secondaryAction,
   secondaryActionLabel,
 }) => {
-  const [showModal, setShowModal] = useState(isOpen);
-  const ref = useRef<HTMLDivElement>(null);
+  const [showModal, setShowModal] = useState(isOpen)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setShowModal(isOpen);
-  }, [isOpen]);
+    setShowModal(isOpen)
+  }, [isOpen])
 
   const handleClose = useCallback(() => {
     if (disabled) {
-      return;
+      return
     }
-    setShowModal(false);
+    setShowModal(false)
     setTimeout(() => {
-      onClose();
-    }, 300);
-  }, [disabled, onClose]);
+      onClose()
+    }, 300)
+  }, [disabled, onClose])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!ref.current?.contains(event.target as Node)) {
-        handleClose();
+        handleClose()
       }
-    };
+    }
 
     if (showModal) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showModal, handleClose]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showModal, handleClose])
 
   const handleSubmit = useCallback(() => {
     if (disabled) {
-      return;
+      return
     }
-    onSubmit();
-  }, [disabled, onSubmit]);
+    onSubmit()
+  }, [disabled, onSubmit])
 
   const handleSecondaryAction = useCallback(() => {
     if (disabled || !secondaryAction) {
-      return;
+      return
     }
-    secondaryAction();
-  }, [disabled, secondaryAction]);
+    secondaryAction()
+  }, [disabled, secondaryAction])
 
   if (!isOpen) {
-    return null;
+    return null
   }
 
   return (
@@ -115,8 +115,8 @@ const Modal: React.FC<ModalProps> = ({
           {/* Content*/}
           <div
             className={`translate duration-300 h-full ${
-              showModal ? "translate-y-0" : "translate-y-full"
-            } ${showModal ? "opacity-100" : "opacity-0"}`}
+              showModal ? 'translate-y-0' : 'translate-y-full'
+            } ${showModal ? 'opacity-100' : 'opacity-0'}`}
           >
             <div
               className="
@@ -185,11 +185,7 @@ const Modal: React.FC<ModalProps> = ({
                       onClick={handleSecondaryAction}
                     />
                   )}
-                  <Button
-                    disabled={disabled}
-                    label={actionLabel}
-                    onClick={handleSubmit}
-                  />
+                  <Button disabled={disabled} label={actionLabel} onClick={handleSubmit} />
                 </div>
                 {footer}
               </div>
@@ -198,7 +194,7 @@ const Modal: React.FC<ModalProps> = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

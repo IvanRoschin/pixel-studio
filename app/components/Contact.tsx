@@ -1,38 +1,38 @@
-"use client";
+'use client'
 
-import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
-import { sendEmail } from "@/actions/resendEmail";
-import { toast } from 'sonner';
-import { useState } from 'react';
+import { useForm, FieldValues, SubmitHandler } from 'react-hook-form'
+import { sendEmail } from '@/actions/resendEmail'
+import { toast } from 'sonner'
+import { useState } from 'react'
 
-import Button from "./Button";
+import Button from './Button'
 type Inputs = {
-  email: string;
-};
+  email: string
+}
 
 const Contact = () => {
-  const [isLoading, setIsLoading] = useState(false);
-    const {
+  const [isLoading, setIsLoading] = useState(false)
+  const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
-      email: "",
+      email: '',
     },
-  });
+  })
   const onSubmit: SubmitHandler<FieldValues> = async data => {
-    setIsLoading(true);
+    setIsLoading(true)
     const result = await sendEmail(data)
     if (result?.success) {
-      console.log({ data: result.data });
-      reset();
+      console.log({ data: result.data })
+      reset()
       toast.success('Email sent successfully')
       return
-    };
+    }
     console.log(result?.error)
-    toast.error("Something went wrong")
+    toast.error('Something went wrong')
   }
   return (
     <div
@@ -49,7 +49,7 @@ const Contact = () => {
         font-tacticsans
         "
     >
-       <h3
+      <h3
         className="
           absolute
           top-[160px]
@@ -63,34 +63,29 @@ const Contact = () => {
       >
         <div className="text-sectionTitleColor">
           {`<Contact`}
-          <span className="text-primaryAccentColor">{ `/`}
-        </span>
-        <span>{`>`}</span>
+          <span className="text-primaryAccentColor">{`/`}</span>
+          <span>{`>`}</span>
         </div>
       </h3>
       <div className="mt-[240px] w-[640px] flex flex-col space-y-10 pt-[120px]">
-
         <h4 className="text-2xl uppercase text-center">
-           <span className="text-primaryAccentColor">{`{   `}</span> Any questions?
+          <span className="text-primaryAccentColor">{`{   `}</span> Any questions?
         </h4>
-        <p className="text-xl">leave a request and our manager will
-         <br/>contact you within 15 minutes!
+        <p className="text-xl">
+          leave a request and our manager will
+          <br />
+          contact you within 15 minutes!
           <span className="text-2xl text-primaryAccentColor">{`   }`}</span>
         </p>
 
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-[640px]"
-        >
-      <div className="relative text-left">
-
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-[640px]">
+          <div className="relative text-left">
             <input
-              {...register("email", {
-                required: "Email is required.",
+              {...register('email', {
+                required: 'Email is required.',
                 pattern: {
                   value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-                  message: "Email must be correctly",
+                  message: 'Email must be correctly',
                 },
               })}
               id="email"
@@ -108,9 +103,10 @@ const Contact = () => {
               placeholder-transparent
               placeholder:b-white
                 "
-                type="email"
+              type="email"
             />
-                    <label  className="
+            <label
+              className="
                     absolute
                     left-0
                     -top-4
@@ -121,21 +117,18 @@ const Contact = () => {
                     peer-placeholder-shown:top-2
                     transition-all
 
-                    ">E-mail</label>
-
+                    "
+            >
+              E-mail
+            </label>
           </div>
-           <div className="flex items-start justify-center pt-5">
-          <Button
-          type="submit"
-          label="Send"
-          outline
-          disabled={isLoading}
-          />
-        </div>
+          <div className="flex items-start justify-center pt-5">
+            <Button type="submit" label="Send" outline disabled={isLoading} />
+          </div>
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,39 +1,38 @@
-"use client"
+'use client'
 
-import useOrderModal from "@/hooks/useOrderModal";
-import { Price } from "@/sanity/interface";
-import { motion } from "framer-motion";
-import { useCallback, useState } from "react";
-import Button from "./Button";
-
+import useOrderModal from '@/hooks/useOrderModal'
+import { Price } from '@/sanity/interface'
+import { motion } from 'framer-motion'
+import { useCallback, useState } from 'react'
+import Button from './Button'
 
 interface PriceCardProps {
-    pricePlan: Price;
-};
+  pricePlan: Price
+}
 
 const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
-  const orderModal = useOrderModal();
-  const [isOpen, setIsOpen] = useState(false);
+  const orderModal = useOrderModal()
+  const [isOpen, setIsOpen] = useState(false)
   const toggleOpen = useCallback(() => {
-    setIsOpen((value) => !value);
-  }, []);
+    setIsOpen(value => !value)
+  }, [])
   const handleClick = () => {
-    orderModal.onOpen();
-    toggleOpen();
+    orderModal.onOpen()
+    toggleOpen()
   }
 
   return (
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: -100,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{ duration: 1.5 }}
-        className="
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: -100,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ duration: 1.5 }}
+      className="
           border
           b-white
           bg-secondaryBackground
@@ -59,18 +58,20 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           transition-opacity
           group
         "
-      >
-        <h4 className="text-[30px]">{pricePlan?.title}</h4>
-        <div className="text-left text-secondaryTextColor group-hover:text-white">
-          <ul className="list-disc text-sm px-10 ">
-          {pricePlan.points.map((point, i) => (<li key={i}>{ point}</li>))}
-          </ul>
-          <p className="text-[22px] text-primaryAccentColor mt-5">from $ {pricePlan?.price}</p>
-          <div className="flex flex-col items-center justify-center my-2">
+    >
+      <h4 className="text-[30px]">{pricePlan?.title}</h4>
+      <div className="text-left text-secondaryTextColor group-hover:text-white">
+        <ul className="list-disc text-sm px-10 ">
+          {pricePlan.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
+        <p className="text-[22px] text-primaryAccentColor mt-5">from $ {pricePlan?.price}</p>
+        <div className="flex flex-col items-center justify-center my-2">
           <Button type="button" label="Order" onClick={handleClick} />
-          </div>
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
   )
 }
 

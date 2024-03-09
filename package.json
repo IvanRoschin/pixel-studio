@@ -2,16 +2,13 @@
   "name": "pixel-studio",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-
   "dependencies": {
-
     "@heroicons/react": "^2.1.1",
     "@portabletext/react": "^3.0.11",
     "@sanity/image-url": "^1.0.2",
@@ -33,7 +30,6 @@
     "tailwind-scrollbar": "^3.1.0",
     "zustand": "^4.5.1"
   },
-
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
@@ -42,9 +38,9 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8.4.34",
+    "prettier": "3.2.5",
+    "prettier-stylelint": "^0.4.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
-
 }
-

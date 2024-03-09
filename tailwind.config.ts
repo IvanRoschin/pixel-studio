@@ -1,18 +1,18 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'selector',
   theme: {
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1366px',
+      sm: '360px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
       '2xl': '1920px',
     },
 
@@ -33,7 +33,6 @@ const config: Config = {
         secondaryTextColor: 'rgb(var(--color-secondaryTextColor) / <alpha-value>)',
         thirdTextColor: 'rgb(var(--color-thirdTextColor) / <alpha-value>)',
 
-
         iconColor: 'rgb(var(--color-iconColor) / <alpha-value>)',
         sectionTitleColor: 'rgb(var(--color-sectionTitleColor) / <alpha-value>)',
 
@@ -46,10 +45,10 @@ const config: Config = {
       animation: {
         'fade-in': 'fade-in 1s',
         'fade-out': 'fade-out 1s',
-        'icon-transition': 'transition duration-3000 ease-in-out transform'
-       }
+        'icon-transition': 'transition duration-3000 ease-in-out transform',
+      },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
-};
-export default config;
+  plugins: [require('tailwind-scrollbar')],
+}
+export default config

@@ -1,6 +1,6 @@
-export { default as getPageInfo } from './getPageInfo';
-export { default as getProjects } from './getProjects';
-export { default as getStacks } from './getStacks';
-export { default as getTechnologies } from './getTechnologies';
-export { default as getTeam } from './getTeam';
-export { default as getPrices } from './getPrices';
+export { default as getPageInfo } from './getPageInfo'
+export { default as getProjects } from './getProjects'
+export { default as getStacks } from './getStacks'
+export { default as getTechnologies } from './getTechnologies'
+export { default as getTeam } from './getTeam'
+export { default as getPrices } from './getPrices'

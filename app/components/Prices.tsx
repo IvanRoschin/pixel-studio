@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import { Price } from "@/sanity/interface";
-import { motion } from "framer-motion";
-import PriceCard from "./PriceCard";
+import { Price } from '@/sanity/interface'
+import { motion } from 'framer-motion'
+import PriceCard from './PriceCard'
 
 interface PricesProps {
-  price: Price[];
-};
+  price: Price[]
+}
 
-const Prices: React.FC<PricesProps> = ({price}) => {
+const Prices: React.FC<PricesProps> = ({ price }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -40,9 +40,8 @@ const Prices: React.FC<PricesProps> = ({price}) => {
       >
         <div className="text-sectionTitleColor">
           {`<Price`}
-          <span className="text-primaryAccentColor">{ `/`}
-        </span>
-        <span>{`>`}</span>
+          <span className="text-primaryAccentColor">{`/`}</span>
+          <span>{`>`}</span>
         </div>
       </h3>
       <div
@@ -66,13 +65,10 @@ const Prices: React.FC<PricesProps> = ({price}) => {
           pb-[35px]
         "
       >
-        {price?.map((pricePlan) => (
-        <PriceCard key={pricePlan._id} pricePlan={pricePlan} />
-        ))}
-
+        {price?.map(pricePlan => <PriceCard key={pricePlan._id} pricePlan={pricePlan} />)}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Prices;
+export default Prices

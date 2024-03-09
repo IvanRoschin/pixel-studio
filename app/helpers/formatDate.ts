@@ -1,24 +1,23 @@
-import { TeamMember } from "@/sanity/interface";
+import { TeamMember } from '@/sanity/interface'
 
 type Props = {
-    teamMember: TeamMember
+  teamMember: TeamMember
 }
 
 const formatDate = ({ teamMember }: Props) => {
+  const data = teamMember.joinedTeam
 
-const data = teamMember.joinedTeam;
-  
-const dateObject = new Date(data);
+  const dateObject = new Date(data)
 
-const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(dateObject);
-  const year = dateObject.getFullYear();
+  const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(dateObject)
+  const year = dateObject.getFullYear()
 
   const formattedDate = {
     month,
-    year
-  };
+    year,
+  }
 
-  return formattedDate;
+  return formattedDate
 }
 
 export default formatDate

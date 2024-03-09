@@ -1,15 +1,27 @@
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic'
 
-import { getPageInfo, getPrices, getProjects, getTeam, getTechnologies } from "@/actions/index";
-import { About, Contact, Footer, Header, Hero, Prices, Projects, Team, Technologies, WhatWeDo } from "@/components/index";
-import { PageInfo, Price, Project, TeamMember, Technology } from "@/sanity/interface";
+import { getPageInfo, getPrices, getProjects, getTeam, getTechnologies } from '@/actions/index'
+import {
+  About,
+  Contact,
+  Footer,
+  Header,
+  Hero,
+  Prices,
+  Projects,
+  Team,
+  Technologies,
+  WhatWeDo,
+  Navbar,
+} from '@/components/index'
+import { PageInfo, Price, Project, TeamMember, Technology } from '@/sanity/interface'
 
-export default async function Home () {
-  const pageInfo: PageInfo = await getPageInfo();
-  const team: TeamMember[] = await getTeam();
-  const projects: Project[] = await getProjects();
-  const technologies: Technology[] = await getTechnologies();
-  const prices: Price[] = await getPrices();
+export default async function Home() {
+  const pageInfo: PageInfo = await getPageInfo()
+  const team: TeamMember[] = await getTeam()
+  const projects: Project[] = await getProjects()
+  const technologies: Technology[] = await getTechnologies()
+  const prices: Price[] = await getPrices()
 
   return (
     <div
@@ -25,22 +37,17 @@ export default async function Home () {
         scrollbar
         scrollbar-track-primaryScrollbarTrack
         scrollbar-thumb-primaryScrollbarThumb
-        sm:max-w-[640px]
-        md:max-w-[768px]
-        lg:max-w-[1024px]
-        xl:max-w-[1366px]
-        2xl:max-w-[1920px]
         "
     >
       <Header pageInfo={pageInfo} />
-      <section id="hero" className="snap-center">
+      <section id="hero" className="snap-center pb-8">
         <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-start pb-8">
         <About pageInfo={pageInfo} />
       </section>
       <section id="services" className="snap-start pb-8">
-        <WhatWeDo pageInfo={pageInfo}  />
+        <WhatWeDo pageInfo={pageInfo} />
       </section>
       <section id="team" className="snap-center">
         <Team team={team} />
@@ -51,7 +58,7 @@ export default async function Home () {
       <section id="projects" className="snap-start">
         <Projects projects={projects} />
       </section>
-          <section id="price" className="snap-start">
+      <section id="price" className="snap-start">
         <Prices price={prices} />
       </section>
       <section id="contact" className="snap-start">
@@ -61,5 +68,5 @@ export default async function Home () {
         <Footer pageInfo={pageInfo} />
       </section>
     </div>
-  );
+  )
 }

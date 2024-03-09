@@ -5,13 +5,13 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
       },
       {
-        protocol: "https",
-        hostname: "img.shields.io",
-        pathname: "**",
+        protocol: 'https',
+        hostname: 'img.shields.io',
+        pathname: '**',
       },
     ],
   },
@@ -19,9 +19,9 @@ const nextConfig = {
     config.experiments = {
       ...config.experiments,
       topLevelAwait: true,
-    };
-    return config;
+    }
+    return config
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

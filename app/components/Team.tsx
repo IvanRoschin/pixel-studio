@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import TeamMemberCard from "./TeamMemberCard";
-import { TeamMember } from "@/sanity/interface";
+import { motion } from 'framer-motion'
+import TeamMemberCard from './TeamMemberCard'
+import { TeamMember } from '@/sanity/interface'
 
 interface TeamProps {
-  team: TeamMember[];
-};
+  team: TeamMember[]
+}
 
-const Team: React.FC<TeamProps> = ({team}) => {
+const Team: React.FC<TeamProps> = ({ team }) => {
   return (
- <motion.div
+    <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -28,21 +28,21 @@ const Team: React.FC<TeamProps> = ({team}) => {
     >
       <h3
         className="
-          absolute
-          top-[160px]
-          left-0
-          uppercase
-          tracking-[3px]
-          text-primaryTextColor
-          text-2xl
-          font-tacticsans
+        absolute
+        top-[70px]
+        left-[20px]
+        md:top-[120px]
+        uppercase
+        tracking-[3px]
+        text-primaryTextColor
+        text-2xl
+        xl:text-4xl
      "
       >
         <div className="text-sectionTitleColor">
           {`<Team`}
-          <span className="text-primaryAccentColor">{ `/`}
-        </span>
-        <span>{`>`}</span>
+          <span className="text-primaryAccentColor">{`/`}</span>
+          <span>{`>`}</span>
         </div>
       </h3>
       <div
@@ -50,7 +50,10 @@ const Team: React.FC<TeamProps> = ({team}) => {
           flex
           flex-row
           space-x-5
-          mt-[240px]
+          mt-[140px]
+          md:mt-[180px]
+          lg:mt-[200px]
+          xl:mt-[225px]
           relative
           w-full
           h-full
@@ -65,12 +68,10 @@ const Team: React.FC<TeamProps> = ({team}) => {
           pb-[35px]
       "
       >
-        {team?.map((teamMember) => (
-        <TeamMemberCard key={teamMember._id} teamMember={teamMember} />
-))}
+        {team?.map(teamMember => <TeamMemberCard key={teamMember._id} teamMember={teamMember} />)}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Team;
+export default Team

@@ -47,7 +47,7 @@ export interface Accordion extends SanityBody, AccordionItem {
   openIcon: Image;
 }
 
-export interface navbarItem extends SanityBody {
+export interface NavbarItem extends SanityBody {
   _type: "navbar"
   title: string;
   link: string;
@@ -55,7 +55,7 @@ export interface navbarItem extends SanityBody {
 
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
-  navbar: navbarItem[];
+  navbar: NavbarItem[];
   title: string;
   headerLogo: Image;
   socials: Social[];

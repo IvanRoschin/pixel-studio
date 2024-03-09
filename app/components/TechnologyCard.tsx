@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import { Technology } from "@/sanity/interface";
-import { urlForImage } from "@/sanity/lib/image";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { Technology } from '@/sanity/interface'
+import { urlForImage } from '@/sanity/lib/image'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface TechnologyCardProps {
-  technology: Technology;
-  directionLeft?: boolean;
-};
+  technology: Technology
+  directionLeft?: boolean
+}
 
 const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technology }) => {
   return (
@@ -25,54 +25,60 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
         duration: 1,
       }}
       className="
-        group
-        relative
-        flex
-        cursor-pointer
-        h-20
-        w-20
-        "
+      opacity-40
+      cursor:pointer
+      hover:opacity-100
+      hover:shadow-lg
+      transition-opacity
+      group
+      col-span-1
+      p-4
+      "
     >
-      <Image
-        alt={technology?.name}
-        src={urlForImage(technology?.image)}
-        width={24}
-        height={24}
-        className="
-        p-2
-        object-cover
-        h-[100%]
-        w-[100%]
-        filter
+      <div className="flex flex-col items-center h-full space-y-2">
+        <p
+          className="
+        text-xs 
+        md:text-lg
+        lg:text-xl
+        xl:text-2xl
+        2xl:text-3xl
+        fond-bold 
+        text-primaryTextColor 
+        opacity-0
         group-hover:opacity-100
-        group-hover:shadow-primaryAccentColor
-        group-hover:shadow-lg
-        shadow-md
-        opacity-60
-        cursor-pointer
-        transition-opacity
-        duration-200
-        "
-      />
-      <div
-        className="
-      absolute
-      opacity-0
-      group-hover:opacity-100
-      transition
-      duration-300
-      ease-in-out
-      rounded-full
-      h-20
-      w-20
-      z-0"
-      >
-        <div className="flex items-center justify-center h-full mt-[-60px]">
-          <p className="text-xl fond-bold text-white opacity-100">{`<${technology?.name}>`}</p>
-        </div>
+        transition-all
+        duration-700"
+        >{`<${technology?.name}>`}</p>
+
+        <Image
+          alt={technology?.name}
+          src={urlForImage(technology?.image)}
+          width={50}
+          height={50}
+          className="
+          md:w-[70px]
+          md:h-[70px]
+          lg:w-[80px]
+          lg:h-[80px]
+          xl:w-[100px]
+          xl:h-[100px]
+          p-2
+          object-cover
+          filter
+          group-hover:opacity-100
+          group-hover:shadow-primaryAccentColor
+          group-hover:shadow-lg
+          shadow-md
+          opacity-60
+          cursor-pointer
+          transition-opacity
+          duration-200
+  "
+        />
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default TechnologyCard;
+export default TechnologyCard

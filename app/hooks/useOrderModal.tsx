@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import { create } from "zustand";
+import { create } from 'zustand'
 
 interface OrderModalStore {
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+  isOpen: boolean
+  onOpen: () => void
+  onClose: () => void
 }
 
-const useOrderModal = create<OrderModalStore>((set) => ({
+const useOrderModal = create<OrderModalStore>(set => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
-}));
+}))
 
-export default useOrderModal;
+export default useOrderModal
