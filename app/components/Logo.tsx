@@ -37,9 +37,9 @@ const Logo: React.FC<LogoProps> = ({ title }) => {
     >
       <Link href="#hero">
         <p className="text-text-lg md:text-xl lg:text-3xl 2xl:text-4xl text-secondaryTextColor uppercase tracking-[3px]">
-          <span className="text-primaryAccentColor">{`| `}</span>
+          <span className="text-primaryAccentColor animate-pulse">{`| `}</span>
           {title}
-          <span className="text-primaryAccentColor">{` |`}</span>
+          <span className="text-primaryAccentColor animate-pulse">{` |`}</span>
         </p>
       </Link>
     </motion.div>

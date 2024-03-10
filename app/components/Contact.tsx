@@ -71,26 +71,43 @@ const Contact = () => {
               gap-4
               pt-[150px]
               md:pt-[200px]
-              place-items-center
-              place-content-center
-              w-[340px] 
+              md:place-items-center
+              md:place-content-center
+              w-[340px]
+              md:w-[640px]
+              lg:w-[920px]  
+              xl:w-[1200px]
               flex 
               flex-col 
               space-y-10
-              mx-3
+              md:space-y-5
+              lg:space-y-10
+              xl:space-y-15
+              mx-auto
               "
       >
-        <h4 className="text-lg md:text-3xl lg:text-4xl uppercase text-center">
+        <h4 className="text-lg md:text-2xl lg:text-4xl uppercase text-center">
           <span className="text-primaryAccentColor">{`{   `}</span> Any questions?
         </h4>
-        <p className="text-base md:text-3xl lg:text-4xl">
+        <p className="text-base md:text-2xl lg:text-4xl">
           leave a request and our manager will
           <br />
           contact you within 15 minutes!
           <span className="text-2xl text-primaryAccentColor">{`   }`}</span>
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-[340px]">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="
+              flex 
+              flex-col 
+              space-y-2 
+              w-[310px]  
+              md:w-[640px]
+              lg:w-[920px]  
+              xl:w-[1200px]
+              "
+        >
           <div className="relative text-left">
             <input
               {...register('email', {
@@ -114,6 +131,9 @@ const Contact = () => {
               bg-transparent
               placeholder-transparent
               placeholder:b-white
+              placeholder:text-base 
+              md:placeholder:text-2xl 
+              lg:placeholder::text-4xl
                 "
               type="email"
             />
@@ -122,13 +142,12 @@ const Contact = () => {
                     absolute
                     left-0
                     -top-4
+                    xl:-top-10
                     text-white
-                    text-sm
                     peer-placeholder-shown:text-base
                     peer-placeholder-shown:text-white
                     peer-placeholder-shown:top-2
                     transition-all
-
                     "
             >
               E-mail

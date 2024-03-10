@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ pageInfo }) => {
             <br /> a full cycle projects and launching startups
           </p>
         </h2>
-        <Button label="Get estimation"></Button>
+        <Button label="Get estimation" main></Button>
       </div>
     </div>
   )

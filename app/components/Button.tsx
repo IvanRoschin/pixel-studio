@@ -7,9 +7,18 @@ interface ButtonProps {
   disabled?: boolean
   outline?: boolean
   small?: boolean
+  main?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline, small }) => {
+const Button: React.FC<ButtonProps> = ({
+  label,
+  onClick,
+  type,
+  disabled,
+  outline,
+  small,
+  main,
+}) => {
   return (
     <button
       type={type}
@@ -20,16 +29,15 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline
         disabled:opacity-70
         disabled:cursor-not-allowed
         rounded-2xl
-        opacity-60
-        hover:opacity-100
-        hover:scale-105
-        transition
         w-[144px]
         h-[56px]
-        xl:w-[240px]
-        xl:h-[86px]
+        lg:w-[240px]
+        lg:h-[86px]
         xl:text-2xl
         mb-10
+        transition-all
+        duration-400
+
         ${outline ? 'bg-transparent hover:bg-white' : 'bg-primaryAccentColor'}
         ${outline ? 'border-white' : 'border-primaryAccentColor'}
         ${outline ? 'text-white hover:text-black' : 'text-primaryBackground'}
@@ -37,6 +45,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline
         ${small ? 'text-sm' : 'text:md'}
         ${small ? 'font-tacticsans' : 'font-tacticsans'}
         ${small ? 'border-[1px]' : 'border-2'}
+        ${main ? 'opacity-100' : 'hover:scale-50'}
         `}
     >
       {label}

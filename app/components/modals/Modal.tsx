@@ -95,7 +95,9 @@ const Modal: React.FC<ModalProps> = ({
       outline-none
       focus:outline-none
       bg-neutral-800/70
-      rounded-lg"
+      rounded-lg
+      
+      "
       >
         <div
           ref={ref}
