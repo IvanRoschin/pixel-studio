@@ -1,13 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { PageInfo } from '@/sanity/interface'
+import { AboutInterface } from '@/sanity/interface'
+import { PortableText } from '@portabletext/react'
 
 interface AboutProps {
-  pageInfo: PageInfo
+  about: AboutInterface
 }
 
-const About: React.FC<AboutProps> = ({ pageInfo }) => {
+const About: React.FC<AboutProps> = ({ about }) => {
+  // const content = about?.content[0]?.children[0]?.text
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -89,11 +92,12 @@ const About: React.FC<AboutProps> = ({ pageInfo }) => {
         xl:leading-loose
 "
         >
-          We are self motivated JS developers who likes working in
+          <PortableText value={about?.content} />
+          {/* We are self motivated JS developers who likes working in
           <span className="font-tacticansBld text-white"> web development</span>. We have about two
           year experience in creating websites.
           <span className="font-tacticansBld text-white">Technologies </span>
-          we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB.
+          we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB. */}
         </p>
 
         <div
@@ -106,18 +110,16 @@ const About: React.FC<AboutProps> = ({ pageInfo }) => {
           xl:text-6xl
           "
         >
-          <div>
-            <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose">2+</span>
-            <p className="text-base lg:text-lg xl:text-2xl">years of expirence</p>
-          </div>
-          <div>
-            <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose">10+</span>
-            <p className="text-base lg:text-lg xl:text-2xl">applied technologies</p>
-          </div>
-          <div>
-            <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose">20+</span>
-            <p className="text-base lg:text-lg xl:text-2xl">happy clients</p>
-          </div>
+          {about?.advantages?.map(advantage => {
+            return (
+              <div key={advantage._id}>
+                <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose">
+                  {advantage?.figure}
+                </span>
+                <p className="text-base lg:text-lg xl:text-2xl">{advantage?.title}</p>
+              </div>
+            )
+          })}
         </div>
       </motion.div>
     </motion.div>

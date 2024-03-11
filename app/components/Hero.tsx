@@ -1,16 +1,16 @@
 'use client'
 
-import { PageInfo } from '@/sanity/interface'
+import { HeroInterface } from '@/sanity/interface'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
 import Button from './Button'
 
 interface HeroProps {
-  pageInfo: PageInfo
+  hero: HeroInterface
 }
 
-const Hero: React.FC<HeroProps> = ({ pageInfo }) => {
-  const titleString = pageInfo?.heroWords
+const Hero: React.FC<HeroProps> = ({ hero }) => {
+  const titleString = hero?.typeWords
   const arrayOfWords = titleString.split(', ').map(word => `<${word}/>`)
 
   const [text, count] = useTypewriter({
@@ -56,10 +56,7 @@ const Hero: React.FC<HeroProps> = ({ pageInfo }) => {
           xl:text-4xl
         "
         >
-          <p className="">
-            we are a development company helping business with
-            <br /> a full cycle projects and launching startups
-          </p>
+          <p className="md:max-w-[600px] lg:max-w-[750px] xl:max-w-[1100px]">{hero?.subtitle}</p>
         </h2>
         <Button label="Get estimation" main></Button>
       </div>

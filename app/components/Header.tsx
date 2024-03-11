@@ -1,16 +1,16 @@
 'use client'
 
-import { PageInfo } from '@/sanity/interface'
+import { HeaderInterface } from '@/sanity/interface'
 
 import Logo from './Logo'
 import { Navbar } from '.'
-import SocialIcons from './SocialIcons'
+import Socials from './Socials'
 
 interface HomeProps {
-  pageInfo: PageInfo
+  header: HeaderInterface
 }
 
-const Header: React.FC<HomeProps> = ({ pageInfo }) => {
+const Header: React.FC<HomeProps> = ({ header }) => {
   return (
     <header
       className="
@@ -28,9 +28,9 @@ const Header: React.FC<HomeProps> = ({ pageInfo }) => {
     backdrop-blur
     "
     >
-      <Logo title={pageInfo?.title} />
-      <Navbar pageInfo={pageInfo} />
-      <SocialIcons socials={pageInfo.socials} />
+      <Logo title={header?.siteTitle} />
+      <Navbar navbarItems={header?.navbar} />
+      <Socials />
     </header>
   )
 }

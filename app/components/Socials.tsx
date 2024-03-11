@@ -1,6 +1,5 @@
 'use client'
 
-import { Social } from '@/sanity/interface'
 import { motion } from 'framer-motion'
 import ThemeSwitcher from './ThemeSwitcher'
 import { TfiFacebook } from 'react-icons/tfi'
@@ -9,11 +8,7 @@ import { FaGithub } from 'react-icons/fa'
 
 import Link from 'next/link'
 
-interface SocialIconsProps {
-  socials: Social[]
-}
-
-const SocialIcons: React.FC<SocialIconsProps> = ({ socials }) => {
+const Socials = () => {
   return (
     <motion.div
       initial={{
@@ -90,4 +85,4 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ socials }) => {
   )
 }
 
-export default SocialIcons
+export default Socials

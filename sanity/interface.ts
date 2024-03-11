@@ -1,3 +1,5 @@
+import { PortableTextBlock } from '@sanity/types';
+
 export interface SanityBody {
   _createdAt: string;
   _id: string;
@@ -51,6 +53,46 @@ export interface NavbarItem extends SanityBody {
   _type: "navbar"
   title: string;
   link: string;
+}
+
+export interface AdvantageItem extends SanityBody {
+  _type: "advantage"
+  figure: string;
+  title: string;
+}
+
+interface Block {
+  _type: 'block';
+  markDefs?: any[]; 
+  style?: string;
+  list?: 'bullet' | 'number';
+  children: {
+    _type: 'span';
+    text: string;
+    marks?: any[]; 
+  }[];
+}
+
+export interface HeaderInterface extends SanityBody {
+  _type: "header"
+  title?: string;
+  siteTitle: string;
+  headerLogo: Image;
+  navbar: NavbarItem[];
+}
+
+export interface HeroInterface extends SanityBody {
+  _type: "hero"
+  title?: string;
+  typeWords: string;
+  subtitle: string;
+}
+
+export interface AboutInterface extends SanityBody {
+  _type: "about"
+  title?: string;
+  content: PortableTextBlock[];
+  advantages: AdvantageItem[];
 }
 
 export interface PageInfo extends SanityBody {

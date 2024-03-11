@@ -1,8 +1,16 @@
-export const dynamic = 'force-dynamic'
+import dynamic from 'next/dynamic'
 
-import { getPageInfo, getPrices, getProjects, getTeam, getTechnologies } from '@/actions/index'
 import {
-  About,
+  getHeader,
+  getHero,
+  getAbout,
+  getPageInfo,
+  getPrices,
+  getProjects,
+  getTeam,
+  getTechnologies,
+} from '@/actions/index'
+import {
   Contact,
   Footer,
   Header,
@@ -12,11 +20,27 @@ import {
   Team,
   Technologies,
   WhatWeDo,
-  Navbar,
 } from '@/components/index'
-import { PageInfo, Price, Project, TeamMember, Technology } from '@/sanity/interface'
+import {
+  HeaderInterface,
+  HeroInterface,
+  AboutInterface,
+  PageInfo,
+  Price,
+  Project,
+  TeamMember,
+  Technology,
+} from '@/sanity/interface'
+
+const DynamicAbout = dynamic(() => import('../components/About.tsx'), {
+  ssr: false,
+})
 
 export default async function Home() {
+  const header: HeaderInterface = await getHeader()
+  const hero: HeroInterface = await getHero()
+  const about: AboutInterface = await getAbout()
+
   const pageInfo: PageInfo = await getPageInfo()
   const team: TeamMember[] = await getTeam()
   const projects: Project[] = await getProjects()
@@ -31,7 +55,6 @@ export default async function Home() {
         h-screen
         snap-y
         snap-mandatory
-        overflow-y-scroll
         overflow-x-hidden
         z-0
         scrollbar
@@ -39,12 +62,12 @@ export default async function Home() {
         scrollbar-thumb-primaryScrollbarThumb
         "
     >
-      <Header pageInfo={pageInfo} />
+      <Header header={header} />
       <section id="hero" className="snap-center pb-8">
-        <Hero pageInfo={pageInfo} />
+        <Hero hero={hero} />
       </section>
       <section id="about" className="snap-start pb-8">
-        <About pageInfo={pageInfo} />
+        <DynamicAbout about={about} />
       </section>
       <section id="services" className="snap-start pb-8">
         <WhatWeDo pageInfo={pageInfo} />

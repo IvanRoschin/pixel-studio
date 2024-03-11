@@ -1,20 +1,18 @@
 'use client'
 
-import { PageInfo } from '@/sanity/interface'
+import { NavbarItem } from '@/sanity/interface'
 import { IoMdMenu, IoMdClose } from 'react-icons/io'
 import { useState } from 'react'
 import Link from 'next/link'
-import SocialIcons from './SocialIcons'
 import { motion } from 'framer-motion'
 import { TfiFacebook } from 'react-icons/tfi'
 import { GoMail } from 'react-icons/go'
 import { FaGithub } from 'react-icons/fa'
 
 interface Navbar {
-  pageInfo: PageInfo
+  navbarItems: NavbarItem[]
 }
-const Navbar: React.FC<Navbar> = ({ pageInfo }) => {
-  const navbarItems = pageInfo?.navbar
+const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleNavbar = () => {
     setIsMenuOpen(!isMenuOpen)

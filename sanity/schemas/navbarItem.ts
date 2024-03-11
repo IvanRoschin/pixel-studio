@@ -7,7 +7,7 @@ export default defineType({
   fields: [
     {
       name: "title",
-      title: "title",
+      title: "Title",
       description: "Title of link for Navbar",
       type: "string",
     },
