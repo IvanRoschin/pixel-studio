@@ -30,7 +30,7 @@ const ThemeSwitcher = () => {
         type="button"
         onClick={toggleTheme}
         aria-label="Toggle dark mode"
-        className="flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[50px] lg:h-[50px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
+        className="flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
       >
         {theme === 'dark' ? (
           <FiSun

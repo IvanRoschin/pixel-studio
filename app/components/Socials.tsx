@@ -41,7 +41,7 @@ const Socials = () => {
       <div className="flex items-center justify-center group">
         <Link
           href="/#contact"
-          className="flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[50px] lg:h-[50px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
+          className="flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
         >
           <GoMail
             size={32}
@@ -54,7 +54,7 @@ const Socials = () => {
       <div className="flex items-center justify-center group">
         <Link
           href="/#contact"
-          className="lg:m-1 flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[50px] lg:h-[50px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
+          className="lg:m-1 flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
         >
           <TfiFacebook
             size={32}
@@ -67,7 +67,7 @@ const Socials = () => {
       <div className="flex items-center justify-center group">
         <Link
           href="#/contact"
-          className="lg:m-1 flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[50px] lg:h-[50px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
+          className="lg:m-1 flex items-center justify-center p-2 rounded-full focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
         >
           <FaGithub
             size={32}
@@ -77,9 +77,6 @@ const Socials = () => {
         </Link>
       </div>
 
-      {/* {socials.map(social => (
-
-      ))} */}
       <ThemeSwitcher />
     </motion.div>
   )

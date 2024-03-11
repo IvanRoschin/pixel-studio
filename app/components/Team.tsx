@@ -62,9 +62,6 @@ const Team: React.FC<TeamProps> = ({ team }) => {
           snap-x
           snap-mandatory
           z-10
-          scrollbar-thin
-          scrollbar-track-primaryScrollbarTrack
-          scrollbar-thumb-primaryScrollbarThumb
           pb-[35px]
       "
       >

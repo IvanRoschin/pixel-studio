@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { PageInfo } from '@/sanity/interface'
-import { SocialIcon } from 'react-social-icons'
 import { urlForImage } from '@/sanity/lib/image'
 import Logo from './Logo'
 import { TfiFacebook } from 'react-icons/tfi'
@@ -122,7 +121,7 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
           <div className="flex items-center justify-center group pb-4 md:pb-0">
             <Link
               href="/#contact"
-              className="lg:m-1 flex items-center justify-center p-2 rounded-full border b-wfite focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[50px] lg:h-[50px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
+              className="lg:m-1 flex items-center justify-center p-2 rounded-full border b-wfite focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
             >
               <TfiFacebook
                 size={32}
@@ -135,7 +134,7 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
           <div className="flex items-center justify-center group">
             <Link
               href="#/contact"
-              className="lg:m-1 flex items-center justify-center p-2 rounded-full border b-wfite focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[50px] lg:h-[50px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
+              className="lg:m-1 flex items-center justify-center p-2 rounded-full border b-wfite focus:outline-none bg-secondaryBackground w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] group-hover:bg-primaryAccentColor group-hover:text-secondaryBackground"
             >
               <FaGithub
                 size={32}

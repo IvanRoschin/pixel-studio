@@ -8,6 +8,7 @@ import { toast } from 'sonner'
 import Heading from '../Heading'
 import Input from '../Input'
 import Modal from './Modal'
+import { ErrorMessage } from '@hookform/error-message'
 
 const OrderModal = () => {
   const orderModal = useOrderModal()
@@ -44,15 +45,28 @@ const OrderModal = () => {
       <Heading title="Send us an email" subtitle="and we`ll contact you" />
       <Input
         id="name"
+        {...register('name', {
+          required: 'This is required.',
+          pattern: {
+            value: /^[a-zа-щьюяіїєґ'-]+$/i,
+            message: 'This input is number only.',
+          },
+          maxLength: {
+            value: 10,
+            message: 'This input exceed maxLength.',
+          },
+        })}
         label="Name"
         disabled={isLoading}
         register={register}
         errors={errors}
-        required
       />
+      <ErrorMessage errors={errors} name="name" />
+      <ErrorMessage errors={errors} name="name" render={({ message }) => <p>{message}</p>} />
+
       <Input
         id="email"
-        label="Email"
+        label="Name"
         disabled={isLoading}
         register={register}
         errors={errors}

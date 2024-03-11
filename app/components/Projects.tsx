@@ -53,13 +53,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         w-full
         h-full
         overflow-x-scroll
-        overflow-y-hidden
+        overflow-y-hidden        
         snap-x
         snap-mandatory
         z-10
-        scrollbar-thin
-        scrollbar-track-primaryScrollbarTrack
-        scrollbar-thumb-primaryScrollbarThumb
         pb-[35px]
         pt-[150px]
         md:pt-[200px]

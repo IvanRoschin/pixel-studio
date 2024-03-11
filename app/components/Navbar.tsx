@@ -19,7 +19,7 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
   }
 
   const links = navbarItems?.map(item => (
-    <Link key={item._id} href={item.link}>
+    <Link key={item._id} href={item.link} className="flex items-center justify-center">
       <button
         className="
       2xl:px-6
@@ -30,12 +30,13 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
       md:text-lg
       md:px-3
       lg:text-xl
-      xl:text-2xl
+      xl:text-xl
       tracking-widest
       font-tacticsans
       transition-all
       text-primaryTextColor
       hover:text-primaryAccentColor
+      items-center
       "
       >
         {item.title}
@@ -45,7 +46,7 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
 
   return (
     <>
-      <nav className="w-25% md:w-20% flex justify-end">
+      <nav className="flex justify-between">
         <motion.div
           initial={{
             opacity: 0,
@@ -58,7 +59,7 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
           transition={{
             duration: 1.5,
           }}
-          className="hidden md:grid grid-cols-3 xl:grid-cols-6 gap-1 items-center justify-between"
+          className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-1 items-center justify-between"
         >
           {links}
         </motion.div>
@@ -123,7 +124,8 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
         items-center
         justify-center
         text-primaryTextColor
-        space-x-4"
+        space-x-4
+        pb-4"
           >
             {/*Social Icons*/}
 

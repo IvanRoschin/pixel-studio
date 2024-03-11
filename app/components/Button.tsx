@@ -7,18 +7,9 @@ interface ButtonProps {
   disabled?: boolean
   outline?: boolean
   small?: boolean
-  main?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({
-  label,
-  onClick,
-  type,
-  disabled,
-  outline,
-  small,
-  main,
-}) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline, small }) => {
   return (
     <button
       type={type}
@@ -45,7 +36,6 @@ const Button: React.FC<ButtonProps> = ({
         ${small ? 'text-sm' : 'text:md'}
         ${small ? 'font-tacticsans' : 'font-tacticsans'}
         ${small ? 'border-[1px]' : 'border-2'}
-        ${main ? 'opacity-100' : 'hover:scale-50'}
         `}
     >
       {label}

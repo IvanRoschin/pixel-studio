@@ -33,16 +33,14 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
       }}
       transition={{ duration: 1.5 }}
       className="
-      w-[340px]  
-      md:w-[310px]
-      lg:w-[440px]
-      xl:w-[560px]
-      mx-4
-
+          w-[340px]  
+          md:w-[310px]
+          lg:w-[440px]
+          xl:w-[560px]
+          mx-4
           border
           b-white
           bg-secondaryBackground
-      
           flex-shrink-0
           snap-center
           cursor-pointer

@@ -52,14 +52,17 @@ export default async function Home() {
       className="
         bg-primaryBackground
         text-textColor
-        h-screen
+        h-full
         snap-y
         snap-mandatory
-        overflow-x-hidden
         z-0
-        scrollbar
-        scrollbar-track-primaryScrollbarTrack
-        scrollbar-thumb-primaryScrollbarThumb
+        w-[360px]
+        md:w-[768px]
+        lg:w-[1440px]
+        xl:w-[1920px]
+        m-auto
+        px-4
+        relative
         "
     >
       <Header header={header} />
@@ -75,9 +78,9 @@ export default async function Home() {
       <section id="team" className="snap-center">
         <Team team={team} />
       </section>
-      <section id="stack" className="snap-start">
+      {/* <section id="stack" className="snap-start">
         <Technologies technologies={technologies} />
-      </section>
+      </section> */}
       <section id="projects" className="snap-start">
         <Projects projects={projects} />
       </section>

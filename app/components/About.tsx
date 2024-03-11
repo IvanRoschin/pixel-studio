@@ -9,8 +9,6 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ about }) => {
-  // const content = about?.content[0]?.children[0]?.text
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -79,7 +77,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
         2xl:pb-[75px]
         "
       >
-        <p
+        <div
           className="
         pb-10
         md:pb-20
@@ -90,7 +88,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
         w-full
         xl:text-2xl
         xl:leading-loose
-"
+        "
         >
           <PortableText value={about?.content} />
           {/* We are self motivated JS developers who likes working in
@@ -98,7 +96,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
           year experience in creating websites.
           <span className="font-tacticansBld text-white">Technologies </span>
           we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB. */}
-        </p>
+        </div>
 
         <div
           className="

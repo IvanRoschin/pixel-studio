@@ -96,7 +96,6 @@ const Modal: React.FC<ModalProps> = ({
       focus:outline-none
       bg-neutral-800/70
       rounded-lg
-      
       "
       >
         <div
@@ -159,8 +158,9 @@ const Modal: React.FC<ModalProps> = ({
                   hover:opacity-70
                   transition
                   absolute
-                  left-9
-                  text-black"
+                  right-9
+                  text-black
+                  "
                 >
                   <IoMdClose size={18} />
                 </button>
@@ -169,7 +169,7 @@ const Modal: React.FC<ModalProps> = ({
               {/*Body */}
               <div className="relative p-6 flex-auto">{body}</div>
               {/**Footer */}
-              <div className="flex flex-col gap-2 p-6">
+              <div className="flex flex-col gap-2">
                 <div
                   className="
                 flex

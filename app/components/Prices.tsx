@@ -54,9 +54,6 @@ const Prices: React.FC<PricesProps> = ({ price }) => {
           snap-mandatory
           z-10
           scroll-smooth
-          scrollbar-thin
-          scrollbar-track-primaryScrollbarTrack
-          scrollbar-thumb-primaryScrollbarThumb
           pb-[35px]
           pt-[150px]
           md:pt-[200px]

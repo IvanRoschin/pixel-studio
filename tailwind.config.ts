@@ -11,9 +11,8 @@ const config: Config = {
     screens: {
       sm: '360px',
       md: '768px',
-      lg: '1024px',
-      xl: '1440px',
-      '2xl': '1920px',
+      lg: '1440px',
+      xl: '1920px',
     },
 
     fontFamily: {
@@ -49,6 +48,5 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwind-scrollbar')],
 }
 export default config

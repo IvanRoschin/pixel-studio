@@ -14,18 +14,21 @@ const Header: React.FC<HomeProps> = ({ header }) => {
   return (
     <header
       className="
-    sticky
+    fixed
     top-0
     flex
 	  flex-wrap
     items-center
     justify-between
-    mx-auto
     z-20
-    p-4
-    md:p-5
     backdrop-filter
     backdrop-blur
+    w-[328px]
+    md:w-[736px]
+    lg:w-[1408px]
+    xl:w-[1888px]
+    mt-4
+    mx-auto
     "
     >
       <Logo title={header?.siteTitle} />
