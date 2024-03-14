@@ -2,6 +2,7 @@ import OrderModal from '@/components/modals/OrderModal'
 import { Providers } from 'app/providers/providers'
 import type { Metadata } from 'next'
 import localfont from 'next/font/local'
+
 import './globals.css'
 
 const tacticsans = localfont({

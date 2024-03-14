@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { urlForImage } from '@/sanity/lib/image'
+import Image from 'next/image'
 import { useState } from 'react'
 
 interface AccordionProps {
@@ -19,9 +19,9 @@ const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon 
           onClick={() => {
             setAccordionOpen(!accordionOpen)
           }}
-          className="flex items-center justify-between w-full px-4"
+          className="flex items-center text-left justify-between w-full px-4"
         >
-          <span className="uppercase text-lg lg:text-xl xl:text-2xl">{title}</span>
+          <span className="uppercase text-base lg:text-xl xl:text-2xl">{title}</span>
           {accordionOpen ? (
             <Image
               alt={title}

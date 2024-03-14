@@ -44,8 +44,8 @@ const Hero: React.FC<HeroProps> = ({ hero }) => {
     >
       <BackgroundCircles />
 
-      <div className="z-2 pt-20">
-        <h1 className="scroll-px-10 mb-4 font-tacticsans text-3xl lg:text-6xl xl:text-8xl 2xl:text-16xl uppercase">
+      <div className="z-2 pt-20 space-y-10 lg:space-y-12">
+        <h1 className="mb-4 font-tacticsans text-3xl lg:text-6xl xl:text-8xl 2xl:text-16xl uppercase">
           {text}
           <Cursor cursorColor="#FFFC32" />
         </h1>

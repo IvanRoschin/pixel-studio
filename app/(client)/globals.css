@@ -30,25 +30,6 @@
     --color-primaryScrollbarTrack: 40 40 40;
     --color-primaryScrollbarThumb: 255 255 50;
   }
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-    background: rgb(40, 40, 40);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: rgb(255, 255, 50);
-    border-radius: 5px;
-}
- 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(255, 255, 50);
-}
 
   @media (prefes-color-scheme: dark) {
   :root {
@@ -99,11 +80,110 @@
   }
 }
 
-@layer components {
-  .section {
+@layer swipper {
+  .swiper-button-next, .swiper-button-prev{
     @apply
-   pb-12
+    w-0
+    !important
+    
   }
+
+ .swiper-button-next::after,
+  .swiper-button-prev::after {
+    @apply 
+    text-[rgb(255,255,50)]
+    text-base
+    !important
+  }
+ .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    @apply opacity-0;
+  }
+
+  .swiper-scrollbar-drag {
+    @apply
+    bg-[#FFFF32]
+    relative
+    !important
+  }
+ 
+
+}
+
+@layer teamCad {
+
+.overlay {
+    @apply 
+      absolute 
+      left-0 
+      top-0 
+      h-full 
+      w-full 
+      bg-[#FFFF32]
+      rounded-[25px_25px_0_25px]
+}
+.overlay::before,
+.overlay::after {
+  @apply 
+    content-[''] 
+    absolute 
+    right-0 
+    -bottom-10
+    h-10 
+    w-10 
+  bg-[#FFFF32]
+}
+
+.overlay::after{
+  @apply
+    rounded-[0_25px_0_0]
+  bg-[#282828]
+
+}
+
+
+}
+
+  /* .button {
+    @apply
+      border-none
+      text-base
+      text-[#fff]
+      px-[8px]
+      py-[16px]
+      bg-[#4070f4]
+      rounded-md
+      m-[14px]
+      hover:bg-[#265DF2]
+      cursor-pointer
+      transition-all
+      duration-300 
+      ease-linear
+  } */
+
+
+@layer components {
+  .sectionTitle {
+    @apply
+      uppercase
+      tracking-[3px]
+      text-primaryTextColor
+      text-2xl
+      xl:text-4xl
+      mb-[50px]
+  }
+  .sectionContentWrapper {
+    @apply
+      w-full 
+      text-left
+      text-sm
+      lg:text-lg
+      xl:text-2xl
+      px-6
+      md:pl-[100px]
+  }
+
+
 
 }
 

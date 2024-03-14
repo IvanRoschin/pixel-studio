@@ -1,30 +1,20 @@
 import dynamic from 'next/dynamic'
 
 import {
+  getAbout,
   getHeader,
   getHero,
-  getAbout,
   getPageInfo,
   getPrices,
   getProjects,
   getTeam,
   getTechnologies,
 } from '@/actions/index'
+import { Contact, Footer, Header, Hero, Prices, Projects, Team, WhatWeDo } from '@/components/index'
 import {
-  Contact,
-  Footer,
-  Header,
-  Hero,
-  Prices,
-  Projects,
-  Team,
-  Technologies,
-  WhatWeDo,
-} from '@/components/index'
-import {
+  AboutInterface,
   HeaderInterface,
   HeroInterface,
-  AboutInterface,
   PageInfo,
   Price,
   Project,
@@ -56,41 +46,41 @@ export default async function Home() {
         snap-y
         snap-mandatory
         z-0
+        m-auto
+        px-4
+        relative
         w-[360px]
         md:w-[768px]
         lg:w-[1440px]
         xl:w-[1920px]
-        m-auto
-        px-4
-        relative
         "
     >
       <Header header={header} />
-      <section id="hero" className="snap-center pb-8">
+      <section id="hero" className="snap-center pb-8 scroll-mt-16">
         <Hero hero={hero} />
       </section>
-      <section id="about" className="snap-start pb-8">
+      <section id="about" className="snap-start pb-8 scroll-mt-16">
         <DynamicAbout about={about} />
       </section>
-      <section id="services" className="snap-start pb-8">
+      <section id="services" className="snap-start pb-8 scroll-mt-16">
         <WhatWeDo pageInfo={pageInfo} />
       </section>
-      <section id="team" className="snap-center">
+      <section id="team" className="snap-center pb-8 scroll-mt-16">
         <Team team={team} />
       </section>
       {/* <section id="stack" className="snap-start">
         <Technologies technologies={technologies} />
       </section> */}
-      <section id="projects" className="snap-start">
+      <section id="projects" className="snap-start pb-8 scroll-mt-16">
         <Projects projects={projects} />
       </section>
-      <section id="price" className="snap-start">
+      <section id="price" className="snap-start pb-8 scroll-mt-16">
         <Prices price={prices} />
       </section>
-      <section id="contact" className="snap-start">
+      <section id="contact" className="snap-start pb-8 scroll-mt-16">
         <Contact />
       </section>
-      <section className="snap-start">
+      <section className="snap-start pb-8 scroll-mt-16">
         <Footer pageInfo={pageInfo} />
       </section>
     </div>

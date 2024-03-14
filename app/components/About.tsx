@@ -1,8 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { AboutInterface } from '@/sanity/interface'
 import { PortableText } from '@portabletext/react'
+import { motion } from 'framer-motion'
 
 interface AboutProps {
   about: AboutInterface
@@ -15,11 +15,6 @@ const About: React.FC<AboutProps> = ({ about }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-        h-screen
-        2xl:h-full
-        flex
-        flex-col
-        relative
         md:text-left
         md:flex-row
         max-w-7xl
@@ -27,21 +22,10 @@ const About: React.FC<AboutProps> = ({ about }) => {
         justify-evenly
         mx-auto
         font-tacticsans
+        mt-12
         "
     >
-      <h3
-        className="
-          absolute
-          top-[70px]
-          left-[20px]
-          md:top-[120px]
-          uppercase
-          tracking-[3px]
-          text-primaryTextColor
-          text-2xl
-          xl:text-4xl
-     "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
           {`<About`}
           <span className="text-primaryAccentColor">{`/`}</span>
@@ -59,23 +43,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        className="
-        w-full 
-        text-left
-        text-sm
-        lg:text-lg
-        xl:text-2xl
-        px-6
-        pt-[50px]
-        md:pt-[200px]
-        2xl:pt-[300px]
-        md:px-[0]
-        md:w-[690px]
-        xl:w-[920px]
-        xl:pb-[75px]
-        2xl:w-[1444px]
-        2xl:pb-[75px]
-        "
+        className="sectionContentWrapper"
       >
         <div
           className="
@@ -114,7 +82,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
                 <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose">
                   {advantage?.figure}
                 </span>
-                <p className="text-base lg:text-lg xl:text-2xl">{advantage?.title}</p>
+                <p className="text-sm lg:text-lg xl:text-2xl">{advantage?.title}</p>
               </div>
             )
           })}

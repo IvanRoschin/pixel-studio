@@ -27,7 +27,7 @@ const Header: React.FC<HomeProps> = ({ header }) => {
     md:w-[736px]
     lg:w-[1408px]
     xl:w-[1888px]
-    mt-4
+    pt-4
     mx-auto
     "
     >

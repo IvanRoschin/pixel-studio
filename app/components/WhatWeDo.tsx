@@ -1,7 +1,7 @@
 'use client'
 
+import { PageInfo } from '@/sanity/interface'
 import { motion } from 'framer-motion'
-import { PageInfo, AccordionItem } from '@/sanity/interface'
 
 import Accordion from './Accordion'
 
@@ -18,11 +18,6 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-      h-screen
-      2xl:h-full
-      flex
-      flex-col
-      relative
       md:text-left
       md:flex-row
       max-w-7xl
@@ -32,19 +27,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
       font-tacticsans
         "
     >
-      <h3
-        className="
-        absolute
-        top-[70px]
-        left-[20px]
-        md:top-[120px]
-        uppercase
-        tracking-[3px]
-        text-primaryTextColor
-        text-2xl
-        xl:text-4xl
-     "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
           {`<What we do`}
           <span className="text-primaryAccentColor">{`/`}</span>
@@ -62,13 +45,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        className="        
-        w-full 
-        relative
-        text-left
-        pt-[150px]
-        md:pt-[200px]
-        "
+        className="sectionContentWrapper"
       >
         {accordion.map(item => (
           <div

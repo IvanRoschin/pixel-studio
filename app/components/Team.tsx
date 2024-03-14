@@ -1,8 +1,15 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import TeamMemberCard from './TeamMemberCard'
 import { TeamMember } from '@/sanity/interface'
+import { motion } from 'framer-motion'
+import { A11y, Navigation, Scrollbar } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/scrollbar'
+
+import TmCard from './TmCard'
 
 interface TeamProps {
   team: TeamMember[]
@@ -15,30 +22,16 @@ const Team: React.FC<TeamProps> = ({ team }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-        flex
-        flex-col
-        relative
-        text-center
-        max-w-7xl
-        px-10
-        justify-evenly
-        mx-auto
-        items-center
+      md:text-left
+      md:flex-row
+      max-w-7xl
+      md:px-10
+      justify-evenly
+      mx-auto
+      font-tacticsans
         "
     >
-      <h3
-        className="
-        absolute
-        top-[70px]
-        left-[20px]
-        md:top-[120px]
-        uppercase
-        tracking-[3px]
-        text-primaryTextColor
-        text-2xl
-        xl:text-4xl
-     "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
           {`<Team`}
           <span className="text-primaryAccentColor">{`/`}</span>
@@ -47,25 +40,27 @@ const Team: React.FC<TeamProps> = ({ team }) => {
       </h3>
       <div
         className="
-          flex
-          flex-row
-          space-x-5
-          mt-[140px]
-          md:mt-[180px]
-          lg:mt-[200px]
-          xl:mt-[225px]
-          relative
-          w-full
-          h-full
-          overflow-x-scroll
-          overflow-y-hidden
-          snap-x
-          snap-mandatory
-          z-10
-          pb-[35px]
+
       "
       >
-        {team?.map(teamMember => <TeamMemberCard key={teamMember._id} teamMember={teamMember} />)}
+        <Swiper
+          modules={[Navigation, Scrollbar, A11y]}
+          scrollbar={{ draggable: true }}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1440: { slidesPerView: 3, spaceBetween: 30 },
+          }}
+          spaceBetween={30}
+          loop={true}
+          navigation
+        >
+          {team?.map(teamMember => (
+            <SwiperSlide key={teamMember._id}>
+              <TmCard teamMember={teamMember} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </motion.div>
   )

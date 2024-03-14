@@ -1,7 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 // import { SocialIcon } from "react-social-icons";
 import { TeamMember } from '@/sanity/interface'
 import { urlForImage } from '@/sanity/lib/image'
@@ -26,9 +26,9 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
       className="
-        w-[280px]  
+        w-[320px]  
         md:w-[330px]
-        lg:w-[300px]
+        lg:w-[380px]
         xl:w-[380px]
         h-[700px]
         flex-shrink-0
@@ -42,14 +42,14 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
         py-10
         items-center
         justify-between
-        rounded-[50px]
+        rounded-lg
       "
     >
       <Image
         alt={teamMember?.name}
         src={urlForImage(teamMember?.photo)}
-        width={225}
-        height={225}
+        width={180}
+        height={180}
         className="
             w-[180px]
             h-[180px]
