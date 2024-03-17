@@ -69,7 +69,7 @@ export default async function Home() {
         className=" 
         h-screen
         snap-start
-        scroll-mt-16"
+        scroll-mt-24"
       >
         <Team team={team} />
       </section>
@@ -94,10 +94,14 @@ export default async function Home() {
       >
         <Prices prices={prices} />
       </section>
-      <section id="contact" className="section">
+      <section
+        id="contact"
+        className=" 
+      section"
+      >
         <Contact contact={contact} />
       </section>
-      <section className="section">
+      <section className="section h-0">
         <Footer footer={footer} />
       </section>
     </div>

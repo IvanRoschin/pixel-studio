@@ -45,7 +45,7 @@ const Services: React.FC<ServiesInterface> = ({ services }) => {
         viewport={{ once: true }}
         className="sectionContentWrapper"
       >
-        {services?.services.map(service => (
+        {services?.services.map((service, index) => (
           <div
             key={service?._id}
             className="
@@ -63,6 +63,7 @@ const Services: React.FC<ServiesInterface> = ({ services }) => {
               text={service?.text}
               closeIcon={services?.closeIcon}
               openIcon={services?.openIcon}
+              index={index}
             />
           </div>
         ))}

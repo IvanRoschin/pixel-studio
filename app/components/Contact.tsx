@@ -38,26 +38,17 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
   return (
     <div
       className="
-      relative
-      max-w-7xl
-      md:px-10
-      justify-evenly
-      mx-auto
+        h-screen
+        md:h-auto
+        md:text-left
+        md:flex-row
+        max-w-7xl
+        md:px-10
+        mx-auto
+        mt-12
       "
     >
-      <h3
-        className="
-        absolute
-        top-[70px]
-        left-[20px]
-        md:top-[120px]
-        uppercase
-        tracking-[3px]
-        text-primaryTextColor
-        text-2xl
-        xl:text-4xl
-        "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
           {`<${contact?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>

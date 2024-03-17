@@ -62,7 +62,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           group
         "
     >
-      <h4 className="text-lg md:text-3xl lg:text-4xl xl:mb-[50px] mb-4">{pricePlan?.title}</h4>
+      <h4 className="text-lg md:text-2xl lg:text-4xl xl:mb-[50px] mb-4">{pricePlan?.title}</h4>
       <div
         className="text-left text-secondaryTextColor group-hover:text-white
          text-xs 
@@ -77,7 +77,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
             <li key={i}>{point}</li>
           ))}
         </ul>
-        <p className="text-lg xl:text-4xl text-primaryAccentColor mt-5">
+        <p className="text-xl xl:text-4xl text-primaryAccentColor mt-5">
           from $ {pricePlan?.price}
         </p>
         <div className="flex flex-col items-center justify-center my-2">

@@ -30,7 +30,7 @@ const Navbar: React.FC<Navbar> = ({ navbarItems, openIcon }) => {
       text-md
       py-2
       md:py-0
-      md:text-lg
+      md:text-base
       md:px-3
       lg:text-xl
       xl:text-xl

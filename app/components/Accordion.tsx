@@ -7,18 +7,21 @@ interface AccordionProps {
   text: string
   closeIcon?: any
   openIcon?: any
+  index: number
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon }) => {
-  const [accordionOpen, setAccordionOpen] = useState(true)
+const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon, index }) => {
+  const [accordionOpen, setAccordionOpen] = useState(index < 2)
+
+  const toggleAccordion = () => {
+    setAccordionOpen(!accordionOpen)
+  }
 
   return (
     <div className="text-secondaryTextColor tracking-[3px] border-b w-full xl:pt-8">
       <div className="m-auto">
         <button
-          onClick={() => {
-            setAccordionOpen(!accordionOpen)
-          }}
+          onClick={toggleAccordion}
           className="flex items-center text-left justify-between w-full px-4"
         >
           <span className="uppercase text-base lg:text-xl xl:text-2xl">{title}</span>

@@ -24,12 +24,12 @@ const Header: React.FC<HomeProps> = ({ header }) => {
     backdrop-filter
     backdrop-blur
     pt-8
-    px-4
+    px-8
     mx-auto
-     w-[360px]
-      md:w-[768px]
-      lg:w-[1440px]
-      xl:w-[1920px]
+    w-[360px]
+    md:w-[768px]
+    lg:w-[1440px]
+    xl:w-[1920px]
     "
     >
       <Logo title={header?.siteTitle} />

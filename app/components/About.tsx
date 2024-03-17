@@ -15,6 +15,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
       transition={{ duration: 1.5 }}
       className="
         h-screen
+        md:h-auto
         md:text-left
         md:flex-row
         max-w-7xl

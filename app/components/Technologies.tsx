@@ -39,9 +39,8 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         space-x-2
         grid 
         grid-cols-3
-        md:grid-cols-4
+        md:grid-cols-9
         lg:grid-cols-9
-        xl:grid-cols-9
         gap-2
         place-items-center
         place-content-center
