@@ -115,14 +115,14 @@ const Modal: React.FC<ModalProps> = ({
         >
           {/* Content*/}
           <div
-            className={`translate duration-300 h-full ${
+            className={`translate duration-300 ${
               showModal ? 'translate-y-0' : 'translate-y-full'
             } ${showModal ? 'opacity-100' : 'opacity-0'}`}
           >
             <div
               className="
             translate
-            h-full
+            min-h-svh
             lg:h-auto
             md:h-auto
             border-0
@@ -187,7 +187,7 @@ const Modal: React.FC<ModalProps> = ({
                       onClick={handleSecondaryAction}
                     />
                   )}
-                  <Button disabled={disabled} label={actionLabel} onClick={handleSubmit} />
+                  <Button disabled={disabled} label={actionLabel} onClick={handleSubmit} small />
                 </div>
                 {footer}
               </div>

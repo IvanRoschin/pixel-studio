@@ -1,0 +1,136 @@
+{
+	"css.lint.unknownAtRules": "ignore",
+
+	//Main editor settings
+	"window.openFilesInNewWindow": "off",
+	"editor.tabSize": 2,
+	"editor.folding": false,
+	"editor.insertSpaces": true,
+	"editor.smoothScrolling": true,
+	"editor.minimap.enabled": false,
+	"editor.detectIndentation": true,
+	"editor.suggestSelection": "first",
+	"editor.fontSize": 12,
+
+	//Wrapping
+	"editor.wordWrap": "bounded",
+	"editor.wrappingIndent": "same",
+	"editor.wordWrapColumn": 120,
+
+	//Будет ли редактор прокручиваться за пределы нижней строки
+	"editor.scrollBeyondLastLine": true,
+	"editor.multiCursorModifier": "ctrlCmd",
+
+	//Rename tags
+	"editor.linkedEditing": true,
+
+	//Autoclosing tags
+	"html.autoClosingTags": true,
+	"javascript.autoClosingTags": true,
+	"typescript.autoClosingTags": true,
+
+	//Опеределяет должен ли редактор отображать управляющие символы
+	"editor.renderControlCharacters": false,
+
+	//Подсказки
+	"editor.quickSuggestions": {
+		"comments": "on",
+		"strings": "on",
+		"other": "on"
+	},
+	"editor.quickSuggestionsDelay": 0,
+	"editor.suggestOnTriggerCharacters": true,
+	"editor.acceptSuggestionOnEnter": "on",
+	"editor.acceptSuggestionOnCommitCharacter": true,
+	"editor.snippetSuggestions": "top",
+	"html.completion.attributeDefaultValue": "singlequotes",
+
+	//Appereance
+	"editor.bracketPairColorization.enabled": true,
+	"editor.glyphMargin": false,
+	"editor.scrollbar.horizontal": "hidden",
+	"editor.scrollbar.vertical": "visible",
+	"window.density.editorTabHeight": "compact",
+	"window.commandCenter": false,
+	"workbench.activityBar.location": "side",
+	"workbench.layoutControl.enabled": false,
+
+	//Cursor
+	"editor.cursorBlinking": "expand",
+	"editor.cursorStyle": "line-thin",
+	"editor.cursorSmoothCaretAnimation": "explicit",
+
+	//Explorer
+	"explorer.compactFolders": false,
+	"workbench.editor.tabSizing": "shrink",
+
+	//Debug
+	"debug.toolBarLocation": "hidden",
+	"debug.focusWindowOnBreak": false,
+	"debug.showInlineBreakpointCandidates": false,
+	"debug.showBreakpointsInOverviewRuler": false,
+
+	//Emmet
+	"emmet.includeLanguages": {
+		"blade": "html",
+		"javascript": "javascriptreact"
+	},
+	"emmet.triggerExpansionOnTab": true,
+
+	//Formatting
+	"prettier.semi": false,
+	"prettier.useTabs": true,
+	"editor.formatOnSave": true,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.bracketSpacing": true,
+	"prettier.printWidth": 100,
+	"prettier.tabWidth": 2,
+	"prettier.trailingComma": "all",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.tslint": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	//Круглые скобки вокруг единственного параметра
+	"prettier.arrowParens": "avoid",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.inlineSuggest.enabled": true,
+
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+
+	"javascript.format.enable": false,
+	"window.zoomLevel": 1,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+	"tabnine.experimentalAutoImports": true,
+
+	//breadcrumbs
+	"breadcrumbs.icons": false,
+	"breadcrumbs.showKeys": false,
+	"breadcrumbs.showFiles": false,
+	"breadcrumbs.symbolPath": "off",
+	"breadcrumbs.showArrays": false,
+	"breadcrumbs.showEvents": false,
+	"breadcrumbs.showFields": false,
+	"breadcrumbs.showClasses": false,
+	"breadcrumbs.showMethods": false,
+	"breadcrumbs.showBooleans": false,
+	"breadcrumbs.showFunctions": false,
+	"breadcrumbs.showConstants": false,
+	"breadcrumbs.showEnumMembers": false,
+	"breadcrumbs.showConstructors": false,
+
+	//JS & TS
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.preferences.quoteStyle": "single",
+	"javascript.format.semicolons": "remove",
+	"typescript.format.semicolons": "remove",
+
+	"diffEditor.ignoreTrimWhitespace": true,
+
+	//Поведение при нескольких операциях
+	"editor.gotoLocation.multipleDefinitions": "goto"
+}

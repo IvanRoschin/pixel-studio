@@ -29,6 +29,8 @@
 
     --color-primaryScrollbarTrack: 40 40 40;
     --color-primaryScrollbarThumb: 255 255 50;
+
+    --font-mono: ui-monospace, Melno, Monaco, Consolas, "Coscadia Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monosapce", "Fira Mono", "Droid Sans Mono", "Courier Nem" monospace
   }
 
   @media (prefes-color-scheme: dark) {
@@ -80,12 +82,41 @@
   }
 }
 
+@layer base {
+  .container {
+    @apply
+      bg-primaryBackground
+      items-stretch
+      h-screen
+      snap-y
+      snap-mandatory
+      overflow-y-scroll
+      overflow-x-hidden
+      z-0
+      m-auto
+      px-2
+      relative
+      w-[360px]
+      md:w-[768px]
+      lg:w-[1440px]
+      xl:w-[1920px]
+  }
+
+  .section {
+    @apply
+    h-screen
+    snap-start
+    scroll-mt-16
+    flex
+    items-center
+  }
+}
+
 @layer swipper {
   .swiper-button-next, .swiper-button-prev{
     @apply
     w-0
-    !important
-    
+    !important 
   }
 
  .swiper-button-next::after,
@@ -119,26 +150,18 @@
       top-0 
       h-full 
       w-full 
-      bg-[#FFFF32]
+      bg-[#D9D9D9]
       rounded-[25px_25px_0_25px]
 }
 .overlay::before,
 .overlay::after {
-  @apply 
-    content-[''] 
-    absolute 
-    right-0 
-    -bottom-10
-    h-10 
-    w-10 
-  bg-[#FFFF32]
+  @apply content-[''] absolute right-0 -bottom-10 h-10 w-10 bg-[#D9D9D9] border-none;
 }
 
 .overlay::after{
   @apply
     rounded-[0_25px_0_0]
   bg-[#282828]
-
 }
 
 

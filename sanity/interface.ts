@@ -1,4 +1,4 @@
-import { PortableTextBlock } from '@sanity/types';
+import { PortableTextBlock } from '@sanity/types'
 
 export interface SanityBody {
   _createdAt: string;
@@ -37,16 +37,10 @@ export interface Technology extends SanityBody {
   image: Image;
 }
 
-export interface AccordionItem extends SanityBody {
-  _type: "accordion"
+export interface ServiceItem extends SanityBody {
+  _type: "serviceItem"
   title: string;
   text: string;
-}
-
-export interface Accordion extends SanityBody, AccordionItem {
-  _type: "accordion"
-  closeIcon: Image;
-  openIcon: Image;
 }
 
 export interface NavbarItem extends SanityBody {
@@ -61,16 +55,33 @@ export interface AdvantageItem extends SanityBody {
   title: string;
 }
 
-interface Block {
-  _type: 'block';
-  markDefs?: any[]; 
-  style?: string;
-  list?: 'bullet' | 'number';
-  children: {
-    _type: 'span';
-    text: string;
-    marks?: any[]; 
-  }[];
+export interface TeamMemberInterface extends SanityBody {
+  _type: "teamMember"
+  name: string;
+  position: string;
+  photo: Image;
+  socials: Social[];
+  technologies: string;
+  joinedTeam: Date;
+  isCurrentWorkingHere: boolean;
+  points: string[];
+}
+
+
+export interface Project extends SanityBody {
+  _type: "project"
+  title: string;
+  image: Image;
+  summary: string;
+  technologies: string;
+  linkToBuild: string;
+}
+
+export interface Price extends SanityBody {
+  _type: "price"
+  title: string;
+  price: number;
+  points: string[];
 }
 
 export interface HeaderInterface extends SanityBody {
@@ -79,6 +90,7 @@ export interface HeaderInterface extends SanityBody {
   siteTitle: string;
   headerLogo: Image;
   navbar: NavbarItem[];
+  mobileMenuIcon?: Image;
 }
 
 export interface HeroInterface extends SanityBody {
@@ -95,53 +107,55 @@ export interface AboutInterface extends SanityBody {
   advantages: AdvantageItem[];
 }
 
-export interface PageInfo extends SanityBody {
-  _type: "pageInfo";
-  navbar: NavbarItem[];
-  title: string;
-  headerLogo: Image;
-  socials: Social[];
-  heroWords: string;
+export interface TeamInterface extends SanityBody {
+  _type: "team"
+  title?: string;
+  teamMembers: TeamMemberInterface[];
+}
+
+export interface ServiсesInterface extends SanityBody {
+  _type: "services"
+  title?: string;
+  services: ServiceItem[];
+  openIcon?: Image;
+  closeIcon?: Image;
+}
+
+export interface TechnologiesInterface extends SanityBody {
+  _type: "techologies"
+  title?: string;
+  technology: Technology[];
+}
+
+export interface CasesInterface extends SanityBody {
+  _type: "cases"
+  title?: string;
+  projects: Project[];
+}
+
+export interface PricesInterface extends SanityBody {
+  _type: "prices"
+  title?: string;
+  price: Price[];
+}
+
+export interface ContactInterface extends SanityBody {
+  _type: "contact"
+  title?: string;
+  mainTitle: string;
   subtitle: string;
-  aboutTitle: string;
-  aboutImage: Image;
-  aboutText: string;
-  accordion: AccordionItem[];
-  openIcon: Image;
-  closeIcon: Image;
-  contactTitle: string;
-  address: string;
-  email: string;
+}
+
+export interface FooterInterface extends SanityBody {
+  _type: "footer";
+  title?: string;
+  siteTitle: string;
+  footerLogo?: Image | string
+  navbar: NavbarItem[];
+  socials?: Social[];
   phoneNumber: string;
-  footerLogo: Image;
-  footerBtnUp: Image;
+  email: string;
+  address: string;
   copyright: string;
-}
-
-export interface Project extends SanityBody {
-  _type: "project"
-  title: string;
-  image: Image;
-  summary: string;
-  technologies: string;
-  linkToBuild: string;
-}
-
-export interface TeamMember extends SanityBody {
-  _type: "teamMember"
-  name: string;
-  position: string;
-  photo: Image;
-  socials: Social[];
-  technologies: string;
-  joinedTeam: Date;
-  isCurrentWorkingHere: boolean;
-  points: string[];
-}
-
-export interface Price extends SanityBody {
-  _type: "price"
-  title: string;
-  price: number;
-  points: string[];
+  footerBtnUp?: Image; 
 }

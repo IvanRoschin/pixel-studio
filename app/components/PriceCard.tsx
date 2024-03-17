@@ -45,7 +45,6 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           snap-center
           cursor-pointer
           overflow-hidden
-          font-tacticsans
           flex
           flex-col
           p-10

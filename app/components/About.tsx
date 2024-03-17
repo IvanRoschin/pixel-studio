@@ -1,7 +1,6 @@
 'use client'
 
 import { AboutInterface } from '@/sanity/interface'
-import { PortableText } from '@portabletext/react'
 import { motion } from 'framer-motion'
 
 interface AboutProps {
@@ -15,19 +14,18 @@ const About: React.FC<AboutProps> = ({ about }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
+        h-screen
         md:text-left
         md:flex-row
         max-w-7xl
         md:px-10
-        justify-evenly
         mx-auto
-        font-tacticsans
         mt-12
         "
     >
       <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
-          {`<About`}
+          {`<${about.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
           <span>{`>`}</span>
         </div>
@@ -55,34 +53,38 @@ const About: React.FC<AboutProps> = ({ about }) => {
         tracking-[3px]
         w-full
         xl:text-2xl
-        xl:leading-loose
+        leading-loose
         "
         >
-          <PortableText value={about?.content} />
-          {/* We are self motivated JS developers who likes working in
+          We are self motivated JS developers who likes working in
           <span className="font-tacticansBld text-white"> web development</span>. We have about two
           year experience in creating websites.
           <span className="font-tacticansBld text-white">Technologies </span>
-          we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB. */}
+          we use: React, NextJS, Tailwind CSS, Redux, Node, Express & MongoDB.
         </div>
 
         <div
           className="
-          flex 
-          justify-between 
-          font-tacticsans 
-          text-2xl 
+          grid
+          grid-cols-1
+          space-y-3
+          justify-center
+          text-xl
+          md:grid-cols-3
           md:text-4xl 
+          md:space-y-0
           xl:text-6xl
           "
         >
           {about?.advantages?.map(advantage => {
             return (
               <div key={advantage._id}>
-                <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose">
+                <span className="text-primaryAccentColor pb-2 space-x-4 xl:leading-loose text-2xl items-center justify-center flex">
                   {advantage?.figure}
                 </span>
-                <p className="text-sm lg:text-lg xl:text-2xl">{advantage?.title}</p>
+                <p className="text-sm lg:text-lg xl:text-2xl items-center justify-center flex">
+                  {advantage?.title}
+                </p>
               </div>
             )
           })}

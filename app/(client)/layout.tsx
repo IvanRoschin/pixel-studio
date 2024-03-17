@@ -37,7 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${tacticsans.variable} ${boldTacticsans.variable}`}>
+      <body
+        className={`${tacticsans.variable} ${boldTacticsans.variable} bg-primaryBackground font-tacticsans overflow-x-hidden`}
+      >
         <Providers>
           <OrderModal />
           {children}

@@ -1,18 +1,21 @@
 'use client'
 
 import { NavbarItem } from '@/sanity/interface'
-import { IoMdMenu, IoMdClose } from 'react-icons/io'
-import { useState } from 'react'
-import Link from 'next/link'
+import { urlForImage } from '@/sanity/lib/image'
 import { motion } from 'framer-motion'
-import { TfiFacebook } from 'react-icons/tfi'
-import { GoMail } from 'react-icons/go'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
+import { GoMail } from 'react-icons/go'
+import { IoMdClose } from 'react-icons/io'
+import { TfiFacebook } from 'react-icons/tfi'
 
 interface Navbar {
   navbarItems: NavbarItem[]
+  openIcon?: any
 }
-const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
+const Navbar: React.FC<Navbar> = ({ navbarItems, openIcon }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleNavbar = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -32,7 +35,6 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
       lg:text-xl
       xl:text-xl
       tracking-widest
-      font-tacticsans
       transition-all
       text-primaryTextColor
       hover:text-primaryAccentColor
@@ -82,7 +84,13 @@ const Navbar: React.FC<Navbar> = ({ navbarItems }) => {
             {isMenuOpen ? (
               <IoMdClose size={32} fill="#FFFC32" />
             ) : (
-              <IoMdMenu size={32} fill="#FFFC32" />
+              <Image
+                alt="Open icon"
+                src={urlForImage(openIcon)}
+                width={0}
+                height={0}
+                className="cursor-pointer w-[32px] h-[32px]"
+              />
             )}
           </button>
         </motion.div>

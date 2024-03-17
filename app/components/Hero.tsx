@@ -1,11 +1,11 @@
 'use client'
 
+import useOrderModal from '@/hooks/useOrderModal'
 import { HeroInterface } from '@/sanity/interface'
+import { useCallback, useState } from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
 import Button from './Button'
-import useOrderModal from '@/hooks/useOrderModal'
-import { useCallback, useState } from 'react'
 
 interface HeroProps {
   hero: HeroInterface
@@ -32,30 +32,26 @@ const Hero: React.FC<HeroProps> = ({ hero }) => {
   return (
     <div
       className="
-    h-screen
     flex
     flex-col
-    space-y-8
     items-center
-    justify-center
+    justify-evenly
     text-center
     overflow-hidden
     "
     >
       <BackgroundCircles />
 
-      <div className="z-2 pt-20 space-y-10 lg:space-y-12">
-        <h1 className="mb-4 font-tacticsans text-3xl lg:text-6xl xl:text-8xl 2xl:text-16xl uppercase">
+      <div className="z-2 pt-20 space-y-12 md:space-y-12">
+        <h1 className="mb-4 text-3xl lg:text-6xl xl:text-8xl 2xl:text-16xl uppercase">
           {text}
           <Cursor cursorColor="#FFFC32" />
         </h1>
         <h2
           className="
-          text-primaryTextColor
+          text-white
           lowercase
           tracking-[5px]
-          backdrop-filter
-          backdrop-blur-[2px]
           text-xs
           md:text-m
           lg:text-lg
@@ -63,10 +59,13 @@ const Hero: React.FC<HeroProps> = ({ hero }) => {
           xl:py-[35px]  
           px-12
           xl:text-4xl
-          mb-4 
+          mb-4  
         "
         >
-          <p className="md:max-w-[600px] lg:max-w-[750px] xl:max-w-[1100px]">{hero?.subtitle}</p>
+          <p>
+            we are a development company helping business with <br /> a full cycle projects and
+            launching startups
+          </p>
         </h2>
         <Button type="button" label="Get estimation" onClick={handleClick} small />
       </div>

@@ -14,7 +14,7 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
   return (
     <motion.div
       initial={{
-        x: directionLeft ? -200 : 200,
+        x: directionLeft ? -50 : 50,
         opacity: 0,
       }}
       whileInView={{
@@ -32,11 +32,11 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
       transition-opacity
       group
       col-span-1
-      p-4
+      p-2
       "
     >
       <div className="flex flex-col items-center h-full space-y-2">
-        <p
+        {/* <p
           className="
         text-xs 
         md:text-lg
@@ -49,20 +49,16 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
         group-hover:opacity-100
         transition-all
         duration-700"
-        >{`<${technology?.name}>`}</p>
+        >{`<${technology?.name}>`}</p> */}
 
         <Image
           alt={technology?.name}
           src={urlForImage(technology?.image)}
-          width={50}
-          height={50}
+          width={0}
+          height={0}
           className="
-          md:w-[70px]
-          md:h-[70px]
-          lg:w-[80px]
-          lg:h-[80px]
-          xl:w-[100px]
-          xl:h-[100px]
+          w-[73px]
+          h-auto
           p-2
           object-cover
           filter

@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { Project } from '@/sanity/interface'
 import { urlForImage } from '@/sanity/lib/image'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface ProjectCardProps {
@@ -27,7 +27,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
         snap-center
         cursor-pointer
         overflow-hidden
-        font-tacticsans
         flex
         flex-col
         md:flex-row
@@ -76,7 +75,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
       md:space-y-2
       lg:space-y-4 
       xl:space-y-10 
-      font-tacticsans
       "
       >
         <h4 className="text-lg md:text-3xl lg:text-4xl xl:mb-[50px] mb-2">{project.title}</h4>

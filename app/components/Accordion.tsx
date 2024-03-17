@@ -10,7 +10,7 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon }) => {
-  const [accordionOpen, setAccordionOpen] = useState(false)
+  const [accordionOpen, setAccordionOpen] = useState(true)
 
   return (
     <div className="text-secondaryTextColor tracking-[3px] border-b w-full xl:pt-8">
@@ -50,7 +50,6 @@ const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon 
           text-sm
           text-primaryTextColor
           ${accordionOpen ? `grid-rows-[1fr] opacity-100` : `grid-rows-[0fr] opacity-0`}
-
           `}
         >
           <div className="overflow-hidden py-2 px-4 text-[10px] xl:text-xl xl:py-8">{text}</div>

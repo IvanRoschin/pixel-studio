@@ -1,4 +1,4 @@
-import { defineType } from "sanity";
+import { defineType } from "sanity"
 
 export default defineType({
   name: "pageInfo",
@@ -58,12 +58,7 @@ export default defineType({
       title: "AboutText",
       type: "string",
     },
-    {
-      name: "accordion",
-      title: "Accordion Items",
-      type: "array",
-      of: [{ type: "reference", to: { type: "accordionItem" } }],
-    },
+
     {
       name: "openIcon",
       title: "accordion Open Icon",

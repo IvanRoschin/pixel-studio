@@ -1,14 +1,14 @@
 'use client'
 
-import { Price } from '@/sanity/interface'
+import { PricesInterface } from '@/sanity/interface'
 import { motion } from 'framer-motion'
 import PriceCard from './PriceCard'
 
 interface PricesProps {
-  price: Price[]
+  prices: PricesInterface
 }
 
-const Prices: React.FC<PricesProps> = ({ price }) => {
+const Prices: React.FC<PricesProps> = ({ prices }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ const Prices: React.FC<PricesProps> = ({ price }) => {
       md:px-10
       justify-evenly
       mx-auto
-      font-tacticsans"
+      "
     >
       <h3
         className="
@@ -36,7 +36,7 @@ const Prices: React.FC<PricesProps> = ({ price }) => {
         "
       >
         <div className="text-sectionTitleColor">
-          {`<Price`}
+          {`<${prices?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
           <span>{`>`}</span>
         </div>
@@ -57,10 +57,9 @@ const Prices: React.FC<PricesProps> = ({ price }) => {
           pb-[35px]
           pt-[150px]
           md:pt-[200px]
-
         "
       >
-        {price?.map(pricePlan => <PriceCard key={pricePlan._id} pricePlan={pricePlan} />)}
+        {prices?.price.map(pricePlan => <PriceCard key={pricePlan._id} pricePlan={pricePlan} />)}
       </div>
     </motion.div>
   )

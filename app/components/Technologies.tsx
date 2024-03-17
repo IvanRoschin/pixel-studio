@@ -1,11 +1,11 @@
 'use client'
 
+import { TechnologiesInterface } from '@/sanity/interface'
 import { motion } from 'framer-motion'
 import TechnologyCard from './TechnologyCard'
-import { Technology } from '@/sanity/interface'
 
 interface TechnologiesProps {
-  technologies: Technology[]
+  technologies: TechnologiesInterface
 }
 
 const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
@@ -21,50 +21,36 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         duration: 1.5,
       }}
       className="      
-      h-screen
-      2xl:h-full
-      relative
       max-w-7xl
       md:px-10
       justify-evenly
       mx-auto
-      font-tacticsans"
+      "
     >
-      <h3
-        className="
-        absolute
-        top-[70px]
-        left-[20px]
-        md:top-[120px]
-        uppercase
-        tracking-[3px]
-        text-primaryTextColor
-        text-2xl
-        xl:text-4xl
-        "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
-          {`<Technologies`}
+          {`<${technologies?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
           <span>{`>`}</span>
         </div>
       </h3>
       <div
         className="
-        space-x-4
+        space-x-2
         grid 
         grid-cols-3
         md:grid-cols-4
-        lg:grid-cols-5
-        gap-4
-        pt-[150px]
-        md:pt-[200px]
+        lg:grid-cols-9
+        xl:grid-cols-9
+        gap-2
         place-items-center
         place-content-center
+        bg-secondaryBackground
+        w-full
         "
       >
-        {technologies?.map(technology => (
-          <TechnologyCard key={technology._id} technology={technology} />
+        {technologies?.technology.map(stack => (
+          <TechnologyCard key={stack._id} technology={stack} />
         ))}
       </div>
     </motion.div>

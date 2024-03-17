@@ -1,16 +1,17 @@
 'use client'
 
-import { useForm, FieldValues, SubmitHandler } from 'react-hook-form'
 import { sendEmail } from '@/actions/resendEmail'
-import { toast } from 'sonner'
+import { ContactInterface } from '@/sanity/interface'
 import { useState } from 'react'
-
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import Button from './Button'
-type Inputs = {
-  email: string
+
+interface ContactProps {
+  contact: ContactInterface
 }
 
-const Contact = () => {
+const Contact: React.FC<ContactProps> = ({ contact }) => {
   const [isLoading, setIsLoading] = useState(false)
   const {
     register,
@@ -37,14 +38,12 @@ const Contact = () => {
   return (
     <div
       className="
-      h-screen
-      2xl:h-full
       relative
       max-w-7xl
       md:px-10
       justify-evenly
       mx-auto
-      font-tacticsans"
+      "
     >
       <h3
         className="
@@ -60,7 +59,7 @@ const Contact = () => {
         "
       >
         <div className="text-sectionTitleColor">
-          {`<Contact`}
+          {`<${contact?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
           <span>{`>`}</span>
         </div>
@@ -87,7 +86,7 @@ const Contact = () => {
               "
       >
         <h4 className="text-lg md:text-2xl lg:text-4xl uppercase text-center">
-          <span className="text-primaryAccentColor">{`{   `}</span> Any questions?
+          <span className="text-primaryAccentColor">{`{   `}</span> {contact?.mainTitle}
         </h4>
         <p className="text-base md:text-2xl lg:text-4xl">
           leave a request and our manager will
@@ -154,7 +153,7 @@ const Contact = () => {
             </label>
           </div>
           <div className="flex items-start justify-center pt-5">
-            <Button type="submit" label="Send" outline disabled={isLoading} />
+            <Button type="submit" label="Send" outline disabled={isLoading} small />
           </div>
         </form>
       </div>

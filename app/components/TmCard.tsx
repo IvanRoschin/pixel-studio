@@ -1,10 +1,10 @@
-import { TeamMember } from '@/sanity/interface'
+import { TeamMemberInterface } from '@/sanity/interface'
 import { urlForImage } from '@/sanity/lib/image'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 interface TeamMemberCardProps {
-  teamMember: TeamMember
+  teamMember: TeamMemberInterface
 }
 const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
   const stackString = teamMember?.technologies
@@ -21,11 +21,14 @@ const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
       }}
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
+      className="flex items-center justify-center"
     >
       <div
-        className="    
-        w-[310px]
-        h-[510px]
+        className="
+        w-[290px]
+        h-[560px]
+        md:w-[280px]  
+        md:h-[570px]
         rounded-[25px]
         bg-secondaryBackground
       "
@@ -39,16 +42,18 @@ const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
           py-[10px]
           gap-y-[5px]
           relative
+          mb-4
           "
         >
           <span className="overlay"></span>
           <div
-            className="    relative 
-      h-[150px]
-      w-[150px]
-      rounded-[50%]
-    bg-white
-      p-1"
+            className="    
+            relative 
+            h-[150px]
+            w-[150px]
+            rounded-[50%]
+          bg-white
+            p-1"
           >
             <Image
               alt={teamMember?.name}
@@ -62,7 +67,7 @@ const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
               rounded-[50%]
               border-[4px]
               border-solid
-              border-primaryAccentColor"
+              border-primaryTextColor"
             />
           </div>
         </div>
@@ -71,8 +76,9 @@ const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
           flex
           flex-col
           items-center
+          justify-between
           px-[14px] 
-          py-[10px]
+          h-[360px]
     "
         >
           <h2
@@ -81,7 +87,8 @@ const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
             text-lg
             font-bold
             mx-auto
-            uppercase"
+            uppercase
+            mb-2"
           >
             {teamMember?.name}
           </h2>
@@ -89,11 +96,12 @@ const TmCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
             className="  
             text-primaryAccentColor
             text-sm
-            font-normal"
+            font-normal
+            mb-4"
           >
             {teamMember?.position}
           </p>
-          <ul className="text-secondaryTextColor text-left min-h-[120px] list-disc space-y-4 ml-5 text-sm mb-[20px]">
+          <ul className="text-secondaryTextColor text-left min-h-[120px] list-disc space-y-4 ml-5 text-sm mb-4 ">
             {teamMember.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}

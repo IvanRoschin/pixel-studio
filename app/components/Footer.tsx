@@ -1,27 +1,24 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
-import { PageInfo } from '@/sanity/interface'
-import { urlForImage } from '@/sanity/lib/image'
-import Logo from './Logo'
-import { TfiFacebook } from 'react-icons/tfi'
-import { FaGithub } from 'react-icons/fa'
+import { FooterInterface } from '@/sanity/interface'
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { FaGithub } from 'react-icons/fa'
+import { TfiFacebook } from 'react-icons/tfi'
+import Logo from './Logo'
 
 interface FooterProps {
-  pageInfo: PageInfo
+  footer: FooterInterface
 }
 
-const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
+const Footer: React.FC<FooterProps> = ({ footer }) => {
   return (
     <footer
       className="
       py-9  
       px-6
-        bg-secondaryBackground
-        font-tacticsans
+      bg-secondaryBackground  
       "
     >
       <div
@@ -55,30 +52,30 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
           >
             <div className="flex items-center space-x-5 justify-left">
               <PhoneIcon className="text-primaryAccentColor h-4 w-4 animate-pulse" />
-              <p>{pageInfo?.phoneNumber}</p>
+              <p>{footer?.phoneNumber}</p>
             </div>
             <div className="flex items-center space-x-5 justify-left">
               <EnvelopeIcon className="text-primaryAccentColor h-4 w-4 animate-pulse" />
-              <p>{pageInfo?.email}</p>
+              <p>{footer?.email}</p>
             </div>
             <div className="flex items-center space-x-5 justify-left">
               <MapPinIcon className="text-primaryAccentColor h-4 w-4 animate-pulse" />
-              <p>{pageInfo?.address}</p>
+              <p>{footer?.address}</p>
             </div>
           </div>
           {/*Contact Information*/}
           <div className="hidden text-base space-y-4 pb-10 text-primaryTextColor">
             <div className="flex items-center space-x-5 justify-left">
               <PhoneIcon className="text-primaryAccentColor h-7 w-7 animate-pulse" />
-              <p>{pageInfo?.phoneNumber}</p>
+              <p>{footer?.phoneNumber}</p>
             </div>
             <div className="flex items-center space-x-5 justify-left">
               <EnvelopeIcon className="text-primaryAccentColor h-7 w-7 animate-pulse" />
-              <p>{pageInfo?.email}</p>
+              <p>{footer?.email}</p>
             </div>
             <div className="flex items-center space-x-5 justify-left">
               <MapPinIcon className="text-primaryAccentColor h-7 w-7 animate-pulse" />
-              <p>{pageInfo?.address}</p>
+              <p>{footer?.address}</p>
             </div>
           </div>
         </div>
@@ -92,7 +89,7 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
           xl:text-2xl 
           hidden md:grid grid-cols-3 xl:flex shrink"
         >
-          {pageInfo?.navbar.map(item => (
+          {footer?.navbar.map(item => (
             <div key={item._id} className="grid gap-5 xl:grid-cols-1">
               <Link href={item.link}>
                 <button className="heroBtn mr-[50px] text-primaryTextColor">{item.title}</button>
@@ -147,13 +144,13 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
       </div>
 
       {/*Copyright*/}
-      <p className=" text-sm flex justify-center text-secondaryTextColor">{pageInfo.copyright}</p>
+      <p className=" text-sm flex justify-center text-secondaryTextColor">{footer?.copyright}</p>
 
       <Link href="#hero" className="sticky bottom-5 w-full cursor-pointer">
         <div className="flex items-center justify-center">
-          <Image
-            src={urlForImage(pageInfo.footerBtnUp)}
-            alt={pageInfo.title}
+          {/* <Image
+            src={urlForImage(footer.footerBtnUp)}
+            alt={footer?.title}
             width={30}
             height={30}
             className="
@@ -167,7 +164,7 @@ const Footer: React.FC<FooterProps> = ({ pageInfo }) => {
                 border
                 p-2
                 border-[#F7AB0A]/80"
-          />
+          /> */}
         </div>
       </Link>
     </footer>

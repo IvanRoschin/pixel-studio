@@ -1,14 +1,14 @@
 'use client'
 
-import useOrderModal from '@/hooks/useOrderModal'
 import { sendEmail } from '@/actions/resendEmail'
+import useOrderModal from '@/hooks/useOrderModal'
+import { ErrorMessage } from '@hookform/error-message'
 import { useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import Heading from '../Heading'
 import Input from '../Input'
 import Modal from './Modal'
-import { ErrorMessage } from '@hookform/error-message'
 
 const OrderModal = () => {
   const orderModal = useOrderModal()
@@ -41,7 +41,7 @@ const OrderModal = () => {
     toast.error('Something went wrong')
   }
   const bodyContent = (
-    <div className="md:max-h-[300px] xl-max-h-screen flex flex-col gap-4 font-tacticsans text-primaryBackground">
+    <div className="md:max-h-[300px] xl-max-h-screen flex flex-col gap-4 text-primaryBackground">
       <Heading title="Send us an email" subtitle="and we`ll contact you" />
       <Input
         id="name"

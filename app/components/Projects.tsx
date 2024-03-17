@@ -1,11 +1,11 @@
 'use client'
 
+import { CasesInterface } from '@/sanity/interface'
 import { motion } from 'framer-motion'
-import { Project } from '@/sanity/interface'
 import ProjectCard from './ProjectCard'
 
 interface ProjectsProps {
-  projects: Project[]
+  projects: CasesInterface
 }
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
@@ -19,7 +19,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       md:px-10
       justify-evenly
       mx-auto
-      font-tacticsans"
+      "
     >
       <h3
         className="
@@ -35,7 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         "
       >
         <div className="text-sectionTitleColor">
-          {`<Case studies`}
+          {`<${projects?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
           <span>{`>`}</span>
         </div>
@@ -51,7 +51,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         xl:mt-[225px]
         relative
         w-full
-        h-full
         overflow-x-scroll
         overflow-y-hidden        
         snap-x
@@ -62,7 +61,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         md:pt-[200px]
       "
       >
-        {projects.map((project, i: number) => (
+        {projects?.projects.map((project, i: number) => (
           <ProjectCard key={project._id} project={project} i={i} />
         ))}
       </div>

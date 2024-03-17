@@ -2,24 +2,38 @@ import dynamic from 'next/dynamic'
 
 import {
   getAbout,
+  getCases,
+  getContact,
+  getFooter,
   getHeader,
   getHero,
-  getPageInfo,
   getPrices,
-  getProjects,
+  getServices,
   getTeam,
   getTechnologies,
 } from '@/actions/index'
-import { Contact, Footer, Header, Hero, Prices, Projects, Team, WhatWeDo } from '@/components/index'
+import {
+  Contact,
+  Footer,
+  Header,
+  Hero,
+  Prices,
+  Projects,
+  Services,
+  Team,
+  Technologies,
+} from '@/components/index'
 import {
   AboutInterface,
+  CasesInterface,
+  ContactInterface,
+  FooterInterface,
   HeaderInterface,
   HeroInterface,
-  PageInfo,
-  Price,
-  Project,
-  TeamMember,
-  Technology,
+  PricesInterface,
+  ServiсesInterface,
+  TeamInterface,
+  TechnologiesInterface,
 } from '@/sanity/interface'
 
 const DynamicAbout = dynamic(() => import('../components/About.tsx'), {
@@ -30,58 +44,61 @@ export default async function Home() {
   const header: HeaderInterface = await getHeader()
   const hero: HeroInterface = await getHero()
   const about: AboutInterface = await getAbout()
-
-  const pageInfo: PageInfo = await getPageInfo()
-  const team: TeamMember[] = await getTeam()
-  const projects: Project[] = await getProjects()
-  const technologies: Technology[] = await getTechnologies()
-  const prices: Price[] = await getPrices()
+  const team: TeamInterface = await getTeam()
+  const services: ServiсesInterface = await getServices()
+  const technologies: TechnologiesInterface = await getTechnologies()
+  const cases: CasesInterface = await getCases()
+  const prices: PricesInterface = await getPrices()
+  const contact: ContactInterface = await getContact()
+  const footer: FooterInterface = await getFooter()
 
   return (
-    <div
-      className="
-        bg-primaryBackground
-        text-textColor
-        h-full
-        snap-y
-        snap-mandatory
-        z-0
-        m-auto
-        px-4
-        relative
-        w-[360px]
-        md:w-[768px]
-        lg:w-[1440px]
-        xl:w-[1920px]
-        "
-    >
+    <div className="container">
       <Header header={header} />
-      <section id="hero" className="snap-center pb-8 scroll-mt-16">
+      <section id="hero" className="section">
         <Hero hero={hero} />
       </section>
-      <section id="about" className="snap-start pb-8 scroll-mt-16">
+      <section id="about" className="section">
         <DynamicAbout about={about} />
       </section>
-      <section id="services" className="snap-start pb-8 scroll-mt-16">
-        <WhatWeDo pageInfo={pageInfo} />
+      <section id="services" className="section">
+        <Services services={services} />
       </section>
-      <section id="team" className="snap-center pb-8 scroll-mt-16">
+      <section
+        id="team"
+        className=" 
+        h-screen
+        snap-start
+        scroll-mt-16"
+      >
         <Team team={team} />
       </section>
-      {/* <section id="stack" className="snap-start">
+      <section id="stack" className="section">
         <Technologies technologies={technologies} />
-      </section> */}
-      <section id="projects" className="snap-start pb-8 scroll-mt-16">
-        <Projects projects={projects} />
       </section>
-      <section id="price" className="snap-start pb-8 scroll-mt-16">
-        <Prices price={prices} />
+      <section
+        id="projects"
+        className=" 
+        h-screen
+        snap-start
+        scroll-mt-16"
+      >
+        <Projects projects={cases} />
       </section>
-      <section id="contact" className="snap-start pb-8 scroll-mt-16">
-        <Contact />
+      <section
+        id="price"
+        className=" 
+        h-screen
+        snap-start
+        scroll-mt-16"
+      >
+        <Prices prices={prices} />
       </section>
-      <section className="snap-start pb-8 scroll-mt-16">
-        <Footer pageInfo={pageInfo} />
+      <section id="contact" className="section">
+        <Contact contact={contact} />
+      </section>
+      <section className="section">
+        <Footer footer={footer} />
       </section>
     </div>
   )

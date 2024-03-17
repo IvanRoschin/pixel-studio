@@ -1,35 +1,33 @@
 'use client'
 
-import { PageInfo } from '@/sanity/interface'
+import { ServiсesInterface } from '@/sanity/interface'
 import { motion } from 'framer-motion'
 
 import Accordion from './Accordion'
 
-interface WhatWeDoProps {
-  pageInfo: PageInfo
+interface ServiesInterface {
+  services: ServiсesInterface
 }
 
-const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
-  const accordion = pageInfo.accordion
-
+const Services: React.FC<ServiesInterface> = ({ services }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-      md:text-left
-      md:flex-row
-      max-w-7xl
-      md:px-10
-      justify-evenly
-      mx-auto
-      font-tacticsans
+        h-screen
+        md:text-left
+        md:flex-row
+        max-w-7xl
+        md:px-10
+        mx-auto
+        mt-12
         "
     >
       <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
-          {`<What we do`}
+          {`<${services?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
           <span>{`>`}</span>
         </div>
@@ -47,9 +45,9 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
         viewport={{ once: true }}
         className="sectionContentWrapper"
       >
-        {accordion.map(item => (
+        {services?.services.map(service => (
           <div
-            key={item?._id}
+            key={service?._id}
             className="
         text-sm
         pb-10
@@ -61,10 +59,10 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
         "
           >
             <Accordion
-              title={item?.title}
-              text={item?.text}
-              closeIcon={pageInfo?.closeIcon}
-              openIcon={pageInfo?.openIcon}
+              title={service?.title}
+              text={service?.text}
+              closeIcon={services?.closeIcon}
+              openIcon={services?.openIcon}
             />
           </div>
         ))}
@@ -73,4 +71,4 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ pageInfo }) => {
   )
 }
 
-export default WhatWeDo
+export default Services

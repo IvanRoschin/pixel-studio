@@ -1,9 +1,27 @@
-import { type SchemaTypeDefinition } from "sanity";
+import { type SchemaTypeDefinition } from "sanity"
 
-
-import { header, hero, about, advantageItem, accordionItem, navbarItem, pageInfo, price, project, social, stack, teamMember, technologies } from "./schemas";
-import {pageType} from "./schemas/pageBuilder"
+import { advantageItem, navbarItem, price, project, sectionAbout, sectionCases, sectionContact, sectionFooter, sectionHeader, sectionHero, sectionPrices, sectionServices, sectionTeam, sectionTechnologies, serviceItem, social, stack, teamMember, technology } from "./schemas"
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [pageType, header, hero, about, advantageItem, pageInfo, project, social, stack, teamMember, technologies, price, navbarItem, accordionItem],
+  types: [
+    sectionHeader,
+    sectionHero,
+    sectionAbout,
+    sectionServices,
+    sectionTeam,
+    sectionTechnologies,
+    sectionCases,
+    sectionPrices,
+    sectionContact,
+    sectionFooter,
+    advantageItem,
+    navbarItem,
+    price,
+    project,
+    serviceItem,
+    social,
+    stack,
+    teamMember,
+    technology,
+  ],
 };

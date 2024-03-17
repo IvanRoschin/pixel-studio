@@ -19,11 +19,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline
         relative
         disabled:opacity-70
         disabled:cursor-not-allowed
-        rounded-2xl
-        w-[144px]
-        h-[56px]
-        lg:w-[240px]
-        lg:h-[86px]
+        rounded-3xl
         xl:text-2xl
         mb-10
         transition-all
@@ -35,7 +31,8 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline
         ${small ? 'py-1' : 'py-3'}
         ${small ? 'text-sm' : 'text:md'}
         ${small ? 'font-tacticsans' : 'font-tacticsans'}
-        ${small ? 'border-[1px]' : 'border-2'}
+        ${small ? 'border' : 'border-2'}
+        ${small ? 'w-[185px] h-[50px]' : 'w-[256] h-[70px]'}
         `}
     >
       {label}

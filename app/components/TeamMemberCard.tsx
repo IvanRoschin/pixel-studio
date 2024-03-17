@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 // import { SocialIcon } from "react-social-icons";
-import { TeamMember } from '@/sanity/interface'
+import { TeamMemberInterface } from '@/sanity/interface'
 import { urlForImage } from '@/sanity/lib/image'
 
 interface TeamMemberCardProps {
-  teamMember: TeamMember
+  teamMember: TeamMemberInterface
 }
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
   const stackString = teamMember?.technologies
@@ -36,7 +36,6 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ teamMember }) => {
         bg-secondaryBackground
         cursor-pointer
         overflow-hidden
-        font-tacticsans
         flex
         flex-col
         py-10

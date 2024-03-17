@@ -1,13 +1,13 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity"
 
 export default defineType({
   name: "about",
-  title: "About",
+  title: "Section About",
   type: "document",
   fields: [
     defineField({
         name: "title",
-        title: "Title",
+        title: "Section title",
         description: "Section title",
         type: "string",
     }),
@@ -31,9 +31,9 @@ export default defineType({
                   alternative text is of great help for those 
                   people that can rely on it to have a good idea of 
                   what\'s on your page.`,
-                options: {
-                  isHighlighted: true
-                }
+                  options: {
+            isHighlighted: true
+          }
               },
             ]
           }

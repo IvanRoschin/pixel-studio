@@ -2,8 +2,8 @@
 
 import { HeaderInterface } from '@/sanity/interface'
 
-import Logo from './Logo'
 import { Navbar } from '.'
+import Logo from './Logo'
 import Socials from './Socials'
 
 interface HomeProps {
@@ -23,16 +23,17 @@ const Header: React.FC<HomeProps> = ({ header }) => {
     z-20
     backdrop-filter
     backdrop-blur
-    w-[328px]
-    md:w-[736px]
-    lg:w-[1408px]
-    xl:w-[1888px]
-    pt-4
+    pt-8
+    px-4
     mx-auto
+     w-[360px]
+      md:w-[768px]
+      lg:w-[1440px]
+      xl:w-[1920px]
     "
     >
       <Logo title={header?.siteTitle} />
-      <Navbar navbarItems={header?.navbar} />
+      <Navbar navbarItems={header?.navbar} openIcon={header?.mobileMenuIcon} />
       <Socials />
     </header>
   )

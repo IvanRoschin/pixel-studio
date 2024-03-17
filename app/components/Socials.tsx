@@ -1,10 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import ThemeSwitcher from './ThemeSwitcher'
-import { TfiFacebook } from 'react-icons/tfi'
-import { GoMail } from 'react-icons/go'
 import { FaGithub } from 'react-icons/fa'
+import { GoMail } from 'react-icons/go'
+import { TfiFacebook } from 'react-icons/tfi'
 
 import Link from 'next/link'
 
@@ -27,7 +26,7 @@ const Socials = () => {
       className="
         hidden
         md:grid
-        grid-cols-2
+        grid-cols-3
         gap-2
         lg:grid-cols-4
         items-between
@@ -76,8 +75,6 @@ const Socials = () => {
           />
         </Link>
       </div>
-
-      <ThemeSwitcher />
     </motion.div>
   )
 }
