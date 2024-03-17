@@ -69,6 +69,7 @@ export default async function Home() {
         className=" 
         h-screen
         md:h-auto
+        md:mb-20
         snap-start
         scroll-mt-24"
       >
@@ -82,6 +83,7 @@ export default async function Home() {
         className=" 
         h-screen
         md:h-auto
+        md:mb-20
         snap-start
         scroll-mt-24"
       >
@@ -92,6 +94,7 @@ export default async function Home() {
         className=" 
         h-screen
         md:h-auto
+        md:mb-20
         snap-start
         scroll-mt-24"
       >
@@ -100,7 +103,7 @@ export default async function Home() {
       <section id="contact" className="section">
         <Contact contact={contact} />
       </section>
-      <section className="section h-0">
+      <section className="section h-auto md:mb-0">
         <Footer footer={footer} />
       </section>
     </div>

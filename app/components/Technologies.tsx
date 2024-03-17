@@ -21,10 +21,14 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         duration: 1.5,
       }}
       className="      
-      max-w-7xl
-      md:px-10
-      justify-evenly
-      mx-auto
+        h-screen
+        md:h-auto
+        md:text-left
+        md:flex-row
+        max-w-7xl
+        md:px-10
+        mx-auto
+        mt-12
       "
     >
       <h3 className="sectionTitle">
@@ -37,16 +41,17 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
       <div
         className="
         space-x-2
+        space-y-4
         grid 
-        grid-cols-3
+        grid-cols-2
         md:grid-cols-9
         lg:grid-cols-9
         gap-2
         place-items-center
         place-content-center
-        bg-secondaryBackground
+        md:bg-secondaryBackground
         w-screen
-        -ml-8
+        md:-ml-8
         "
       >
         {technologies?.technology.map(stack => (

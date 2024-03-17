@@ -58,11 +58,10 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
       <div
         className="
               space-x-4
+              md:space-x-0
               gap-4
               pt-[150px]
-              md:pt-[200px]
-              md:place-items-center
-              md:place-content-center
+              md:pt-0
               w-[340px]
               md:w-[640px]
               lg:w-[920px]  
@@ -76,13 +75,13 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
               mx-auto
               "
       >
-        <h4 className="text-lg md:text-2xl lg:text-4xl uppercase text-center">
+        <h4 className="text-lg md:text-2xl lg:text-4xl uppercase text-center md:text-left">
           <span className="text-primaryAccentColor">{`{   `}</span> {contact?.mainTitle}
         </h4>
         <p className="text-base md:text-2xl lg:text-4xl">
-          leave a request and our manager will
+          leave a request and our manager
           <br />
-          contact you within 15 minutes!
+          will contact you within 15 minutes!
           <span className="text-2xl text-primaryAccentColor">{`   }`}</span>
         </p>
 
