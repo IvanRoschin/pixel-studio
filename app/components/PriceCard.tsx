@@ -34,7 +34,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
       transition={{ duration: 1.5 }}
       className="
           w-[310px]  
-          md:w-[310px]
+          md:w-[300px]
           lg:w-[440px]
           xl:w-[560px]
           mx-4
@@ -48,6 +48,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           flex
           flex-col
           p-10
+          md:p-6
           pb-0
           justify-between
           items-start
@@ -81,7 +82,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ pricePlan }) => {
           from $ {pricePlan?.price}
         </p>
         <div className="flex flex-col items-center justify-center my-2">
-          <Button type="button" label="Order" onClick={handleClick} small />
+          <Button type="button" label="Order" onClick={handleClick} />
         </div>
       </div>
     </motion.div>

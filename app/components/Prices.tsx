@@ -15,26 +15,16 @@ const Prices: React.FC<PricesProps> = ({ prices }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-      relative
-      max-w-7xl
-      md:px-10
-      justify-evenly
-      mx-auto
+        h-screen
+        md:text-left
+        md:flex-row
+        max-w-7xl
+        md:px-10
+        mx-auto
+        mt-12
       "
     >
-      <h3
-        className="
-        absolute
-        top-[70px]
-        left-[20px]
-        md:top-[120px]
-        uppercase
-        tracking-[3px]
-        text-primaryTextColor
-        text-2xl
-        xl:text-4xl
-        "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
           {`<${prices?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
@@ -47,7 +37,7 @@ const Prices: React.FC<PricesProps> = ({ prices }) => {
           flex-row
           relative
           w-full
-          h-full
+          h-auto
           overflow-x-scroll
           overflow-y-hidden
           snap-x
@@ -55,8 +45,6 @@ const Prices: React.FC<PricesProps> = ({ prices }) => {
           z-10
           scroll-smooth
           pb-[35px]
-          pt-[150px]
-          md:pt-[200px]
         "
       >
         {prices?.price.map(pricePlan => <PriceCard key={pricePlan._id} pricePlan={pricePlan} />)}

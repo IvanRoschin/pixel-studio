@@ -14,26 +14,17 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-      relative
-      max-w-7xl
-      md:px-10
-      justify-evenly
-      mx-auto
+        h-screen
+        md:h-auto
+        md:text-left
+        md:flex-row
+        max-w-7xl
+        md:px-10
+        mx-auto
+        mt-12
       "
     >
-      <h3
-        className="
-        absolute
-        top-[70px]
-        left-[20px]
-        md:top-[120px]
-        uppercase
-        tracking-[3px]
-        text-primaryTextColor
-        text-2xl
-        xl:text-4xl
-        "
-      >
+      <h3 className="sectionTitle">
         <div className="text-sectionTitleColor">
           {`<${projects?.title}`}
           <span className="text-primaryAccentColor">{`/`}</span>
@@ -44,11 +35,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         className="
         flex
         flex-row
-        space-x-5
-        mt-[140px]
-        md:mt-[180px]
-        lg:mt-[200px]
-        xl:mt-[225px]
         relative
         w-full
         overflow-x-scroll
@@ -57,8 +43,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         snap-mandatory
         z-10
         pb-[35px]
-        pt-[150px]
-        md:pt-[200px]
       "
       >
         {projects?.projects.map((project, i: number) => (

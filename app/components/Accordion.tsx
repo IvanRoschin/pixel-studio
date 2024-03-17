@@ -1,6 +1,6 @@
 import { urlForImage } from '@/sanity/lib/image'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface AccordionProps {
   title: string
@@ -11,7 +11,16 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon, index }) => {
-  const [accordionOpen, setAccordionOpen] = useState(index < 2)
+  const [accordionOpen, setAccordionOpen] = useState(false)
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth
+    if (screenWidth > 768) {
+      setAccordionOpen(true)
+    } else {
+      setAccordionOpen(index < 2)
+    }
+  }, [index])
 
   const toggleAccordion = () => {
     setAccordionOpen(!accordionOpen)

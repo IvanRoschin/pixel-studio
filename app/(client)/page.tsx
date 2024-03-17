@@ -55,7 +55,7 @@ export default async function Home() {
   return (
     <div className="container">
       <Header header={header} />
-      <section id="hero" className="section">
+      <section id="hero" className="section md:h-screen">
         <Hero hero={hero} />
       </section>
       <section id="about" className="section">
@@ -68,6 +68,7 @@ export default async function Home() {
         id="team"
         className=" 
         h-screen
+        md:h-auto
         snap-start
         scroll-mt-24"
       >
@@ -80,8 +81,9 @@ export default async function Home() {
         id="projects"
         className=" 
         h-screen
+        md:h-auto
         snap-start
-        scroll-mt-16"
+        scroll-mt-24"
       >
         <Projects projects={cases} />
       </section>
@@ -89,16 +91,13 @@ export default async function Home() {
         id="price"
         className=" 
         h-screen
+        md:h-auto
         snap-start
-        scroll-mt-16"
+        scroll-mt-24"
       >
         <Prices prices={prices} />
       </section>
-      <section
-        id="contact"
-        className=" 
-      section"
-      >
+      <section id="contact" className="section">
         <Contact contact={contact} />
       </section>
       <section className="section h-0">

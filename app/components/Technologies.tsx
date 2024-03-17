@@ -45,7 +45,8 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         place-items-center
         place-content-center
         bg-secondaryBackground
-        w-full
+        w-screen
+        -ml-8
         "
       >
         {technologies?.technology.map(stack => (

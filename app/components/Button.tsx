@@ -29,10 +29,10 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type, disabled, outline
         ${outline ? 'border-white' : 'border-primaryAccentColor'}
         ${outline ? 'text-white hover:text-black' : 'text-primaryBackground'}
         ${small ? 'py-1' : 'py-3'}
-        ${small ? 'text-sm' : 'text:md'}
+        ${small ? 'text-sm' : 'text-xl'}
         ${small ? 'font-tacticsans' : 'font-tacticsans'}
         ${small ? 'border' : 'border-2'}
-        ${small ? 'w-[185px] h-[50px]' : 'w-[256] h-[70px]'}
+        ${small ? 'w-[185px] h-[50px]' : 'w-[256px] h-[70px]'}
         `}
     >
       {label}
