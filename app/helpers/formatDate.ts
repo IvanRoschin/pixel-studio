@@ -1,7 +1,7 @@
-import { TeamMember } from '@/sanity/interface'
+import { TeamMemberInterface } from '@/sanity/interface'
 
 type Props = {
-  teamMember: TeamMember
+  teamMember: TeamMemberInterface
 }
 
 const formatDate = ({ teamMember }: Props) => {
