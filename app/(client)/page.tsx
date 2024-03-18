@@ -53,57 +53,90 @@ export default async function Home() {
   const footer: FooterInterface = await getFooter()
 
   return (
-    <div className="container">
+    <div className="overflow">
       <Header header={header} />
-      <section id="hero" className="section md:h-screen">
+      <section
+        id="hero"
+        className="
+      section 
+      min-h-screen"
+      >
         <Hero hero={hero} />
       </section>
-      <section id="about" className="section">
+      <section
+        id="about"
+        className="
+      section 
+      min-h-screen
+      "
+      >
         <DynamicAbout about={about} />
       </section>
-      <section id="services" className="section">
+      <section
+        id="services"
+        className="
+      section 
+      min-h-screen"
+      >
         <Services services={services} />
       </section>
       <section
         id="team"
         className=" 
-        h-screen
-        md:h-auto
         md:mb-20
         snap-start
-        scroll-mt-24"
+        scroll-mt-20
+        px-4
+        min-h-screen"
       >
         <Team team={team} />
       </section>
-      <section id="stack" className="section">
+      <section
+        id="stack"
+        className="
+      section
+      min-h-screen"
+      >
         <Technologies technologies={technologies} />
       </section>
       <section
         id="projects"
         className=" 
-        h-screen
-        md:h-auto
         md:mb-20
         snap-start
-        scroll-mt-24"
+        scroll-mt-24
+        px-4 
+        min-h-screen"
       >
         <Projects projects={cases} />
       </section>
       <section
         id="price"
         className=" 
-        h-screen
-        md:h-auto
         md:mb-20
         snap-start
-        scroll-mt-24"
+        scroll-mt-24
+        px-4
+        min-h-screen"
       >
         <Prices prices={prices} />
       </section>
-      <section id="contact" className="section">
+      <section
+        id="contact"
+        className="
+      section
+      min-h-screen"
+      >
         <Contact contact={contact} />
       </section>
-      <section className="section h-auto md:mb-0">
+      <section
+        className="      
+        md:mb-0
+        snap-start
+        scroll-mt-24
+        
+        "
+      >
         <Footer footer={footer} />
       </section>
     </div>

@@ -38,11 +38,8 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
   return (
     <div
       className="
-        h-screen
-        md:h-auto
         md:text-left
         md:flex-row
-        max-w-7xl
         md:px-10
         mx-auto
         mt-12
@@ -60,12 +57,11 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
               space-x-4
               md:space-x-0
               gap-4
-              pt-[150px]
               md:pt-0
               w-[340px]
               md:w-[640px]
               lg:w-[920px]  
-              xl:w-[1200px]
+              xl:w-full
               flex 
               flex-col 
               space-y-10

@@ -21,11 +21,8 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         duration: 1.5,
       }}
       className="      
-        h-screen
-        md:h-auto
         md:text-left
         md:flex-row
-        max-w-7xl
         md:px-10
         mx-auto
         mt-12
@@ -44,13 +41,10 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         space-y-4
         grid 
         grid-cols-2
-        md:grid-cols-9
-        lg:grid-cols-9
-        gap-2
+        md:grid-cols-4
         place-items-center
         place-content-center
         md:bg-secondaryBackground
-        w-screen
         md:-ml-8
         "
       >

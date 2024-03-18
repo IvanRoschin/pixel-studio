@@ -38,11 +38,12 @@ const Hero: React.FC<HeroProps> = ({ hero }) => {
     justify-evenly
     text-center
     overflow-hidden
+    w-screen
     "
     >
       <BackgroundCircles />
 
-      <div className="z-2 py-20 md:py-40 space-y-12 ">
+      <div className="z-2 py-20 md:py-40 space-y-12">
         <h1 className="mb-4 text-3xl lg:text-6xl xl:text-8xl 2xl:text-16xl uppercase">
           {text}
           <Cursor cursorColor="#FFFC32" />
@@ -67,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ hero }) => {
             launching startups
           </p>
         </h2>
-        <Button type="button" label="Get estimation" onClick={handleClick} small />
+        <Button type="button" label="Get estimation" onClick={handleClick} />
       </div>
     </div>
   )

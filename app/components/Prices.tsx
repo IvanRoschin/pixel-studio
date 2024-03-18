@@ -15,10 +15,8 @@ const Prices: React.FC<PricesProps> = ({ prices }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-        h-screen
         md:text-left
         md:flex-row
-        max-w-7xl
         md:px-10
         mx-auto
         mt-12

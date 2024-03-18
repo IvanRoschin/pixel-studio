@@ -98,33 +98,26 @@
 }
 
 @layer base {
-  .container {
+  .overflow {
     @apply
       bg-primaryBackground
-      items-stretch
-      h-screen
       snap-y
       snap-mandatory
       overflow-y-scroll
-      md:overscroll-none
-      overflow-x-hidden
       z-0
       m-auto
-      px-2
       relative
-      w-[360px]
-      md:w-[768px]
-      lg:w-[1440px]
-      xl:w-[1920px]
+      h-screen
   }
 
   .section {
     @apply
-    h-screen
-    md:h-auto
+    w-screen
+    px-4
     md:mb-20
     snap-start
-    scroll-mt-16
+    scroll-py-10
+    scroll-mt-8
     md:scroll-mt-32
     flex
     items-center

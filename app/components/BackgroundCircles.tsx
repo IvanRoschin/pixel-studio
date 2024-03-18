@@ -18,7 +18,9 @@ const BackgroundCircles = (props: Props) => {
       relative
       flex
       justify-center
-      items-center"
+      items-center
+      mb-10
+      mt-10"
     >
       <div className="opacity-100 border border-textColor rounded-full h-[50px] w-[50px] md:h-[50px] md:w-[50px] xl:h-[100px] xl:w-[100px] mt-[350px] md:mt-[450px] animate-ping absolute" />
 

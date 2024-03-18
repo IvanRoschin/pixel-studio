@@ -14,11 +14,11 @@ const TechnologyCard: React.FC<TechnologyCardProps> = ({ directionLeft, technolo
   return (
     <motion.div
       initial={{
-        x: directionLeft ? -50 : 50,
+        y: -100,
         opacity: 0,
       }}
       whileInView={{
-        x: 0,
+        y: 0,
         opacity: 1,
       }}
       transition={{

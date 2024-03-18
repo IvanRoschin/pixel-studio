@@ -26,11 +26,7 @@ const Header: React.FC<HomeProps> = ({ header }) => {
     pt-8
     px-8
     mx-auto
-    w-[360px]
-    md:w-[768px]
-    lg:w-[1440px]
-    xl:w-[1920px]
-    "
+    w-screen"
     >
       <Logo title={header?.siteTitle} />
       <Navbar navbarItems={header?.navbar} openIcon={header?.mobileMenuIcon} />

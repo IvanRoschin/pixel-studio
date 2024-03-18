@@ -14,11 +14,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-        h-screen
-        md:h-auto
         md:text-left
         md:flex-row
-        max-w-7xl
         md:px-10
         mx-auto
         mt-12

@@ -1,6 +1,7 @@
 import OrderModal from '@/components/modals/OrderModal'
 import { Providers } from 'app/providers/providers'
 import type { Metadata } from 'next'
+
 import localfont from 'next/font/local'
 
 import './globals.css'
@@ -30,6 +31,13 @@ export const metadata: Metadata = {
   description: 'looks like you have not seen cool project',
 }
 
+// export const viewport: Viewport = {
+//   width: 'device-width',
+//   initialScale: 1,
+//   maximumScale: 1,
+//   userScalable: false,
+// }
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${tacticsans.variable} ${boldTacticsans.variable} bg-primaryBackground font-tacticsans overflow-x-hidden`}
+        className={`${tacticsans.variable} ${boldTacticsans.variable} bg-primaryBackground font-tacticsans max-w-[1920px] `}
       >
         <Providers>
           <OrderModal />
