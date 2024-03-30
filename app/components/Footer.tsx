@@ -33,7 +33,6 @@ const Footer: React.FC<FooterProps> = ({ footer }) => {
         z-20
         md:gap-4
         flex-shrink
-        2xl:max-w-[1550px]
         "
       >
         {/*Footer Logo*/}

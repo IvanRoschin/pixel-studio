@@ -43,6 +43,7 @@ const Team: React.FC<TeamProps> = ({ team }) => {
           breakpoints={{
             768: { slidesPerView: 2 },
             1440: { slidesPerView: 3, spaceBetween: 30 },
+            1920: { slidesPerView: 5, spaceBetween: 10 },
           }}
           spaceBetween={30}
           loop={true}

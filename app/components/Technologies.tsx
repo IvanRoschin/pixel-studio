@@ -21,11 +21,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         duration: 1.5,
       }}
       className="      
-        md:text-left
-        md:flex-row
-        md:px-10
-        mx-auto
-        mt-12
+
       "
     >
       <h3 className="sectionTitle">
@@ -40,12 +36,11 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
         space-x-2
         space-y-4
         grid 
-        grid-cols-2
-        md:grid-cols-4
+        grid-cols-3
+        md:grid-cols-5
         place-items-center
         place-content-center
-        md:bg-secondaryBackground
-        md:-ml-8
+        bg-secondaryBackground  
         "
       >
         {technologies?.technology.map(stack => (

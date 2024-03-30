@@ -64,10 +64,13 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
               xl:w-full
               flex 
               flex-col 
+              items-start 
+              xl:ml-20
               space-y-10
               md:space-y-5
               lg:space-y-10
-              xl:space-y-15
+              xl:space-y-[200px]
+              xl:pt-20
               mx-auto
               "
       >

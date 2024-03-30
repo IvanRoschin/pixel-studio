@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
         md:flex-row
         py-2
         items-center
-        justify-between
+        justify-center
         rounded-[50px]
               "
     >

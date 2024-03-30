@@ -43,7 +43,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
       >
         <div
           className="
-        pb-10
+        pb-8
         md:pb-20
         text-primaryTextColor
         xl:left

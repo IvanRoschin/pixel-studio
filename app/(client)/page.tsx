@@ -58,16 +58,22 @@ export default async function Home() {
       <section
         id="hero"
         className="
-      section 
-      min-h-screen"
+        snap-start
+        scroll-mt-20
+        px-4
+        h-svh
+        flex items-center justify-center"
       >
         <Hero hero={hero} />
       </section>
       <section
         id="about"
         className="
-      section 
-      min-h-screen
+        mb-20
+        snap-start
+        scroll-mt-20
+        px-4
+       
       "
       >
         <DynamicAbout about={about} />
@@ -75,66 +81,73 @@ export default async function Home() {
       <section
         id="services"
         className="
-      section 
-      min-h-screen"
+        mb-20
+        snap-start
+        scroll-mt-24
+        px-4
+        "
       >
         <Services services={services} />
       </section>
       <section
         id="team"
         className=" 
-        md:mb-20
+        mb-20
         snap-start
-        scroll-mt-20
+        scroll-mt-24
         px-4
-        min-h-screen"
+        "
       >
         <Team team={team} />
       </section>
       <section
         id="stack"
         className="
-      section
-      min-h-screen"
+        mb-20
+        snap-start
+        scroll-mt-24
+        
+        "
       >
         <Technologies technologies={technologies} />
       </section>
       <section
         id="projects"
         className=" 
-        md:mb-20
+        mb-20
         snap-start
         scroll-mt-24
-        px-4 
-        min-h-screen"
+        "
       >
         <Projects projects={cases} />
       </section>
       <section
         id="price"
         className=" 
-        md:mb-20
+        mb-20
         snap-start
         scroll-mt-24
         px-4
-        min-h-screen"
+        "
       >
         <Prices prices={prices} />
       </section>
       <section
         id="contact"
         className="
-      section
-      min-h-screen"
+        mb-20
+        snap-start
+        scroll-mt-24
+        px-4
+        h-svh        
+        "
       >
         <Contact contact={contact} />
       </section>
       <section
         className="      
-        md:mb-0
         snap-start
         scroll-mt-24
-        
         "
       >
         <Footer footer={footer} />

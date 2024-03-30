@@ -18,7 +18,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, text, closeIcon, openIcon,
     if (screenWidth > 768) {
       setAccordionOpen(true)
     } else {
-      setAccordionOpen(index < 2)
+      setAccordionOpen(index === 1)
     }
   }, [index])
 

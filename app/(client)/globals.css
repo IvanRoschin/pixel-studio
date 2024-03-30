@@ -12,7 +12,7 @@
 #FFFD84 => 255 255 216
 */
 
-    ::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
 }
@@ -107,7 +107,7 @@
       z-0
       m-auto
       relative
-      h-screen
+      h-dvh
   }
 
   .section {
@@ -118,7 +118,7 @@
     snap-start
     scroll-py-10
     scroll-mt-8
-    md:scroll-mt-32
+    md:scroll-mt-12
     flex
     items-center
   }
