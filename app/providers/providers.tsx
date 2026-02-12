@@ -4,9 +4,10 @@ import { Toaster } from 'sonner'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange
+>
       {children}
       <Toaster position="top-right" richColors />
     </ThemeProvider>
-  )
+  ) 
 }

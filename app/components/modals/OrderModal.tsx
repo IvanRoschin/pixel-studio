@@ -42,7 +42,6 @@ const OrderModal = () => {
     },
     validationSchema: orderSchema,
     onSubmit: async (values, actions) => {
-      console.log('values:', values)
       setIsLoading(true)
       const result = await sendEmail(values)
       if (result?.success) {
