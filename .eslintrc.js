@@ -1,10 +1,8 @@
 module.exports = {
   root: true,
-  extends: ['plugin:@next/next/recommended', '@payloadcms'],
+  extends: ['next/core-web-vitals'],
   ignorePatterns: ['**/payload-types.ts'],
-  plugins: ['prettier'],
   rules: {
     'no-console': 'off',
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 }

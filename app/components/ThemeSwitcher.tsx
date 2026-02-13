@@ -8,9 +8,9 @@ const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
+  // Нужен только для корректной гидрации (next-themes рекомендует mounted guard)
   useEffect(() => {
     setMounted(true)
-    setTheme('dark')
   }, [])
 
   const toggleTheme = useCallback(() => {
@@ -19,8 +19,9 @@ const ThemeSwitcher = () => {
 
   if (!mounted) {
     return (
-      // setTheme("dark")
-      <pre>¯\_(ツ)_/¯ Your data will show up here when you've configured everything correctly</pre>
+      <pre>
+        ¯\_(ツ)_/¯ Your data will show up here when you&apos;ve configured everything correctly
+      </pre>
     )
   }
 
